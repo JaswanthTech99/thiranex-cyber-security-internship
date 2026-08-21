@@ -213,12 +213,12 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,114.0,2.0569048513364727,0,dictionary:breach,2,False,42.303957463269825,False,True
 6,161.0,2.2068258760318495,0,dictionary:breach,1,False,19.931568569324174,False,True
 7,39.0,1.5910646070264993,0,dictionary:breach,1,False,32.90307802698764,False,True
-4,2252.0,3.3525683861793087,1,dictionary:breach,2,False,23.530572197447366,False,True
+4,1126.0,3.0515383905153275,1,dictionary:breach,2,False,23.530572197447366,False,True
 8,115.0,2.060697840353612,0,dictionary:breach,2,False,37.603517745128734,False,True
 6,119.0,2.075546961392531,0,dictionary:breach,1,False,28.202638308846552,False,True
 6,1514.0,3.1801258751640544,1,dictionary:breach,2,False,31.019550008653873,False,True
 10,104.0,2.0170333392987803,0,bruteforce,3,False,51.69925001442312,False,True
-10,661045.0,5.820231024669417,1,dictionary:breach,3,False,57.004397181410916,False,True
+10,1717.0,3.2347702951609167,1,dictionary:breach,3,False,57.004397181410916,False,True
 6,261.0,2.4166405073382813,0,dictionary:breach,1,False,28.202638308846552,False,True
 8,234.0,2.369215857410143,0,dictionary:breach,3,False,41.3594000115385,False,True
 6,300.0,2.4771212547196626,0,repeat,1,False,19.931568569324174,False,True
@@ -252,7 +252,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 14,3.1322155183571065e+21,21.495851636914978,4,bruteforce,5,True,85.51934239489437,True,False
 7,707999.0,5.850032644279051,1,dictionary:breach,1,False,32.90307802698764,False,True
 8,8225568.0,6.915165896986578,2,bruteforce,3,False,41.3594000115385,False,False
-10,1331884.0,6.1244664017459405,2,dictionary:breach,2,False,47.004397181410916,False,True
+10,665942.0,5.823436406081959,1,dictionary:breach,2,False,47.004397181410916,False,True
 7,4218240000.0,9.62513128562406,3,bruteforce,3,False,41.67937417270812,False,False
 6,287.0,2.4578818967339924,0,dictionary:breach,1,False,19.931568569324174,False,True
 6,127.0,2.103803720955957,0,dictionary:breach,1,False,28.202638308846552,False,True
@@ -274,7 +274,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,2057.0,3.313234291694724,1,dictionary:breach,2,False,36.18947501009619,False,True
 6,4967.0,3.6960941599952233,1,dictionary:breach,1,False,28.202638308846552,False,True
 10,375900.0,5.575072325713813,1,dictionary:breach,4,False,59.54196310386875,False,False
-18,843648.0,5.926161281288042,1,repeat,4,False,102.60791492653965,True,True
+18,58161.0,4.764631865023408,1,dictionary:breach,4,False,102.60791492653965,True,True
 7,360.0,2.5563025007672873,0,dictionary:breach,1,False,32.90307802698764,False,True
 9,284.0,2.4533183400470375,0,dictionary:breach,2,False,42.303957463269825,False,True
 6,146.0,2.164352855784437,0,dictionary:breach,1,False,28.202638308846552,False,True
@@ -355,7 +355,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,226.0,2.354108439147401,0,dictionary:breach,1,False,32.90307802698764,False,True
 9,277.0,2.4424797690644486,0,dictionary:breach,2,False,42.303957463269825,False,True
 7,2540.0,3.4048337166199385,1,dictionary:breach,2,False,36.18947501009619,False,True
-6,150.0,2.1760912590556813,0,dictionary:breach,2,False,34.20263830884655,False,True
+6,75.0,1.8750612633917,0,dictionary:breach,2,False,34.20263830884655,False,True
 8,160.0,2.204119982655925,0,sequence,2,False,26.575424759098897,False,True
 7,1736.0,3.239549720840473,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,254.0,2.404833716619938,0,dictionary:breach,1,False,32.90307802698764,False,True
@@ -379,7 +379,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,3325.0,3.5217916496391237,1,dictionary:breach,2,False,36.18947501009619,False,True
 8,337.0,2.527629900871339,0,dictionary:breach,2,False,37.603517745128734,False,True
 9,1306.0,3.1159431769390555,1,dictionary:breach,3,False,46.529325012980806,False,True
-4,718740.0,5.856571815297643,1,bruteforce,2,False,21.70505901880839,False,False
+4,158828.93617021278,5.200929627022069,1,spatial,2,False,21.70505901880839,False,False
 7,266.0,2.424881636631067,0,dictionary:breach,1,False,32.90307802698764,False,True
 6,268.0,2.428134794028789,0,dictionary:breach,1,False,28.202638308846552,False,True
 7,315.0,2.498310553789601,0,dictionary:breach,1,False,32.90307802698764,False,True
@@ -498,7 +498,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,309.0,2.4899584794248346,0,dictionary:breach,1,False,28.202638308846552,False,True
 8,1438.0,3.1577588860468637,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,357.0,2.552668216112193,0,dictionary:breach,1,False,28.202638308846552,False,True
-7,378.0,2.577491799837225,0,dictionary:breach,2,False,39.90307802698764,False,True
+7,189.0,2.2764618041732443,0,dictionary:breach,2,False,39.90307802698764,False,True
 7,314.0,2.496929648073215,0,dictionary:breach,1,False,32.90307802698764,False,True
 7,397.0,2.598790506763115,0,dictionary:breach,1,False,32.90307802698764,False,True
 7,5637.0,3.7510480348201884,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -520,7 +520,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,400.0,2.6020599913279625,0,repeat,2,False,26.575424759098897,False,True
 10,1157.0,3.0633333589517497,1,dictionary:breach,3,False,51.69925001442312,False,True
 8,2329.0,3.367169488534681,1,dictionary:breach,3,False,41.3594000115385,False,True
-9,400.0,2.6020599913279625,0,dictionary:breach,4,False,53.587766793481876,False,True
+9,200.0,2.3010299956639813,0,dictionary:breach,4,False,53.587766793481876,False,True
 9,361.0,2.5575072019056577,0,dictionary:breach,2,False,42.303957463269825,False,True
 6,565.0,2.7520484478194387,0,dictionary:breach,1,False,19.931568569324174,False,True
 8,720.0,2.8573324964312685,0,dictionary:breach,3,False,41.3594000115385,False,True
@@ -562,7 +562,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,1738.0,3.240049772112648,1,dictionary:breach,2,False,31.019550008653873,False,True
 7,7224.0,3.8587777373054495,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,292.0,2.4653828514484184,0,dictionary:breach,1,False,32.90307802698764,False,True
-16,13189800.0,7.120238210288223,2,dictionary:breach,5,True,95.26714096619,True,True
+16,169100.0,5.228143607597742,1,dictionary:breach,5,True,95.26714096619,True,True
 6,1828.0,3.261976191397813,1,dictionary:breach,2,False,31.019550008653873,False,True
 9,198.0,2.2966651902615314,0,dictionary:breach,3,False,52.94378744425657,False,True
 7,2694.0,3.4303975913869666,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -581,7 +581,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,430.0,2.6334684555795866,0,dictionary:breach,2,False,42.303957463269825,False,True
 7,2720.0,3.434568904034199,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,52.0,1.7160033436347992,0,bruteforce,2,False,36.18947501009619,False,True
-11,39992160000000.0,13.601974861266491,4,bruteforce,3,False,56.86917501586544,False,False
+11,2846755230421.006,12.454350127263783,4,bruteforce,3,False,56.86917501586544,False,False
 8,8627.0,3.935859798037881,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,399.0,2.600972895686748,0,dictionary:breach,1,False,32.90307802698764,False,True
 6,339.0,2.530199698203082,0,dictionary:breach,1,False,28.202638308846552,False,True
@@ -624,7 +624,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 4,496.0,2.6954816764901977,0,dictionary:breach,1,False,18.801758872564367,False,True
 9,260.0,2.414973347970818,0,dictionary:breach,3,False,46.529325012980806,False,True
 7,564.0,2.7512791039833426,0,dictionary:breach,1,False,32.90307802698764,False,True
-21,984256.0,5.993108070918655,1,repeat,4,False,119.70923408096293,True,True
+21,111916.0,5.048892179602324,1,dictionary:breach,4,False,119.70923408096293,True,True
 8,829.0,2.918554530550274,0,dictionary:breach,2,False,37.603517745128734,False,True
 6,498.0,2.697229342759718,0,dictionary:breach,1,False,28.202638308846552,False,True
 8,220.0,2.3424226808222066,0,repeat,2,False,37.603517745128734,False,True
@@ -687,7 +687,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,20.0,1.3010299956639813,0,repeat,3,False,41.3594000115385,False,True
 6,2401.0,3.3803921600570277,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,1580.0,3.198657086954423,1,dictionary:breach,3,False,41.3594000115385,False,True
-8,192.0,2.2833012287035497,0,dictionary:breach,3,False,45.603517745128734,False,True
+8,96.0,1.9822712330395684,0,dictionary:breach,3,False,45.603517745128734,False,True
 7,548.0,2.7387805584843696,0,dictionary:breach,1,False,32.90307802698764,False,True
 7,10661.0,4.0277979433503,1,dictionary:breach,2,False,36.18947501009619,False,True
 4,833.0,2.920645001406788,0,dictionary:breach,1,False,18.801758872564367,False,True
@@ -702,7 +702,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,387.0,2.5877109650189114,0,dictionary:breach,2,False,37.603517745128734,False,True
 6,408.0,2.61066016308988,0,dictionary:breach,1,False,28.202638308846552,False,True
 7,3901.0,3.5911759503117913,1,dictionary:breach,2,False,36.18947501009619,False,True
-24,1124864.0,6.051100017896341,2,repeat,4,False,136.8105532353862,True,True
+24,117251.0,5.0691165553754365,1,dictionary:breach,4,False,136.8105532353862,True,True
 8,401.0,2.603144372620182,0,dictionary:breach,2,False,37.603517745128734,False,True
 9,4839.0,3.684755622108624,1,dictionary:breach,3,False,46.529325012980806,False,True
 7,3003.0,3.477555332198981,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -1137,7 +1137,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,668.0,2.824776462475546,0,dictionary:breach,1,False,28.202638308846552,False,True
 7,3120.0,3.494154594018443,1,sequence,2,False,36.18947501009619,False,True
 10,2530500.0,6.403206341644807,2,dictionary:breach,4,False,59.54196310386875,False,False
-15,703040.0,5.846980035240416,1,repeat,4,False,85.50659577211637,True,True
+15,144764.0,5.160660574670531,1,dictionary:breach,4,False,85.50659577211637,True,True
 4,896.0,2.9523080096621253,0,dictionary:breach,1,False,18.801758872564367,False,True
 5,803.0,2.904715545278681,0,dictionary:breach,1,False,23.502198590705458,False,True
 6,840.0,2.924279286061882,0,dictionary:breach,1,False,28.202638308846552,False,True
@@ -1167,7 +1167,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,731.0,2.8639173769578603,0,dictionary:breach,1,False,32.90307802698764,False,True
 8,400.0,2.6020599913279625,0,repeat,2,False,26.575424759098897,False,True
 10,1369.0,3.1364034481339904,1,dictionary:breach,2,False,47.004397181410916,False,True
-27,1265472.0,6.102252540343723,2,repeat,4,False,153.91187238980947,True,True
+27,234399.0,5.3699557545499434,1,dictionary:breach,4,False,153.91187238980947,True,True
 8,1047.0,3.0199466816788427,1,dictionary:breach,2,False,37.603517745128734,False,True
 8,2376.0,3.3758464363091565,1,dictionary:breach,3,False,47.06114439489473,False,False
 6,7206.0,3.85769425778655,1,dictionary:breach,2,False,31.019550008653873,False,True
@@ -1255,7 +1255,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 12,43560.0,4.6390878710837375,1,dictionary:breach,4,False,70.5917165923421,True,True
 4,150.0,2.1760912590556813,0,date,1,False,13.287712379549449,False,True
 10,1984.0,3.2975416678181597,1,dictionary:breach,3,False,51.69925001442312,False,True
-8,4272.0,3.6306312440205004,1,dictionary:breach,5,True,52.55884486664758,False,True
+8,2136.0,3.329601248356519,1,dictionary:breach,5,True,52.55884486664758,False,True
 6,827.0,2.917505509552547,0,dictionary:breach,1,False,28.202638308846552,False,True
 8,49609.0,4.695560472775774,1,dictionary:breach,3,False,47.06114439489473,False,True
 8,730.0,2.863322860120456,0,dictionary:breach,2,False,37.603517745128734,False,True
@@ -1464,7 +1464,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,4658.0,3.668199484198662,1,dictionary:breach,2,False,31.019550008653873,False,True
 12,8.0,0.9030899869919436,0,dictionary:breach,4,False,62.039100017307746,True,True
 9,1317.0,3.119585774961784,1,dictionary:breach,2,False,29.89735285398626,False,True
-8,1074.0,3.0310042813635367,1,dictionary:breach,2,False,37.603517745128734,False,True
+8,537.0,2.729974285699556,0,dictionary:breach,2,False,37.603517745128734,False,True
 6,1522.0,3.182414652434554,1,dictionary:breach,1,False,28.202638308846552,False,True
 7,820.0,2.9138138523837167,0,dictionary:breach,1,False,32.90307802698764,False,True
 7,10192.0,4.008259414991275,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -1511,7 +1511,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,2588.0,3.412964271996663,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,2647.0,3.4227539413013486,1,dictionary:breach,2,False,31.019550008653873,False,True
 6,4403.0,3.643748685459526,1,dictionary:breach,2,False,31.019550008653873,False,True
-11,1395820608.0,9.144829605993486,3,dictionary:breach,4,False,65.49615941425563,True,False
+11,49850736.0,7.697671574651268,2,dictionary:breach,4,False,65.49615941425563,True,False
 8,362.0,2.558708570533166,0,dictionary:breach,2,False,37.603517745128734,False,True
 9,1008.0,3.0034605321095063,1,dictionary:breach,2,False,29.89735285398626,False,True
 7,5650.0,3.752048447819439,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -1587,7 +1587,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,156.0,2.1931245983544616,0,repeat,1,False,28.202638308846552,False,True
 7,1520.0,3.181843587944773,1,dictionary:breach,2,False,36.18947501009619,False,True
 6,312.0,2.494154594018443,0,dictionary:breach,2,False,31.019550008653873,False,True
-8,1650.0,3.2174839442139063,1,dictionary:breach,4,False,47.633570483095,False,True
+8,825.0,2.916453948549925,0,dictionary:breach,4,False,47.633570483095,False,True
 1,10.0,1.0,0,bruteforce,1,False,3.321928094887362,False,True
 9,4308.0,3.634275694625944,1,dictionary:breach,3,False,46.529325012980806,False,True
 8,862.0,2.935507265824713,0,dictionary:breach,2,False,37.603517745128734,False,True
@@ -1606,7 +1606,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,958.0,2.9813655090785445,0,dictionary:breach,1,False,32.90307802698764,False,True
 7,17217.0,4.235957479466621,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,6670.0,3.824125833916549,1,dictionary:breach,2,False,36.18947501009619,False,True
-7,10957184.0,7.039698954659314,2,dictionary:breach,2,False,39.90307802698764,False,True
+7,391328.0,5.592540923317094,1,dictionary:breach,2,False,39.90307802698764,False,True
 7,1200.0,3.079181246047625,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,1569.0,3.1956229435869368,1,dictionary:breach,1,False,19.931568569324174,False,True
 9,784.0,2.8943160626844384,0,dictionary:english,2,False,42.303957463269825,False,True
@@ -1736,7 +1736,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,869.0,2.9390197764486667,0,dictionary:breach,1,False,28.202638308846552,False,True
 6,300.0,2.4771212547196626,0,repeat,1,False,19.931568569324174,False,True
 9,3889.0,3.58983794314746,1,dictionary:breach,3,False,46.529325012980806,False,True
-13,41671584.0,7.61984000896183,2,dictionary:breach,5,True,77.40455203502937,True,True
+13,452952.0,5.656052181616276,1,dictionary:breach,5,True,77.40455203502937,True,True
 7,1228.0,3.0891983668051486,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,300.0,2.4771212547196626,0,repeat,1,False,19.931568569324174,False,True
 8,5985.0,3.7770641547424297,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -1979,7 +1979,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,1309.0,3.116939646550756,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,572.0,2.7573960287930244,0,dictionary:breach,3,False,41.3594000115385,False,True
 5,914.0,2.9609461957338317,0,dictionary:breach,1,False,23.502198590705458,False,True
-11,281265.0,5.449115692874146,1,dictionary:breach,5,True,72.26841169164042,True,True
+11,1103.0,3.0425755124401905,1,dictionary:breach,5,True,72.26841169164042,True,True
 6,2074.0,3.3168087520530225,1,dictionary:breach,1,False,19.931568569324174,False,True
 8,1311.0,3.1176026916900845,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,960.0,2.9822712330395684,0,sequence,1,False,19.931568569324174,False,True
@@ -2063,7 +2063,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,1051.0,3.021602716028242,1,dictionary:breach,2,False,37.603517745128734,False,True
 7,5068.0,3.704836606211404,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,1334.0,3.1251558295805304,1,dictionary:breach,1,False,32.90307802698764,False,True
-8,256.0,2.4082399653118496,0,dictionary:breach,4,False,47.633570483095,False,True
+8,128.0,2.1072099696478683,0,dictionary:breach,4,False,47.633570483095,False,True
 9,1370.0,3.1367205671564067,1,dictionary:breach,2,False,42.303957463269825,False,True
 7,2017.0,3.3047058982127657,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,156.0,2.1931245983544616,0,repeat,1,False,28.202638308846552,False,True
@@ -2118,7 +2118,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,398.0,2.599883072073688,0,dictionary:english,1,False,28.202638308846552,False,True
 7,2944.0,3.4689378056654614,1,dictionary:breach,2,False,36.18947501009619,False,True
 6,1958.0,3.291812687467119,1,dictionary:breach,1,False,28.202638308846552,False,True
-8,109040.0,5.037585842826617,1,dictionary:breach,3,False,45.603517745128734,False,True
+8,54520.0,4.736555847162636,1,dictionary:breach,3,False,45.603517745128734,False,True
 7,1351.0,3.130655349022031,1,dictionary:breach,1,False,32.90307802698764,False,True
 8,2164.0,3.335257256434532,1,dictionary:breach,2,False,37.603517745128734,False,True
 10,8630.0,3.9360107957152097,1,dictionary:breach,3,False,51.69925001442312,False,True
@@ -2128,7 +2128,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,1077.0,3.0322157032979815,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,11296.0,4.052924683707729,1,dictionary:breach,2,False,36.18947501009619,False,True
 6,1576.0,3.1975562131535367,1,dictionary:breach,1,False,19.931568569324174,False,True
-14,2156.0,3.3336487565147013,1,dictionary:breach,5,True,83.35874834541625,True,True
+14,1078.0,3.03261876085072,1,dictionary:breach,5,True,83.35874834541625,True,True
 6,1554.0,3.1914510144648958,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,2513.0,3.400192488592576,1,dictionary:breach,2,False,37.603517745128734,False,True
 6,10741.0,4.031044716583706,1,dictionary:breach,2,False,31.019550008653873,False,True
@@ -2209,7 +2209,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,1610.0,3.20682587603185,1,dictionary:breach,2,False,37.603517745128734,False,True
 6,156.0,2.1931245983544616,0,repeat,1,False,28.202638308846552,False,True
 6,1327.0,3.1228709228644354,1,dictionary:breach,1,False,28.202638308846552,False,True
-6,3692.0,3.5672616923538745,1,dictionary:breach,1,False,28.202638308846552,False,True
+6,1846.0,3.266231696689893,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,3038.0,3.4825877695267677,1,dictionary:breach,2,False,42.303957463269825,False,True
 5,1581.0,3.198931869932209,1,dictionary:breach,1,False,23.502198590705458,False,True
 9,1281.0,3.1075491297446862,1,dictionary:breach,2,False,42.303957463269825,False,True
@@ -2258,7 +2258,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,961.0,2.9827233876685453,0,dictionary:english,1,False,32.90307802698764,False,True
 7,2360.0,3.3729120029701067,1,dictionary:breach,1,False,32.90307802698764,False,True
 9,6504.0,3.8131805325860118,1,dictionary:breach,3,False,46.529325012980806,False,True
-18,16218150.0,7.210001312845906,2,dictionary:breach,5,True,107.17553358696375,True,True
+18,207925.0,5.317906710155426,1,dictionary:breach,5,True,107.17553358696375,True,True
 7,19991.0,4.300834519161612,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,13079.0,4.1165745397769165,1,dictionary:breach,2,False,36.18947501009619,False,True
 8,2716.0,3.4339297656084646,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -2546,7 +2546,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,10708.0,4.029708362514895,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,2000.0,3.3010299956639813,1,repeat,1,False,19.931568569324174,False,True
 8,8236.0,3.915716337945994,1,dictionary:breach,3,False,41.3594000115385,False,True
-12,562432.0,5.75007002223236,1,repeat,4,False,68.4052766176931,True,True
+12,100992.0,5.004286972857289,1,dictionary:breach,4,False,68.4052766176931,True,True
 5,1600.0,3.204119982655925,1,sequence,1,False,16.609640474436812,False,True
 7,2746.0,3.4387005329007363,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,1966.0,3.293583513496117,1,dictionary:breach,1,False,28.202638308846552,False,True
@@ -2768,7 +2768,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,29631.0,4.471746308488267,1,dictionary:breach,2,False,41.178501345532894,False,True
 8,214.0,2.330413773349191,0,dictionary:breach,2,False,37.603517745128734,False,True
 7,2144.0,3.3312247810207323,1,dictionary:breach,1,False,32.90307802698764,False,True
-30,1406080.0,6.1480100309043975,2,repeat,4,False,171.01319154423274,True,True
+30,337858.0,5.528734206862359,1,dictionary:breach,4,False,171.01319154423274,True,True
 4,4000.0,3.6020599913279625,1,bruteforce,1,False,13.287712379549449,False,True
 8,5777.0,3.761702367541413,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,2038.0,3.3092041796704077,1,dictionary:breach,1,False,32.90307802698764,False,True
@@ -2902,7 +2902,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,19040.0,4.279666944048456,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,7335.0,3.865400118179302,1,dictionary:breach,2,False,31.019550008653873,False,True
 7,2240.0,3.350248018334163,1,dictionary:breach,1,False,32.90307802698764,False,True
-10,19057878.0,7.280074542462068,2,dictionary:breach,4,False,59.54196310386875,False,True
+10,302506.0,5.480733993008486,1,dictionary:breach,4,False,59.54196310386875,False,True
 8,3354.0,3.525563058270067,1,dictionary:breach,2,False,26.575424759098897,False,True
 10,100.0,2.0,0,repeat,2,False,33.219280948873624,False,True
 7,1434.0,3.1565491513317814,1,dictionary:breach,1,False,32.90307802698764,False,True
@@ -2950,7 +2950,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,10328.0,4.014016229258364,1,dictionary:breach,3,False,46.529325012980806,False,True
 6,2771.0,3.442636525782232,1,dictionary:english,1,False,28.202638308846552,False,True
 9,2341.0,3.3694014136966244,1,dictionary:breach,2,False,42.303957463269825,False,True
-10,750.0,2.8750612633917,0,dictionary:breach,4,False,59.54196310386875,False,True
+10,375.0,2.574031267727719,0,dictionary:breach,4,False,59.54196310386875,False,True
 7,273.0,2.436162647040756,0,dictionary:english,1,False,32.90307802698764,False,True
 8,1352.0,3.130976691605617,1,bruteforce,3,False,41.3594000115385,False,True
 6,2035.0,3.308564413561239,1,dictionary:breach,1,False,28.202638308846552,False,True
@@ -3053,7 +3053,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,312.0,2.494154594018443,0,dictionary:breach,2,False,31.019550008653873,False,True
 7,12913.0,4.1110271510261756,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,16497.0,4.217404974401542,1,dictionary:breach,1,False,32.90307802698764,False,True
-10,70623.0,4.848946162048555,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,1121.0,3.049605612594973,1,dictionary:breach,4,False,59.54196310386875,False,True
 8,1632.0,3.2127201544178425,1,dictionary:breach,2,False,37.603517745128734,False,True
 7,12126.0,4.083717563898948,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,2146.0,3.3316297176299323,1,dictionary:breach,1,False,32.90307802698764,False,True
@@ -3309,7 +3309,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,14060.0,4.147985320683805,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,1819.0,3.2598326990634834,1,dictionary:english,1,False,32.90307802698764,False,True
 9,2088.0,3.319730494330225,1,dictionary:breach,2,False,42.303957463269825,False,True
-8,4478.0,3.6510840892430116,1,dictionary:breach,4,False,47.633570483095,False,True
+8,2239.0,3.350054093579031,1,dictionary:breach,4,False,47.633570483095,False,True
 1,26.0,1.414973347970818,0,bruteforce,1,False,4.700439718141092,False,True
 6,4116.0,3.614475366090396,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,10877.0,4.036509128532731,1,dictionary:breach,2,False,31.019550008653873,False,True
@@ -3358,7 +3358,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 5,2324.0,3.366236123718293,1,dictionary:breach,1,False,23.502198590705458,False,True
 6,7123.0,3.8526629443445692,1,dictionary:breach,2,False,31.019550008653873,False,True
 6,7684.0,3.885587356189656,1,dictionary:breach,2,False,31.019550008653873,False,True
-9,1547520.0,6.1896362705086405,2,date,2,False,29.89735285398626,False,False
+9,967200.0,5.985516287852716,1,date,2,False,29.89735285398626,False,False
 8,2601.0,3.4151403521958725,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,52.0,1.7160033436347992,0,bruteforce,2,False,36.18947501009619,False,True
 7,2679.0,3.427972713608209,1,dictionary:breach,1,False,32.90307802698764,False,True
@@ -3458,7 +3458,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,2307.0,3.3630475945210936,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,8537.0,3.931305281421673,1,dictionary:breach,3,False,41.3594000115385,False,True
 1,10.0,1.0,0,bruteforce,1,False,3.321928094887362,False,True
-8,4810.0,3.682145076373832,1,dictionary:breach,4,False,47.633570483095,False,True
+8,962.0,2.983175072037813,0,dictionary:breach,4,False,47.633570483095,False,True
 10,953.0,2.979092900638326,0,dictionary:breach,2,False,47.004397181410916,False,True
 10,7670.0,3.8847953639489807,1,dictionary:breach,3,False,51.69925001442312,False,True
 7,1143.0,3.0580462303952816,1,dictionary:eff,1,False,32.90307802698764,False,True
@@ -3510,7 +3510,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,7000.0,3.845098040014257,1,bruteforce,2,False,31.019550008653873,False,True
 5,2855.0,3.455606112581867,1,dictionary:breach,1,False,23.502198590705458,False,True
 6,2524.0,3.402089350572097,1,dictionary:breach,1,False,28.202638308846552,False,True
-16,33234396.0,7.521587790338964,2,dictionary:breach,5,True,95.26714096619,True,True
+16,426082.0,5.6294931876484835,1,dictionary:breach,5,True,95.26714096619,True,True
 7,80.0,1.9030899869919438,0,dictionary:breach,2,False,36.18947501009619,False,True
 7,2388.0,3.378034322457332,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,16886.0,4.227526784937202,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -3631,7 +3631,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,1154.0,3.0622058088197126,1,dictionary:breach,1,False,32.90307802698764,False,True
 9,1290.0,3.110589710299249,1,dictionary:english,2,False,42.303957463269825,False,True
 8,2954.0,3.470410490975931,1,dictionary:breach,2,False,37.603517745128734,False,True
-12,6572986.0,6.817762707264512,2,dictionary:breach,4,False,68.4052766176931,True,True
+12,22057.0,4.343546443188257,1,dictionary:breach,4,False,68.4052766176931,True,True
 7,680.0,2.8325089127062366,0,dictionary:breach,2,False,36.18947501009619,False,True
 7,15915.0,4.201806642957022,1,dictionary:breach,2,False,36.18947501009619,False,True
 6,7154.0,3.854548935812951,1,dictionary:breach,2,False,31.019550008653873,False,True
@@ -3653,7 +3653,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,2767.0,3.442009159140952,1,dictionary:english,2,False,42.303957463269825,False,True
 7,18753.0,4.2730707536224655,1,dictionary:breach,2,False,36.18947501009619,False,True
 10,2368.0,3.374381698050882,1,dictionary:breach,3,False,51.69925001442312,False,True
-8,10596.0,4.025141949625193,1,dictionary:breach,4,False,47.633570483095,False,True
+8,1766.0,3.24699069924155,1,dictionary:breach,4,False,47.633570483095,False,True
 8,400.0,2.6020599913279625,0,repeat,2,False,26.575424759098897,False,True
 9,2598.0,3.414639146737009,1,dictionary:breach,2,False,42.303957463269825,False,True
 5,693.0,2.840733234611807,0,dictionary:english,1,False,23.502198590705458,False,True
@@ -3901,7 +3901,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,2337.0,3.368658712392227,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,8299.0,3.91902576458736,1,dictionary:breach,2,False,31.019550008653873,False,True
 7,2967.0,3.472317546316842,1,dictionary:breach,1,False,32.90307802698764,False,True
-8,3650616.0,6.56236615290268,2,dictionary:breach,3,False,45.603517745128734,False,True
+8,101406.0,5.006063652135392,1,dictionary:breach,3,False,45.603517745128734,False,True
 6,2615.0,3.4174716932032934,1,dictionary:breach,1,False,28.202638308846552,False,True
 5,2382.0,3.3769417571467586,1,dictionary:breach,1,False,23.502198590705458,False,True
 8,400.0,2.6020599913279625,0,repeat,2,False,26.575424759098897,False,True
@@ -4062,7 +4062,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,306409.0,5.486301517464918,1,dictionary:breach,3,False,42.75967119744718,False,True
 8,10386.0,4.016448318259037,1,dictionary:breach,3,False,41.3594000115385,False,True
 8,2495.0,3.397070549959409,1,dictionary:breach,2,False,37.603517745128734,False,True
-10,51296.0,4.710083500674051,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,1832.0,3.2629254693318317,1,dictionary:breach,4,False,59.54196310386875,False,True
 6,11802.0,4.071955610302981,1,dictionary:breach,2,False,31.019550008653873,False,True
 9,14535.0,4.162415036106447,1,dictionary:breach,2,False,42.303957463269825,False,True
 8,10304.0,4.0130058500157375,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -4156,7 +4156,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 5,1282.0,3.107888025182799,1,dictionary:english,1,False,23.502198590705458,False,True
 8,9703.0,3.9869060313807214,1,dictionary:breach,3,False,41.3594000115385,False,True
 8,9949.0,3.997779430865604,1,dictionary:breach,3,False,41.3594000115385,False,True
-6,4258.0,3.6292056571023044,1,dictionary:breach,2,False,34.20263830884655,False,True
+6,2129.0,3.328175661438323,1,dictionary:breach,2,False,34.20263830884655,False,True
 8,5444.0,3.735918116531297,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,17861.0,4.251905770472128,1,dictionary:breach,2,False,36.18947501009619,False,True
 8,1480.0,3.170261715394958,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -4286,7 +4286,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,1660.0,3.2201080880400554,1,dictionary:breach,2,False,36.18947501009619,False,True
 6,2477.0,3.393926006585837,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,2757.0,3.440436766105774,1,dictionary:breach,2,False,37.603517745128734,False,True
-10,46760.0,4.669874502489803,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,1670.0,3.2227164711475837,1,dictionary:breach,4,False,59.54196310386875,False,True
 7,3482.0,3.5418287667813124,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,2617.0,3.4178037226398814,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,24887.0,4.395972547794993,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -4294,7 +4294,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,3315.0,3.520483532740792,1,dictionary:breach,2,False,37.603517745128734,False,True
 6,156.0,2.1931245983544616,0,repeat,1,False,28.202638308846552,False,True
 5,2755.0,3.440121603187804,1,dictionary:breach,1,False,23.502198590705458,False,True
-17,346800.0,5.540079088804173,1,dictionary:breach,5,True,101.22133727657688,True,True
+17,1360.0,3.133538908370218,1,dictionary:breach,5,True,101.22133727657688,True,True
 8,4871.0,3.6876181295717703,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,4011.0,3.603252661981647,1,dictionary:breach,1,False,32.90307802698764,False,True
 8,12203.0,4.086466611271582,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -4316,7 +4316,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,17765.0,4.249565211825347,1,dictionary:breach,3,False,46.529325012980806,False,True
 6,4788.0,3.680154141734373,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,3657.0,3.563124960338045,1,dictionary:breach,1,False,28.202638308846552,False,True
-10,35000.0,4.544068044350276,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,1250.0,3.0969100130080562,1,dictionary:breach,4,False,59.54196310386875,False,True
 8,13778.0,4.139186180416129,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,2671.0,3.4266738880213734,1,dictionary:breach,1,False,28.202638308846552,False,True
 12,935.0,2.9708116108725178,0,dictionary:breach,3,False,56.405276617693104,False,True
@@ -4460,7 +4460,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,17780.0,4.249931756634195,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,14086.0,4.1487876840563125,1,dictionary:breach,2,False,36.18947501009619,False,True
 6,14363.0,4.157245160475195,1,dictionary:breach,2,False,31.019550008653873,False,True
-6,2002.0,3.3014640731432996,1,dictionary:breach,1,False,28.202638308846552,False,True
+6,1001.0,3.000434077479319,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,47448.0,4.676217911025279,1,dictionary:breach,2,False,31.019550008653873,False,True
 7,1565.0,3.194514341882467,1,dictionary:english,1,False,32.90307802698764,False,True
 6,15584.0,4.192678939534541,1,dictionary:english,2,False,31.019550008653873,False,True
@@ -4584,7 +4584,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,12424.0,4.094261442720502,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,2547.0,3.4060289449636154,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,4923.0,3.692229835772756,1,dictionary:breach,3,False,46.529325012980806,False,True
-13,56984697.0,7.755758243378537,2,dictionary:breach,5,True,77.40455203502937,True,True
+13,101577.0,5.006795382122375,1,dictionary:breach,5,True,77.40455203502937,True,True
 9,19126.0,4.281624151440202,1,dictionary:breach,3,False,46.529325012980806,False,True
 5,3668.0,3.5644293269979834,1,dictionary:breach,1,False,23.502198590705458,False,True
 9,5560.0,3.745074791582058,1,dictionary:breach,3,False,46.529325012980806,False,True
@@ -4624,7 +4624,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,312.0,2.494154594018443,0,bruteforce,2,False,31.019550008653873,False,True
 10,104.0,2.0170333392987803,0,bruteforce,3,False,51.69925001442312,False,True
 10,2473.0,3.3932241163612975,1,dictionary:breach,2,False,47.004397181410916,False,True
-8,18440242.0,7.265766616206492,2,dictionary:breach,4,False,47.633570483095,False,True
+8,449762.0,5.652982759486758,1,dictionary:breach,4,False,47.633570483095,False,True
 6,3489.0,3.542700969448111,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,11697.0,4.068074489907648,1,dictionary:breach,3,False,46.529325012980806,False,True
 6,3310.0,3.519827993775719,1,dictionary:breach,1,False,28.202638308846552,False,True
@@ -4788,7 +4788,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,2857.0,3.455910240382743,1,dictionary:breach,2,False,37.603517745128734,False,True
 7,2638.0,3.4212747912103465,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,3314.0,3.520352504083318,1,dictionary:breach,1,False,32.90307802698764,False,True
-10,54720846.0,7.738152803081422,2,dictionary:breach,4,False,59.54196310386875,False,True
+10,337783.0,5.528637788538791,1,dictionary:breach,4,False,59.54196310386875,False,True
 6,19377.0,4.287286539262812,1,dictionary:breach,2,False,31.019550008653873,False,True
 6,3609.0,3.557386882059507,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,4373.0,3.640779477344857,1,dictionary:breach,2,False,37.603517745128734,False,True
@@ -4822,7 +4822,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,6935.0,3.8410464654093035,1,dictionary:breach,1,False,28.202638308846552,False,True
 7,11400.0,4.056904851336473,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,2336.0,3.368472838440362,1,dictionary:english,1,False,32.90307802698764,False,True
-8,2462.0,3.391288048595298,1,dictionary:breach,4,False,47.633570483095,False,True
+8,1231.0,3.0902580529313166,1,dictionary:breach,4,False,47.633570483095,False,True
 5,5995.0,3.777789187434868,1,dictionary:breach,1,False,23.502198590705458,False,True
 8,5760.0,3.760422483423212,1,dictionary:english,3,False,41.3594000115385,False,True
 7,24600.0,4.390935107103379,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -4836,7 +4836,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,1340.0,3.127104798364808,1,dictionary:breach,3,False,46.529325012980806,False,True
 11,200.0,2.3010299956639813,0,dictionary:breach,2,False,36.541209043760986,False,True
 6,9892.0,3.9952841076892596,1,dictionary:breach,1,False,28.202638308846552,False,True
-8,2276.0,3.357172257723034,1,dictionary:breach,4,False,47.633570483095,False,True
+8,1138.0,3.0561422620590526,1,dictionary:breach,4,False,47.633570483095,False,True
 8,2732.0,3.436480695009495,1,dictionary:breach,2,False,37.603517745128734,False,True
 7,580.0,2.7634279935629373,0,dictionary:breach,2,False,36.18947501009619,False,True
 6,3951.0,3.5967070296814465,1,dictionary:breach,1,False,28.202638308846552,False,True
@@ -4897,7 +4897,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 5,3566.0,3.5521813388393357,1,dictionary:breach,1,False,23.502198590705458,False,True
 6,594.0,2.773786444981194,0,dictionary:eff,1,False,28.202638308846552,False,True
 6,7210.0,3.857935264719429,1,dictionary:breach,1,False,28.202638308846552,False,True
-8,3604.0,3.5567847823070253,1,dictionary:breach,2,False,37.603517745128734,False,True
+8,1802.0,3.255754786643044,1,dictionary:breach,2,False,37.603517745128734,False,True
 9,4323.0,3.635785235533652,1,dictionary:breach,2,False,42.303957463269825,False,True
 7,15100.0,4.17897694729317,1,dictionary:breach,2,False,36.18947501009619,False,True
 6,3711.0,3.5694909543487836,1,dictionary:breach,1,False,28.202638308846552,False,True
@@ -4936,7 +4936,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,11450.0,4.058805486675907,1,dictionary:breach,2,False,36.18947501009619,False,True
 8,27462.0,4.438732162810943,1,dictionary:breach,3,False,41.3594000115385,False,True
 5,1323.0,3.121559844187501,1,dictionary:english,1,False,23.502198590705458,False,True
-11,5052.0,3.7034633418832934,1,dictionary:breach,4,False,65.49615941425563,True,True
+11,2526.0,3.402433346219312,1,dictionary:breach,4,False,65.49615941425563,True,True
 8,12736.0,4.105033050393594,1,dictionary:breach,3,False,41.3594000115385,False,True
 9,2743.0,3.4382258076045296,1,dictionary:breach,2,False,42.303957463269825,False,True
 7,4676.0,3.6698745024898023,1,dictionary:breach,1,False,32.90307802698764,False,True
@@ -5036,7 +5036,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,3438.0,3.536305872351034,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,6756.0,3.8296896408989713,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,3500.0,3.5440680443502757,1,dictionary:breach,2,False,36.18947501009619,False,True
-14,1696.0,3.229425847920695,1,dictionary:breach,4,False,79.80615605397529,True,True
+14,848.0,2.9283958522567137,0,dictionary:breach,4,False,79.80615605397529,True,True
 6,37464.0,4.573614144774024,1,dictionary:breach,2,False,31.019550008653873,False,True
 3,413.0,2.6159500516564016,0,dictionary:english,1,False,14.101319154423276,False,True
 7,3114.0,3.493318608232102,1,dictionary:breach,1,False,32.90307802698764,False,True
@@ -5246,7 +5246,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,21075.0,4.32376758329678,1,dictionary:breach,2,False,31.019550008653873,False,True
 5,3529.0,3.5476516583599693,1,dictionary:breach,1,False,23.502198590705458,False,True
 6,11960.0,4.077731179652392,1,dictionary:breach,1,False,28.202638308846552,False,True
-6,4412.0,3.644635503768153,1,dictionary:breach,2,False,34.20263830884655,False,True
+6,2206.0,3.343605508104172,1,dictionary:breach,2,False,34.20263830884655,False,True
 9,3902.0,3.5912872650584995,1,dictionary:breach,2,False,29.89735285398626,False,True
 6,10000.0,4.0,1,dictionary:breach,2,False,31.019550008653873,False,True
 7,15979.0,4.203549596750741,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -5300,7 +5300,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,9745.0,3.9887818434536406,1,dictionary:breach,2,False,31.019550008653873,False,True
 8,4480.0,3.6512780139981444,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,5055.0,3.70372115992702,1,dictionary:breach,1,False,28.202638308846552,False,True
-9,3248.0,3.511616020569138,1,dictionary:breach,4,False,53.587766793481876,False,True
+9,1624.0,3.2105860249051568,1,dictionary:breach,4,False,53.587766793481876,False,True
 10,15129.0,4.179810222878796,1,dictionary:breach,3,False,51.69925001442312,False,True
 10,27174.0,4.434153571066601,1,dictionary:breach,3,False,51.69925001442312,False,True
 7,4190.0,3.6222140229662956,1,dictionary:breach,1,False,32.90307802698764,False,True
@@ -5346,21 +5346,21 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,5243.0,3.7195798577137236,1,dictionary:breach,1,False,19.931568569324174,False,True
 8,3828.0,3.582971929104806,1,dictionary:breach,2,False,37.603517745128734,False,True
 6,3686.0,3.5665553308830553,1,repeat,1,False,28.202638308846552,False,True
-9,58032000.0,7.76366753823636,2,date,2,False,29.89735285398626,False,False
+9,967200.0,5.985516287852716,1,date,2,False,29.89735285398626,False,False
 8,2347.0,3.370513089598593,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,22908.0,4.359987174441292,1,dictionary:breach,2,False,35.29585829617105,False,True
 9,11695.0,4.068000226145172,1,dictionary:breach,3,False,46.529325012980806,False,True
 8,9713.0,3.987353388735794,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,4420.0,3.645422269349092,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,3015.0,3.4792873164761704,1,dictionary:breach,1,False,32.90307802698764,False,True
-10,139104.0,5.143339618510743,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,4968.0,3.696181587168524,1,dictionary:breach,4,False,59.54196310386875,False,True
 8,11471.0,4.059601279762754,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,2637.0,3.4211101297934348,1,dictionary:english,1,False,28.202638308846552,False,True
 9,12851.0,4.10893692358826,1,dictionary:breach,3,False,46.529325012980806,False,True
 6,3645.0,3.561697532653994,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,5341.0,3.727622577969137,1,dictionary:breach,1,False,19.931568569324174,False,True
 11,400.0,2.6020599913279625,0,dictionary:breach,3,False,56.86917501586544,False,True
-6,52176.0,4.7174707814618815,1,dictionary:breach,3,False,35.725177862321246,False,True
+6,13044.0,4.115410790133919,1,dictionary:breach,3,False,35.725177862321246,False,True
 9,16845.0,4.226471015317139,1,dictionary:breach,3,False,46.529325012980806,False,True
 6,556.0,2.7450747915820575,0,dictionary:english,1,False,28.202638308846552,False,True
 5,1536.0,3.1863912156954934,1,dictionary:breach,1,False,23.502198590705458,False,True
@@ -5618,7 +5618,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,17888.0,4.252561786206329,1,dictionary:breach,2,False,31.019550008653873,False,True
 9,5560.0,3.745074791582058,1,dictionary:breach,3,False,46.529325012980806,False,True
 8,5596.0,3.7478777058197905,1,dictionary:breach,2,False,37.603517745128734,False,True
-8,247025.0,5.392740907966641,1,dictionary:breach,5,True,52.55884486664758,False,True
+8,6025.0,3.7799570512469063,1,dictionary:breach,5,True,52.55884486664758,False,True
 7,6416.0,3.807264355276107,1,dictionary:breach,2,False,36.18947501009619,False,True
 3,2094.0,3.320976677342824,1,dictionary:breach,1,False,14.101319154423276,False,True
 8,5598.0,3.748032894130144,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -5783,7 +5783,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,12491.0,4.0965972083578945,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,1340.0,3.127104798364808,1,dictionary:english,1,False,28.202638308846552,False,True
 11,4023.0,3.6045500325712614,1,dictionary:breach,2,False,51.70483689955201,False,True
-10,53299464.0,7.726722841615452,2,dictionary:breach,4,False,59.54196310386875,False,True
+10,579342.0,5.762935014269896,1,dictionary:breach,4,False,59.54196310386875,False,True
 7,2481.0,3.3946267642722097,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,19176.0,4.2827580210255976,1,dictionary:breach,2,False,36.18947501009619,False,True
 10,3572.0,3.552911450216509,1,dictionary:breach,2,False,47.004397181410916,False,True
@@ -5806,7 +5806,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,4082.0,3.6108730003800518,1,dictionary:breach,2,False,37.603517745128734,False,True
 6,300.0,2.4771212547196626,0,repeat,1,False,19.931568569324174,False,True
 9,24958.0,4.39720978037878,1,dictionary:breach,3,False,46.529325012980806,False,True
-4,5970.0,3.7759743311293694,1,dictionary:breach,2,False,22.801758872564367,False,True
+4,2985.0,3.474944335465388,1,dictionary:breach,2,False,22.801758872564367,False,True
 8,4464.0,3.6497241859295224,1,dictionary:breach,2,False,37.603517745128734,False,True
 9,13494.0,4.130140705819276,1,dictionary:breach,3,False,46.529325012980806,False,True
 8,208827064576.0,11.319786783766544,4,bruteforce,2,False,37.603517745128734,False,False
@@ -5962,7 +5962,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 3,44616.0,4.649490631483505,1,bruteforce,2,False,17.647929148085524,False,False
 6,714.0,2.8536982117761744,0,dictionary:english,1,False,28.202638308846552,False,True
 10,61024.0,4.785500671365911,1,dictionary:breach,3,False,51.69925001442312,False,True
-9,2406.0,3.381295623003826,1,dictionary:breach,3,False,46.529325012980806,False,True
+9,1985.3617021276598,3.297839640030126,1,spatial,3,False,46.529325012980806,False,True
 8,18001.0,4.255296631904341,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,19943.0,4.299790489253734,1,dictionary:breach,2,False,31.019550008653873,False,True
 12,3960.0,3.5976951859255126,1,dictionary:breach,3,False,56.405276617693104,False,True
@@ -5986,7 +5986,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,4098.0,3.612571954065176,1,dictionary:breach,2,False,37.603517745128734,False,True
 6,874.0,2.9415114326344036,0,dictionary:eff,1,False,28.202638308846552,False,True
 6,2600.0,3.4149733479708178,1,bruteforce,2,False,31.019550008653873,False,True
-7,7536.0,3.877140889784821,1,dictionary:english,2,False,39.90307802698764,False,True
+7,5136.0,3.710625015060797,1,dictionary:breach,2,False,39.90307802698764,False,True
 6,4355.0,3.638988159343682,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,3628.0,3.559667278388058,1,dictionary:breach,2,False,42.303957463269825,False,True
 7,12000.0,4.079181246047625,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -6140,7 +6140,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 5,1466.0,3.166133970305109,1,dictionary:english,1,False,23.502198590705458,False,True
 7,40532.0,4.607798033979387,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,12120.0,4.083502619830267,1,dictionary:breach,1,False,32.90307802698764,False,True
-10,7548.0,3.877831891492894,1,dictionary:breach,2,False,47.004397181410916,False,True
+10,3774.0,3.576801895828913,1,dictionary:breach,2,False,47.004397181410916,False,True
 7,32086.0,4.506315579164506,1,dictionary:breach,2,False,36.18947501009619,False,True
 8,3742.0,3.573103783163991,1,dictionary:breach,2,False,37.603517745128734,False,True
 7,920.0,2.9637878273455556,0,dictionary:breach,2,False,36.18947501009619,False,True
@@ -6223,7 +6223,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,5142.0,3.711132072306842,1,dictionary:breach,2,False,42.303957463269825,False,True
 6,46379.0,4.666321380370018,1,dictionary:breach,2,False,31.019550008653873,False,True
 6,17638.0,4.246449338267045,1,dictionary:breach,2,False,31.019550008653873,False,True
-9,4122.0,3.615107987443194,1,dictionary:breach,4,False,53.587766793481876,False,True
+9,687.0,2.8369567370595505,0,dictionary:breach,4,False,53.587766793481876,False,True
 7,11400.0,4.056904851336473,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,4572.0,3.660106221723244,1,dictionary:breach,1,False,32.90307802698764,False,True
 9,19502.0,4.2900791521022015,1,dictionary:breach,3,False,46.529325012980806,False,True
@@ -6563,7 +6563,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 5,4717.0,3.673665876245702,1,dictionary:breach,1,False,23.502198590705458,False,True
 6,300.0,2.4771212547196626,0,repeat,1,False,19.931568569324174,False,True
 6,7490.0,3.8744818176994666,1,dictionary:breach,1,False,19.931568569324174,False,True
-3,4251.0,3.628491104967123,1,dictionary:breach,1,False,14.101319154423276,False,True
+3,992.6808510638299,2.9968096443661447,0,spatial,1,False,14.101319154423276,False,True
 12,3000.0,3.4771212547196626,1,dictionary:breach,3,False,56.405276617693104,False,True
 6,17675.0,4.247359422468937,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,30980.0,4.491081413423188,1,dictionary:breach,2,False,31.019550008653873,False,True
@@ -6576,7 +6576,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,407.0,2.6095944092252203,0,dictionary:english,1,False,28.202638308846552,False,True
 8,13909.0,4.143295907124072,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,34519.0,4.538058205908395,1,dictionary:breach,2,False,31.019550008653873,False,True
-7,27168.0,4.434057668563859,1,dictionary:breach,3,False,41.67937417270812,False,True
+7,6792.0,3.8319976772358966,1,dictionary:breach,3,False,41.67937417270812,False,True
 8,1372.0,3.1373541113707333,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,1600.0,3.204119982655925,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,18200.0,4.260071387985075,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -6610,10 +6610,10 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,4163.0,3.6194064108867776,1,dictionary:breach,2,False,37.603517745128734,False,True
 8,12539.0,4.09826290237993,1,dictionary:breach,3,False,41.3594000115385,False,True
 9,19673.0,4.2938705919529,1,dictionary:breach,3,False,46.529325012980806,False,True
-9,7238.0,3.859618578772181,1,dictionary:breach,3,False,51.303957463269825,False,True
+9,3619.0,3.5585885831082,1,dictionary:breach,3,False,51.303957463269825,False,True
 6,8507.0,3.9297764328049025,1,dictionary:breach,1,False,19.931568569324174,False,True
 7,4828.0,3.683767261425312,1,dictionary:breach,1,False,32.90307802698764,False,True
-9,2864.0,3.4569730136358183,1,dictionary:breach,3,False,51.303957463269825,False,True
+9,1432.0,3.155943017971837,1,dictionary:breach,3,False,51.303957463269825,False,True
 7,18781.0,4.273718712686196,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,2550.0,3.4065401804339555,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,2094.0,3.320976677342824,1,repeat,1,False,28.202638308846552,False,True
@@ -6797,7 +6797,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 10,18767.0,4.273394853997137,1,dictionary:breach,3,False,51.69925001442312,False,True
 8,14019.0,4.1467170357439755,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,3100.0,3.491361693834273,1,dictionary:breach,2,False,36.18947501009619,False,True
-7,9132.0,3.960565902818198,1,dictionary:breach,2,False,39.90307802698764,False,True
+7,4566.0,3.6595359071542166,1,dictionary:breach,2,False,39.90307802698764,False,True
 10,12110.0,4.083144143143053,1,dictionary:breach,2,False,47.004397181410916,False,True
 7,8031810176.0,9.904813435795726,3,bruteforce,1,False,32.90307802698764,False,False
 10,20280.0,4.307067950661299,1,dictionary:breach,2,False,47.004397181410916,False,True
@@ -6945,7 +6945,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,3463.0,3.539452491549461,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,6604.0,3.8198070645907563,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,35070.0,4.544935765881503,1,dictionary:breach,3,False,46.529325012980806,False,True
-10,8992161.0,6.953864074113068,2,dictionary:breach,4,False,59.54196310386875,False,True
+10,219321.0,5.3410802173933325,1,dictionary:breach,4,False,59.54196310386875,False,True
 8,3067.0,3.4867137759824858,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,6280.0,3.7979596437371965,1,dictionary:english,2,False,31.019550008653873,False,True
 8,11045.0,4.043165720207454,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -6961,7 +6961,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 5,5570.0,3.745855195173729,1,dictionary:breach,1,False,23.502198590705458,False,True
 7,1344.0,3.1283992687178066,1,dictionary:english,2,False,36.18947501009619,False,True
 10,51111.0,4.708514378122785,1,dictionary:breach,3,False,51.69925001442312,False,True
-7,7970.0,3.9014583213961123,1,dictionary:breach,2,False,39.90307802698764,False,True
+7,3985.0,3.6004283257321315,1,dictionary:breach,2,False,39.90307802698764,False,True
 6,300.0,2.4771212547196626,0,repeat,1,False,19.931568569324174,False,True
 7,1989.0,3.298634783124436,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,9224.0,3.9649192942866427,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -7053,7 +7053,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,7285.0,3.862429556106009,1,dictionary:breach,1,False,19.931568569324174,False,True
 6,4349.0,3.6383894076653363,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,17800.0,4.2504200023088945,1,dictionary:breach,3,False,46.529325012980806,False,True
-10,15001654.0,7.17613914462051,2,dictionary:breach,4,False,59.54196310386875,False,True
+10,365894.0,5.563355287900775,1,dictionary:breach,4,False,59.54196310386875,False,True
 7,18460.0,4.266231696689893,1,dictionary:breach,2,False,36.18947501009619,False,True
 6,3855.0,3.586024382386976,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,23379.0,4.368825930958845,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -7099,7 +7099,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,10126.0,4.005437923050822,1,dictionary:breach,1,False,28.202638308846552,False,True
 4,2034.0,3.308350948586726,1,dictionary:eff,1,False,18.801758872564367,False,True
 7,6929.0,3.840670561333409,1,dictionary:breach,1,False,23.253496664211536,False,True
-4,4815.0,3.6825962914605537,1,dictionary:breach,1,False,18.801758872564367,False,True
+4,4562.107741059304,3.659165537581358,1,spatial,1,False,18.801758872564367,False,True
 6,571896.0,5.75731705898066,1,bruteforce,1,False,28.202638308846552,False,False
 3,1723.0,3.2362852774480286,1,dictionary:english,1,False,14.101319154423276,False,True
 8,15124.0,4.179666668690499,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -7186,7 +7186,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 4,5053.0,3.7035492982382303,1,dictionary:english,1,False,18.801758872564367,False,True
 6,7107.0,3.8516863154424277,1,dictionary:breach,1,False,28.202638308846552,False,True
 7,31264.0,4.495044542038679,1,dictionary:breach,2,False,36.18947501009619,False,True
-8,4688.0,3.6709876030100346,1,dictionary:english,4,False,47.633570483095,False,True
+8,4679.0,3.67015304519218,1,dictionary:breach,4,False,47.633570483095,False,True
 9,7080.0,3.8500332576897693,1,dictionary:english,3,False,46.529325012980806,False,True
 7,5044.0,3.702775077901044,1,dictionary:breach,1,False,32.90307802698764,False,True
 8,13253.0,4.122314197968806,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -7268,7 +7268,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 12,64.0,1.8061799739838873,0,repeat,3,False,39.86313713864835,False,True
 6,25747.0,4.410726633014192,1,dictionary:breach,2,False,31.019550008653873,False,True
 8,4160.0,3.6190933306267428,1,sequence,3,False,41.3594000115385,False,True
-26,4676516342784.0,12.66992245639095,4,repeat,5,True,166.64416433958024,True,False
+26,322398520488.0,11.508393040126318,4,dictionary:breach,5,True,166.64416433958024,True,False
 9,1000.0,3.0,1,dictionary:breach,3,False,46.529325012980806,False,True
 6,4693.0,3.6714505542124947,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,35509.0,4.550338441927154,1,dictionary:breach,3,False,46.529325012980806,False,True
@@ -7317,10 +7317,10 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 10,30216.0,4.480236971819469,1,dictionary:breach,3,False,51.69925001442312,False,True
 7,1414.0,3.150449409460881,1,dictionary:eff,1,False,32.90307802698764,False,True
 7,3486.0,3.5423273827739745,1,dictionary:breach,1,False,32.90307802698764,False,True
-8,7026.0,3.8467081454560073,1,dictionary:english,3,False,45.603517745128734,False,True
+8,4123.0,3.615213334801359,1,dictionary:breach,3,False,45.603517745128734,False,True
 10,14040.0,4.147367107793786,1,dictionary:breach,3,False,51.69925001442312,False,True
 8,11077.0,4.044422155711843,1,dictionary:breach,3,False,41.3594000115385,False,True
-8,1088.0,3.036628895362161,1,dictionary:breach,4,False,47.633570483095,False,True
+8,544.0,2.73559889969818,0,dictionary:breach,4,False,47.633570483095,False,True
 10,67505.0,4.829335941601227,1,dictionary:breach,3,False,51.69925001442312,False,True
 8,3564.0,3.5519376953648374,1,dictionary:breach,2,False,37.603517745128734,False,True
 6,4007.0,3.6028193424327,1,dictionary:breach,1,False,28.202638308846552,False,True
@@ -7329,7 +7329,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 10,3781.0,3.577606677362536,1,dictionary:english,2,False,47.004397181410916,False,True
 8,1840.0,3.264817823009537,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,3339.0,3.5236164190543713,1,dictionary:breach,1,False,32.90307802698764,False,True
-9,3020.0,3.480006942957151,1,dictionary:breach,3,False,46.529325012980806,False,True
+9,1510.0,3.1789769472931697,1,dictionary:breach,3,False,46.529325012980806,False,True
 9,53507.0,4.728410601881194,1,dictionary:breach,3,False,46.529325012980806,False,True
 6,73420.0,4.8658143801679685,1,dictionary:eff,2,False,31.019550008653873,False,True
 8,2515.0,3.4005379893919465,1,dictionary:breach,2,False,37.603517745128734,False,True
@@ -7411,7 +7411,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 10,120.0,2.079181246047625,0,dictionary:breach,3,False,51.69925001442312,False,True
 7,2184.0,3.3392526340327,1,bruteforce,2,False,36.18947501009619,False,True
 6,3915.0,3.592731766393962,1,dictionary:eff,1,False,28.202638308846552,False,True
-6,4474.0,3.6506959797606107,1,dictionary:breach,2,False,34.20263830884655,False,True
+6,2237.0,3.34966598409663,1,dictionary:breach,2,False,34.20263830884655,False,True
 8,25553.0,4.407441894958461,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,5198.0,3.715836275164994,1,dictionary:breach,1,False,32.90307802698764,False,True
 8,5077.0,3.705607163404605,1,dictionary:breach,2,False,26.575424759098897,False,True
@@ -7452,7 +7452,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,21902.0,4.340483774625718,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,19791.0,4.296467738800116,1,dictionary:breach,2,False,31.019550008653873,False,True
 8,5194.0,3.7155019452932843,1,dictionary:breach,3,False,41.3594000115385,False,True
-10,35140.0,4.545801757159277,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,1255.0,3.0986437258170567,1,dictionary:breach,4,False,59.54196310386875,False,True
 7,11208.0,4.049528122277718,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,16476.0,4.21685178328438,1,dictionary:breach,1,False,28.202638308846552,False,True
 7,5878.0,3.7692295817365937,1,dictionary:breach,1,False,32.90307802698764,False,True
@@ -7476,7 +7476,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 10,30800.0,4.488550716500444,1,dictionary:breach,3,False,51.69925001442312,False,True
 7,21163.0,4.325577231940418,1,dictionary:breach,1,False,32.90307802698764,False,True
 9,43815.0,4.641622816029231,1,dictionary:breach,3,False,46.529325012980806,False,True
-7,11800.0,4.071882007306126,1,dictionary:breach,1,False,32.90307802698764,False,True
+7,5900.0,3.7708520116421442,1,dictionary:breach,1,False,32.90307802698764,False,True
 4,4593.0,3.662096445417924,1,dictionary:breach,1,False,13.287712379549449,False,True
 6,4592.0,3.6620018793899174,1,dictionary:breach,1,False,28.202638308846552,False,True
 7,11980.0,4.078456818053293,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -7492,7 +7492,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,14343.0,4.156639998415452,1,dictionary:breach,3,False,46.529325012980806,False,True
 7,1440.0,3.1583624920952498,1,dictionary:breach,2,False,36.18947501009619,False,True
 9,8600.0,3.934498451243568,1,dictionary:breach,3,False,46.529325012980806,False,True
-8,7822.0,3.8933178116161122,1,dictionary:breach,4,False,47.633570483095,False,True
+8,3911.0,3.592287815952131,1,dictionary:breach,4,False,47.633570483095,False,True
 4,1352.0,3.130976691605617,1,repeat,1,False,18.801758872564367,False,True
 8,3330.0,3.52244423350632,1,dictionary:breach,3,False,41.3594000115385,False,True
 8,7338.0,3.8655777074199293,1,dictionary:breach,2,False,26.575424759098897,False,True
@@ -7576,7 +7576,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,5841.0,3.7664872062396944,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,8010.0,3.903632516084238,1,dictionary:breach,3,False,41.3594000115385,False,True
 8,7320.0,3.864511081058392,1,dictionary:english,3,False,41.3594000115385,False,True
-11,27660.0,4.441852175773292,1,dictionary:breach,4,False,65.49615941425563,True,True
+11,2766.0,3.4418521757732923,1,dictionary:breach,4,False,65.49615941425563,True,True
 4,40.0,1.6020599913279625,0,sequence,1,False,13.287712379549449,False,True
 7,7606.0,3.881156321075564,1,dictionary:breach,1,False,32.90307802698764,False,True
 11,3436.0,3.5360531551592045,1,dictionary:breach,3,False,56.86917501586544,False,True
@@ -7719,7 +7719,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,3333.0,3.52283531366053,1,dictionary:breach,1,False,32.90307802698764,False,True
 8,6200.0,3.7923916894982543,1,dictionary:english,3,False,41.3594000115385,False,True
 7,10221.0,4.00949338828754,1,dictionary:breach,1,False,32.90307802698764,False,True
-4,4718.0,3.6737579365495767,1,dictionary:eff,1,False,18.801758872564367,False,True
+4,4562.107741059304,3.659165537581358,1,spatial,1,False,18.801758872564367,False,True
 6,5024.0,3.70104963072914,1,dictionary:breach,1,False,28.202638308846552,False,True
 4,8.0,0.9030899869919436,0,repeat,1,False,18.801758872564367,False,True
 7,22160.0,4.345569756056392,1,repeat,2,False,36.18947501009619,False,True
@@ -7824,7 +7824,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 10,10320.0,4.013679697291193,1,dictionary:breach,2,False,47.004397181410916,False,True
 6,19734.0,4.295215123866298,1,dictionary:breach,2,False,35.29585829617105,False,True
 7,4940.0,3.693726948923647,1,dictionary:breach,1,False,32.90307802698764,False,True
-8,8110.0,3.909020854211156,1,dictionary:breach,3,False,45.603517745128734,False,True
+8,4055.0,3.6079908585471747,1,dictionary:breach,3,False,45.603517745128734,False,True
 7,32520.0,4.5121505369220305,1,dictionary:breach,2,False,36.18947501009619,False,True
 10,42205.0,4.625363904605701,1,dictionary:breach,3,False,51.69925001442312,False,True
 7,5380.0,3.7307822756663893,1,dictionary:breach,1,False,32.90307802698764,False,True
@@ -7930,7 +7930,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,300.0,2.4771212547196626,0,dictionary:breach,3,False,46.529325012980806,False,True
 6,15330.0,4.185542154854375,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,13232.0,4.121625492208472,1,dictionary:breach,3,False,46.529325012980806,False,True
-6,6310.0,3.8000293592441343,1,dictionary:breach,2,False,34.20263830884655,False,True
+6,3155.0,3.498999363580153,1,dictionary:breach,2,False,34.20263830884655,False,True
 8,15886.0,4.201014558213372,1,dictionary:breach,3,False,41.3594000115385,False,True
 9,1056.0,3.023663918197794,1,dictionary:breach,2,False,29.89735285398626,False,True
 10,25210.0,4.401572845676446,1,dictionary:breach,3,False,51.69925001442312,False,True
@@ -7964,7 +7964,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 10,1559.0,3.192846115188842,1,dictionary:breach,2,False,47.004397181410916,False,True
 8,6319.0,3.8006483553639883,1,dictionary:breach,2,False,37.603517745128734,False,True
 8,8200.0,3.913813852383717,1,dictionary:breach,3,False,41.3594000115385,False,True
-6,12718.0,4.104418820647595,1,dictionary:breach,1,False,28.202638308846552,False,True
+6,6359.0,3.803388824983614,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,600.0,2.778151250383644,0,dictionary:breach,3,False,46.529325012980806,False,True
 8,8065.0,3.9066043717249803,1,dictionary:breach,2,False,37.603517745128734,False,True
 6,24919.0,4.396530610090025,1,dictionary:breach,2,False,31.019550008653873,False,True
@@ -8018,7 +8018,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 12,4510.0,3.654176541877961,1,dictionary:breach,4,False,62.039100017307746,True,True
 6,4596.0,3.6623800200162475,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,72275.0,4.858988100342695,1,dictionary:breach,2,False,31.019550008653873,False,True
-13,1014860.0,6.006406135430473,2,dictionary:breach,5,True,77.40455203502937,True,True
+13,2636.0,3.420945405921972,1,dictionary:breach,5,True,77.40455203502937,True,True
 6,48360.0,4.684486292188734,1,date,1,False,19.931568569324174,False,True
 13,8054.0,3.9060116252714128,1,dictionary:breach,3,False,61.105716335834195,True,True
 10,30800.0,4.488550716500444,1,dictionary:breach,3,False,51.69925001442312,False,True
@@ -8095,7 +8095,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,4885.0,3.6888645680547922,1,dictionary:breach,3,False,41.3594000115385,False,True
 5,4825.0,3.6834973176798114,1,dictionary:breach,2,False,25.84962500721156,False,True
 6,9610.0,3.9827233876685457,1,dictionary:breach,2,False,31.019550008653873,False,True
-10,54974511.0,7.740161374986968,2,dictionary:breach,4,False,59.54196310386875,False,True
+10,426159.0,5.629571664687719,1,dictionary:breach,4,False,59.54196310386875,False,True
 8,3565.0,3.5520595341878844,1,dictionary:english,2,False,37.603517745128734,False,True
 7,10766.0,4.032054375479669,1,dictionary:breach,1,False,32.90307802698764,False,True
 8,5879.0,3.769303460189082,1,dictionary:breach,2,False,37.603517745128734,False,True
@@ -8109,7 +8109,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,3050.0,3.484299839346786,1,dictionary:english,1,False,28.202638308846552,False,True
 6,5078.0,3.7056926965377035,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,4811.0,3.6822353569025643,1,dictionary:breach,1,False,28.202638308846552,False,True
-10,66087.0,4.82011603764714,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,1049.0,3.020775488193558,1,dictionary:breach,4,False,59.54196310386875,False,True
 9,1920.0,3.2833012287035497,1,sequence,2,False,29.89735285398626,False,True
 6,5207.0,3.7165875776756923,1,dictionary:eff,1,False,28.202638308846552,False,True
 5,5222.0,3.717836867486926,1,dictionary:english,1,False,23.502198590705458,False,True
@@ -8167,7 +8167,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,4675.0,3.6697816152085365,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,16680.0,4.22219604630172,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,3540.0,3.549003262025788,1,dictionary:breach,2,False,36.18947501009619,False,True
-10,18034128.0,7.256095147821902,2,dictionary:breach,4,False,59.54196310386875,False,True
+10,286256.0,5.45675459836832,1,dictionary:breach,4,False,59.54196310386875,False,True
 5,3413.0,3.5331362882786395,1,dictionary:english,1,False,23.502198590705458,False,True
 7,36624.0,4.563765775330468,1,dictionary:breach,2,False,36.18947501009619,False,True
 10,20280.0,4.307067950661299,1,dictionary:breach,2,False,47.004397181410916,False,True
@@ -8200,11 +8200,11 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,3102.0,3.4916417934775863,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,22000.0,4.342422680822207,1,dictionary:breach,2,False,31.019550008653873,False,True
 5,2535.0,3.4039779636693552,1,dictionary:breach,1,False,23.502198590705458,False,True
-9,2998.0,3.4768316285122607,1,dictionary:breach,3,False,46.529325012980806,False,True
+9,1985.3617021276598,3.297839640030126,1,spatial,3,False,46.529325012980806,False,True
 6,11346.0,4.054842779228683,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,15963.0,4.203114513644385,1,dictionary:breach,3,False,46.529325012980806,False,True
 9,17006.0,4.230602174740532,1,dictionary:breach,3,False,46.529325012980806,False,True
-10,473292.0,5.675129163700578,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,13147.0,4.11882666293329,1,dictionary:breach,4,False,59.54196310386875,False,True
 7,21431.0,4.3310424362937825,1,dictionary:breach,2,False,36.18947501009619,False,True
 9,6281.0,3.798028793404073,1,dictionary:breach,3,False,46.529325012980806,False,True
 7,11400.0,4.056904851336473,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -8246,7 +8246,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,14651.0,4.165867268352944,1,dictionary:breach,2,False,31.019550008653873,False,True
 7,18237.0,4.260953398104104,1,dictionary:breach,1,False,32.90307802698764,False,True
 10,65151.0,4.813921086067774,1,dictionary:breach,3,False,51.69925001442312,False,True
-3,2170.0,3.33645973384853,1,dictionary:breach,1,False,14.101319154423276,False,True
+3,992.6808510638299,2.9968096443661447,0,spatial,1,False,14.101319154423276,False,True
 6,6005.0,3.778513011738925,1,dictionary:breach,1,False,19.931568569324174,False,True
 6,1800.0,3.2552725051033065,1,repeat,1,False,19.931568569324174,False,True
 6,1800.0,3.2552725051033065,1,sequence,1,False,19.931568569324174,False,True
@@ -8255,7 +8255,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,6324.0,3.8009918612601714,1,dictionary:breach,3,False,46.529325012980806,False,True
 9,10566.0,4.0239106063509205,1,dictionary:breach,2,False,42.303957463269825,False,True
 6,820.0,2.9138138523837167,0,dictionary:eff,1,False,28.202638308846552,False,True
-10,8341830.0,6.92126133501662,2,dictionary:breach,4,False,59.54196310386875,False,True
+10,132410.0,5.121920785563038,1,dictionary:breach,4,False,59.54196310386875,False,True
 10,6782.0,3.8313577854420675,1,dictionary:breach,2,False,47.004397181410916,False,True
 9,8650.0,3.9370161074648142,1,dictionary:breach,3,False,46.529325012980806,False,True
 6,6895.0,3.8385342705118686,1,dictionary:breach,1,False,28.202638308846552,False,True
@@ -8267,7 +8267,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,140.0,2.146128035678238,0,repeat,3,False,41.3594000115385,False,True
 8,9400.0,3.973127853599699,1,dictionary:breach,3,False,41.3594000115385,False,True
 8,14305.0,4.155487862141282,1,dictionary:breach,3,False,41.3594000115385,False,True
-9,5431.0,3.7348798027926278,1,dictionary:breach,3,False,46.529325012980806,False,True
+9,1985.3617021276598,3.297839640030126,1,dictionary:breach,3,False,46.529325012980806,False,True
 9,18076.0,4.257102332659165,1,dictionary:breach,3,False,46.529325012980806,False,True
 6,4789.0,3.680244837042608,1,dictionary:breach,1,False,28.202638308846552,False,True
 7,7016.0,3.8460895803579844,1,dictionary:breach,1,False,32.90307802698764,False,True
@@ -8445,7 +8445,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 5,4926.0,3.6924944075030846,1,dictionary:breach,1,False,23.502198590705458,False,True
 6,21384.0,4.330088945748481,1,dictionary:breach,2,False,31.019550008653873,False,True
 7,8558.0,3.9323722821479143,1,dictionary:breach,1,False,32.90307802698764,False,True
-8,7854.0,3.8950908969344,1,dictionary:breach,3,False,45.603517745128734,False,True
+8,3927.0,3.5940609012704186,1,dictionary:breach,3,False,45.603517745128734,False,True
 8,435.0,2.6384892569546374,0,dictionary:english,2,False,37.603517745128734,False,True
 7,25885.0,4.413048169317875,1,dictionary:breach,2,False,36.18947501009619,False,True
 8,3800.0,3.5797835966168106,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -8507,7 +8507,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,7873.0,3.89614025144202,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,77336.0,4.888381705584831,1,dictionary:breach,2,False,31.019550008653873,False,True
 6,3640.0,3.561101383649056,1,dictionary:breach,2,False,31.019550008653873,False,True
-10,44352.0,4.646913208595694,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,2112.0,3.324693913861775,1,dictionary:breach,4,False,59.54196310386875,False,True
 6,9722.0,3.9877556167385233,1,dictionary:breach,1,False,19.931568569324174,False,True
 8,15146.0,4.180297952488594,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,17157.0,4.234441351266335,1,dictionary:breach,2,False,31.019550008653873,False,True
@@ -8612,7 +8612,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,18807.0,4.274319524558622,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,7523.0,3.8763910618191875,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,3640.0,3.561101383649056,1,dictionary:breach,2,False,31.019550008653873,False,True
-8,45602424.0,7.658987928231205,2,dictionary:breach,4,False,47.633570483095,False,True
+8,723848.0,5.859647378777623,1,dictionary:breach,4,False,47.633570483095,False,True
 8,5361.0,3.7292458072253067,1,dictionary:breach,2,False,37.603517745128734,False,True
 9,5703.0,3.7561033715851058,1,dictionary:breach,2,False,42.303957463269825,False,True
 6,5727.0,3.7579271831133294,1,dictionary:breach,1,False,28.202638308846552,False,True
@@ -8625,7 +8625,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,4908.0,3.690904554054967,1,dictionary:english,1,False,28.202638308846552,False,True
 7,6777.0,3.8310374856400253,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,300.0,2.4771212547196626,0,repeat,1,False,19.931568569324174,False,True
-10,207081.0,5.316140253535207,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,3287.0,3.516799704081625,1,dictionary:breach,4,False,59.54196310386875,False,True
 6,5259.0,3.720903170813458,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,10400.0,4.017033339298781,1,dictionary:breach,2,False,37.603517745128734,False,True
 9,4105.0,3.61331316145546,1,dictionary:eff,2,False,42.303957463269825,False,True
@@ -8688,7 +8688,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,13958.0,4.144823193989894,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,9701.0,3.9868165045855366,1,dictionary:breach,1,False,32.90307802698764,False,True
 8,17373.0,4.2398748196530365,1,dictionary:breach,3,False,41.3594000115385,False,True
-8,1684.0,3.226342087163631,1,dictionary:breach,4,False,47.633570483095,False,True
+8,842.0,2.9253120914996495,0,dictionary:breach,4,False,47.633570483095,False,True
 8,4314.0,3.6348801407665263,1,dictionary:breach,3,False,41.3594000115385,False,True
 8,12577.0,4.099577060916709,1,dictionary:breach,2,False,37.603517745128734,False,True
 8,11672.0,4.067145278885396,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -8733,7 +8733,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,5006.0,3.6994908452722046,1,dictionary:breach,1,False,32.90307802698764,False,True
 8,9638.0,3.9839869219651898,1,dictionary:breach,2,False,26.575424759098897,False,True
 7,69.0,1.8388490907372554,0,dictionary:english,1,False,32.90307802698764,False,True
-8,11516.0,4.061301656206044,1,dictionary:breach,3,False,45.603517745128734,False,True
+8,5758.0,3.7602716605420636,1,dictionary:breach,3,False,45.603517745128734,False,True
 4,5976.0,3.7764105888073427,1,dictionary:english,1,False,18.801758872564367,False,True
 9,3080.0,3.4885507165004443,1,dictionary:breach,3,False,46.529325012980806,False,True
 8,3810.0,3.58092497567562,1,dictionary:breach,2,False,37.603517745128734,False,True
@@ -8816,7 +8816,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 5,11519.0,4.061414778277073,1,dictionary:breach,1,False,23.502198590705458,False,True
 7,19459.0,4.289120518067948,1,dictionary:breach,2,False,36.18947501009619,False,True
 8,4482.0,3.651471852199043,1,dictionary:breach,2,False,37.603517745128734,False,True
-9,7022.0,3.8464608251293324,1,dictionary:breach,4,False,53.587766793481876,False,True
+9,3511.0,3.5454308294653516,1,dictionary:breach,4,False,53.587766793481876,False,True
 6,312.0,2.494154594018443,0,bruteforce,2,False,31.019550008653873,False,True
 9,12252.0,4.0882069881345355,1,dictionary:breach,2,False,42.303957463269825,False,True
 7,29029.0,4.462832075378275,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -8860,7 +8860,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,10809.0,4.033785516842231,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,2540.0,3.4048337166199385,1,dictionary:breach,2,False,36.18947501009619,False,True
 11,6867.0,3.8367670473942055,1,dictionary:breach,2,False,51.70483689955201,False,True
-9,6132.0,3.787602146182338,1,dictionary:breach,3,False,46.529325012980806,False,True
+9,1985.3617021276598,3.297839640030126,1,dictionary:breach,3,False,46.529325012980806,False,True
 10,7848.0,3.8947589943718923,1,dictionary:breach,2,False,47.004397181410916,False,True
 8,4763.0,3.677880581511591,1,dictionary:breach,2,False,37.603517745128734,False,True
 4,32.0,1.505149978319906,0,dictionary:english,1,False,18.801758872564367,False,True
@@ -8894,7 +8894,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,11648.0,4.066251361968962,1,dictionary:breach,1,False,23.253496664211536,False,True
 6,4361.0,3.6395860866734266,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,12996.0,4.113809702672945,1,dictionary:breach,1,False,28.202638308846552,False,True
-9,18046.0,4.256380953031641,1,dictionary:breach,4,False,53.587766793481876,False,True
+9,2578.0,3.4112829130173847,1,dictionary:breach,4,False,53.587766793481876,False,True
 8,7414.0,3.8700525816935447,1,repeat,2,False,26.575424759098897,False,True
 10,8928.0,3.9507541815935037,1,dictionary:breach,2,False,47.004397181410916,False,True
 6,4751.0,3.676785030419206,1,dictionary:eff,1,False,28.202638308846552,False,True
@@ -8929,7 +8929,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,3474.0,3.54082981411108,1,dictionary:breach,1,False,28.202638308846552,False,True
 7,37521.0,4.574274404565623,1,dictionary:breach,2,False,36.18947501009619,False,True
 9,21558.0,4.333608467588293,1,dictionary:breach,3,False,46.529325012980806,False,True
-10,1051232.0,6.021698572546658,2,dictionary:breach,4,False,59.54196310386875,False,True
+10,37544.0,4.574540541204438,1,dictionary:breach,4,False,59.54196310386875,False,True
 7,5644.0,3.7515870050823104,1,dictionary:breach,1,False,32.90307802698764,False,True
 9,2001.0,3.3012470886362113,1,dictionary:english,2,False,42.303957463269825,False,True
 10,120.0,2.079181246047625,0,dictionary:breach,3,False,51.69925001442312,False,True
@@ -8989,7 +8989,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,12980.0,4.11327469246435,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,60604.0,4.782501289522681,1,dictionary:breach,2,False,36.18947501009619,False,True
 8,11166.0,4.047897623514411,1,dictionary:breach,3,False,41.3594000115385,False,True
-8,21080.0,4.32387060654051,1,dictionary:breach,4,False,47.633570483095,False,True
+8,10540.0,4.0228406108765284,1,dictionary:breach,4,False,47.633570483095,False,True
 8,1183.0,3.072984744627931,1,dictionary:english,2,False,37.603517745128734,False,True
 8,5553.0,3.7445276734725668,1,dictionary:breach,2,False,37.603517745128734,False,True
 7,4628.0,3.665393350279712,1,dictionary:eff,1,False,32.90307802698764,False,True
@@ -9009,7 +9009,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,7961.0,3.9009676239191244,1,dictionary:breach,3,False,41.3594000115385,False,True
 9,90.0,1.954242509439325,0,repeat,2,False,29.89735285398626,False,True
 7,288.0,2.459392487759231,0,dictionary:english,1,False,32.90307802698764,False,True
-8,11198.0,4.049140463158965,1,dictionary:breach,4,False,47.633570483095,False,True
+8,5599.0,3.7481104674949837,1,dictionary:breach,4,False,47.633570483095,False,True
 7,7580.0,3.879669205632054,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,11540.0,4.062205808819713,1,dictionary:english,2,False,31.019550008653873,False,True
 6,7994.0,3.9027641439240863,1,dictionary:breach,1,False,28.202638308846552,False,True
@@ -9098,7 +9098,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 10,3000.0,3.4771212547196626,1,dictionary:breach,3,False,51.69925001442312,False,True
 6,33249.0,4.521778587954529,1,dictionary:breach,2,False,31.019550008653873,False,True
 6,6500.0,3.8129133566428557,1,dictionary:breach,1,False,28.202638308846552,False,True
-6,15934.0,4.2023248128295485,1,dictionary:english,2,False,34.20263830884655,False,True
+6,8229.0,3.915347062324192,1,dictionary:breach,2,False,34.20263830884655,False,True
 9,6492.0,3.812378511154195,1,dictionary:breach,3,False,46.529325012980806,False,True
 8,8360.0,3.9222062774390167,1,dictionary:breach,3,False,41.3594000115385,False,True
 8,8115.0,3.909288524162251,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -9276,7 +9276,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,11100.0,4.045322978786658,1,dictionary:breach,2,False,36.18947501009619,False,True
 6,4040.0,3.606381365110605,1,dictionary:english,2,False,31.019550008653873,False,True
 6,810.0,2.90848501887865,0,dictionary:eff,1,False,28.202638308846552,False,True
-6,10320.0,4.013679697291193,1,dictionary:breach,3,False,35.725177862321246,False,True
+6,5160.0,3.7126497016272113,1,dictionary:breach,3,False,35.725177862321246,False,True
 6,308915776.0,8.489840087824907,3,bruteforce,1,False,28.202638308846552,False,False
 6,5012.0,3.7000110623221123,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,14998.0,4.1760333492640225,1,dictionary:breach,1,False,28.202638308846552,False,True
@@ -9290,7 +9290,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,16587.0,4.219767844658399,1,dictionary:breach,2,False,36.18947501009619,False,True
 5,6140.0,3.788168371141168,1,dictionary:english,1,False,23.502198590705458,False,True
 6,19520.0,4.290479813330673,1,dictionary:breach,2,False,31.019550008653873,False,True
-10,88368.0,4.946295025879602,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,3156.0,3.4991369945373827,1,dictionary:breach,4,False,59.54196310386875,False,True
 9,5103.0,3.707825568332232,1,dictionary:breach,2,False,42.303957463269825,False,True
 6,6060.0,3.7824726241662865,1,dictionary:breach,1,False,28.202638308846552,False,True
 7,12820.0,4.107888025182799,1,dictionary:english,2,False,36.18947501009619,False,True
@@ -9403,7 +9403,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,8469.0,3.9278321328665817,1,dictionary:breach,1,False,32.90307802698764,False,True
 6,6080.0,3.7839035792727356,1,dictionary:english,2,False,31.019550008653873,False,True
 6,24805.0,4.394539231372204,1,dictionary:breach,2,False,31.019550008653873,False,True
-10,44370.0,4.647089428716555,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,2958.0,3.470998169660874,1,dictionary:breach,4,False,59.54196310386875,False,True
 1,26.0,1.414973347970818,0,bruteforce,1,False,4.700439718141092,False,True
 10,9875.0,3.9945371042984976,1,dictionary:breach,2,False,47.004397181410916,False,True
 8,9446.0,3.9752479412406814,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -9439,7 +9439,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,6674.0,3.824386202318774,1,dictionary:breach,1,False,28.202638308846552,False,True
 8,6037.0,3.780821175853473,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,31470.0,4.497896742913221,1,dictionary:breach,2,False,36.18947501009619,False,True
-7,8254.0,3.9166644645413973,1,dictionary:english,2,False,39.90307802698764,False,True
+7,5828.0,3.7655195430979527,1,dictionary:breach,2,False,39.90307802698764,False,True
 8,5790.0,3.7626785637274365,1,dictionary:breach,2,False,26.575424759098897,False,True
 8,572.0,2.7573960287930244,0,dictionary:breach,3,False,41.3594000115385,False,True
 9,3132.0,3.495821753385906,1,dictionary:breach,2,False,42.303957463269825,False,True
@@ -9485,7 +9485,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,91640.0,4.962085080517361,1,dictionary:breach,2,False,35.29585829617105,False,True
 8,56640.0,4.753123244681713,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,10861.0,4.035869813695553,1,dictionary:breach,1,False,28.202638308846552,False,True
-8,9898.0,3.9955474494751377,1,dictionary:breach,3,False,45.603517745128734,False,True
+8,4949.0,3.6945174538111565,1,dictionary:breach,3,False,45.603517745128734,False,True
 8,12118.0,4.083430948160511,1,dictionary:breach,2,False,26.575424759098897,False,True
 7,7660.0,3.884228769632604,1,dictionary:breach,1,False,32.90307802698764,False,True
 7,26159.0,4.417621137863895,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -9512,7 +9512,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,5215.0,3.7172543127625497,1,dictionary:english,1,False,32.90307802698764,False,True
 8,4542.0,3.6572471298837166,1,dictionary:breach,2,False,37.603517745128734,False,True
 10,30062.0,4.478017870464792,1,dictionary:breach,3,False,51.69925001442312,False,True
-9,311784.0,5.493853824483346,1,dictionary:breach,4,False,53.587766793481876,False,True
+9,155892.0,5.192823828819365,1,dictionary:breach,4,False,53.587766793481876,False,True
 8,4613.0,3.6639834546082666,1,dictionary:breach,2,False,37.603517745128734,False,True
 9,7406.0,3.869583707713424,1,dictionary:breach,2,False,42.303957463269825,False,True
 3,5741.0,3.7589875468676195,1,dictionary:breach,1,False,14.101319154423276,False,True
@@ -9650,7 +9650,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,15452.0,4.188984699472783,1,dictionary:breach,3,False,46.529325012980806,False,True
 7,1404.0,3.147367107793787,1,bruteforce,2,False,36.18947501009619,False,True
 9,23942.0,4.379160426466545,1,dictionary:breach,3,False,46.529325012980806,False,True
-9,22054.0,4.343487370238302,1,dictionary:breach,2,False,42.303957463269825,False,True
+9,11027.0,4.042457374574321,1,dictionary:breach,2,False,42.303957463269825,False,True
 7,41869.0,4.621892588317354,1,dictionary:breach,2,False,36.18947501009619,False,True
 32,1.4056663146179676e+45,45.1478822375263,4,bruteforce,4,False,165.437600046154,True,False
 6,46739.0,4.66967941624774,1,dictionary:breach,2,False,31.019550008653873,False,True
@@ -9672,7 +9672,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 7,14480.0,4.160768561861128,1,dictionary:breach,2,False,36.18947501009619,False,True
 8,5275.0,3.72222246396973,1,dictionary:breach,2,False,37.603517745128734,False,True
 8,10947.0,4.039295118084311,1,dictionary:breach,3,False,41.3594000115385,False,True
-9,11170.0,4.048053173115609,1,dictionary:breach,3,False,51.303957463269825,False,True
+9,5585.0,3.7470231774516285,1,dictionary:breach,3,False,51.303957463269825,False,True
 9,19032.0,4.2794844290292104,1,dictionary:breach,3,False,46.529325012980806,False,True
 6,26295.0,4.419873175149476,1,dictionary:breach,2,False,31.019550008653873,False,True
 9,16753.0,4.224092588494267,1,dictionary:breach,2,False,42.303957463269825,False,True
@@ -9698,7 +9698,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,13344.0,4.125286033293664,1,dictionary:breach,2,False,31.019550008653873,False,True
 10,118420.0,5.073425056745982,1,dictionary:breach,2,False,47.004397181410916,False,True
 9,6193.0,3.791901080009571,1,dictionary:breach,3,False,46.529325012980806,False,True
-10,12730.0,4.104828403653656,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,6365.0,3.8037984079896745,1,dictionary:breach,4,False,59.54196310386875,False,True
 6,92611.0,4.966662573675219,1,dictionary:breach,2,False,31.019550008653873,False,True
 8,4300.0,3.633468455579587,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,56569.0,4.752578501556027,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -9769,7 +9769,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 8,20166.0,4.304619762853122,1,dictionary:breach,3,False,41.3594000115385,False,True
 8,26897.0,4.429703842972572,1,dictionary:breach,3,False,41.3594000115385,False,True
 9,2506.0,3.398981066658131,1,dictionary:eff,2,False,42.303957463269825,False,True
-8,5624.0,3.7500453120117676,1,dictionary:breach,3,False,45.603517745128734,False,True
+8,2812.0,3.4490153163477864,1,dictionary:breach,3,False,45.603517745128734,False,True
 10,4487.0,3.6519560695330746,1,dictionary:breach,2,False,47.004397181410916,False,True
 10,70771.0,4.849855332265052,1,dictionary:breach,3,False,51.69925001442312,False,True
 4,7342.0,3.865814380167968,1,dictionary:breach,1,False,18.801758872564367,False,True
@@ -9870,7 +9870,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 4,150.0,2.1760912590556813,0,date,1,False,13.287712379549449,False,True
 8,2838.0,3.4530123911214554,1,dictionary:breach,3,False,47.06114439489473,False,True
 6,1170.0,3.0681858617461617,1,dictionary:breach,2,False,31.019550008653873,False,True
-10,66465.0,4.822593009087294,1,dictionary:breach,4,False,59.54196310386875,False,True
+10,3165.0,3.500373714353374,1,dictionary:breach,4,False,59.54196310386875,False,True
 8,2420.0,3.383815365980431,1,dictionary:breach,3,False,41.3594000115385,False,True
 7,830.0,2.919078092376074,0,dictionary:english,1,False,32.90307802698764,False,True
 7,50174.0,4.700478725478213,1,dictionary:breach,2,False,36.18947501009619,False,True
@@ -9890,7 +9890,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 6,5571.0,3.7459331584594433,1,dictionary:breach,1,False,28.202638308846552,False,True
 6,6891.0,3.838282249914689,1,dictionary:breach,1,False,28.202638308846552,False,True
 9,15470.0,4.189490313699367,1,dictionary:breach,3,False,46.529325012980806,False,True
-11,83016.0,4.9191618037259675,1,dictionary:breach,4,False,65.49615941425563,True,True
+11,2306.0,3.36285930295868,1,dictionary:breach,4,False,65.49615941425563,True,True
 6,11620.0,4.065206128054312,1,dictionary:breach,2,False,31.019550008653873,False,True
 8,4200.0,3.623249290397901,1,bruteforce,3,False,41.3594000115385,False,True
 8,19187.0,4.283007075553756,1,dictionary:breach,3,False,41.3594000115385,False,True
@@ -9961,7 +9961,7 @@ password_len,guesses,log10_guesses,gn_score,top_pattern,comp_score,comp_strong,e
 9,10474.0,4.020112569565467,1,dictionary:breach,3,False,46.529325012980806,False,True
 8,44204.0,4.645461570238844,1,dictionary:breach,3,False,41.3594000115385,False,True
 6,27461.0,4.438716348143793,1,dictionary:breach,2,False,31.019550008653873,False,True
-6,6266.0,3.7969903905456865,1,dictionary:english,2,False,34.20263830884655,False,True
+6,6058.0,3.782329268996837,1,dictionary:breach,2,False,34.20263830884655,False,True
 5,8441.0,3.9263939002696824,1,dictionary:breach,1,False,23.502198590705458,False,True
 7,3060.0,3.4857214264815806,1,dictionary:breach,2,False,36.18947501009619,False,True
 7,58998.0,4.770837289545772,1,dictionary:breach,2,False,36.18947501009619,False,True

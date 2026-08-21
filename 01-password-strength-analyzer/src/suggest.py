@@ -25,7 +25,9 @@ from math import log2
 from .corpus import load_eff_wordlist
 from .pwned import PwnedClient
 
-# 33 printable ASCII symbols, matching the charset assumption used elsewhere.
+# All 32 printable ASCII characters that are neither a letter nor a digit. The
+# charset assumption elsewhere in the project says 33 because it counts the
+# space, which is deliberately not generated here.
 SYMBOLS = "!@#$%^&*()-_=+[]{};:,.?/~`|<>" + "'\"\\"
 
 

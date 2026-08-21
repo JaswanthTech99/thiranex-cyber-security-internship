@@ -1,7 +1,9 @@
 """Downloads and caches the real password corpora this analyser depends on.
 
 Every list here is a published artefact from a real breach compilation or a real
-published wordlist. There are no synthetic passwords anywhere in this project.
+published wordlist. No known-bad password anywhere in this project is invented:
+every one comes from one of these files. The known-good controls in the
+evaluation are generated, and are labelled as generated wherever they appear.
 
 Run `python -m src.corpus` to populate data/raw/.
 """

@@ -34,7 +34,7 @@ from argon2 import PasswordHasher
 from argon2.exceptions import InvalidHashError, VerifyMismatchError
 from argon2.low_level import Type
 
-from .guessing import LEET_REVERSE
+from .guessing import _leet_normalise
 
 # RFC 9106, section 4, second recommended option: t=3, m=64 MiB, p=4.
 HASHER = PasswordHasher(time_cost=3, memory_cost=65536, parallelism=4,
@@ -62,9 +62,15 @@ def skeleton(password: str) -> str:
     letters (2->z, 0->o, 4->a), so folding before trimming turns `Summer2024!`
     into `summerzozai` and the trailing-digit trim then finds nothing to remove.
     Trim the suffix first, then fold what is left.
+
+    The fold itself goes through the estimator's helper rather than reading the
+    table directly. Some leet characters stand for more than one letter (`1` is
+    both `i` and `l`), so a fold has to pick one; substituting the whole
+    candidate list expanded `Adm1n` to `admiln`, which no longer matched
+    `Admin` and let exactly the leet variant this check exists to catch through.
     """
     trimmed = password.strip().rstrip(TRAILING_JUNK)
-    return "".join(LEET_REVERSE.get(c.lower(), c.lower()) for c in trimmed)
+    return _leet_normalise(trimmed)[0]
 
 
 class PasswordHistory:
@@ -82,8 +88,14 @@ class PasswordHistory:
         self.conn.executescript(SCHEMA)
         self.conn.commit()
 
-    def _hmac(self, password: str) -> str:
-        return hmac.new(self.key, skeleton(password).encode("utf-8"), sha256).hexdigest()
+    def _hmac(self, password: str) -> str | None:
+        root = skeleton(password)
+        if not root:
+            # Nothing survives the trim - an all-digit or all-punctuation
+            # password. Every such password shares the empty root, so tracking
+            # it would report unrelated passwords as variations of each other.
+            return None
+        return hmac.new(self.key, root.encode("utf-8"), sha256).hexdigest()
 
     def retire(self, user_id: str, password: str) -> int:
         """Record a password the user is moving away from."""
@@ -121,8 +133,10 @@ class PasswordHistory:
         near_ids: list[int] = []
         if self.track_skeletons:
             cand_hmac = self._hmac(candidate)
-            near_ids = [rid for rid, _r, _h, sk in rows
-                        if sk and hmac.compare_digest(sk, cand_hmac) and rid != exact_id]
+            if cand_hmac:
+                near_ids = [rid for rid, _r, _h, sk in rows
+                            if sk and hmac.compare_digest(sk, cand_hmac)
+                            and rid != exact_id]
 
         return {
             "history_size": len(rows),

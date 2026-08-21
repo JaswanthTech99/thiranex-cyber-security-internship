@@ -29,59 +29,59 @@ The real problem is the 591 survivors. Ranked by how common they are in breach d
 N0=Acc3ss, ka_dJKHJsy6, P@ssw0rd, Abc123456!, !Turbine1, fxzZ75$yer, S9QxA9Yn9Cc=, 1qaz!QAZ, Temp2014!, Comply1!
 ```
 
-And the meter cannot rank what it admits. Across the 9,999 passwords in the second dump, the correlation between a meter's output and the actual guess count is 0.363 (Spearman) for the composition score and 0.287 for charset "entropy" bits. A policy is a gate, not a measurement, and it was never designed to be one.
+And the meter cannot rank what it admits. Across the 9,999 passwords in the second dump, the correlation between a meter's output and the actual guess count is 0.351 (Spearman) for the composition score and 0.277 for charset "entropy" bits. A policy is a gate, not a measurement, and it was never designed to be one.
 
 ## Finding 2 - the trap: a held-out corpus that is not held out
 
 The second dump looks like an independent test set. It is not: 98.75% of it (9,874 of 9,999) also appears in the training corpus. A corpus-lookup estimator scores those from memory, so any headline number over the whole file measures recall of a wordlist, not the ability to judge an unfamiliar password.
 
-On the 125 passwords that are genuinely absent, the weak-flag rate drops from 100.0% to 55.2%. That is the finding, but n=125 is too small to publish, so the split was rebuilt properly:
+On the 125 passwords that are genuinely absent, the weak-flag rate drops from 100.0% to 56.0%. That is the finding, but n=125 is too small to publish, so the split was rebuilt properly:
 
 Rank-based split - the estimator gets breach ranks 1 to 500,000 and is tested on a random sample of 6,000 passwords drawn from the 500,000 ranked below the cutoff.
 
 | estimator's corpus | n | flags weak | median estimate |
 |---|---|---|---|
-| contains the test passwords | 6,000 | 99.95% | 10^5.78 |
-| does not contain them | 6,000 | 79.83% | 10^6.01 |
+| contains the test passwords | 6,000 | 100.0% | 10^5.76 |
+| does not contain them | 6,000 | 80.47% | 10^5.95 |
 
 The second row is what this tool can actually claim. The gap between the rows is how much of a corpus-lookup meter's apparent skill is lookup.
 
 ## Finding 3 - the operational test
 
-A signup form does not get to choose its inputs. It runs its policy filter, and then has to judge whatever passed. So: take breached passwords that pass the four-class policy *and* sit outside the estimator's dictionary (n=346, all known-compromised), mix in 600 CSPRNG-generated passwords (known-good, guess space computable), and ask each meter to tell them apart.
+A signup form does not get to choose its inputs. It runs its policy filter, and then has to judge whatever passed. So: take breached passwords that pass the four-class policy *and* sit outside the estimator's dictionary (n=346, all known-compromised), mix in 600 generated passwords (known-good, guess space computable), and ask each meter to tell them apart.
 
 | meter | ROC AUC |
 |---|---|
 | signup-form composition score | 0.2765 |
 | charset "entropy" bits | 0.9921 |
-| guess-number (this tool) | 0.9913 |
+| guess-number (this tool) | 0.9919 |
 
-The composition meter scores 0.2765, which is not merely uninformative - it is below 0.5, so the meter is inverted. It ranks the compromised passwords as *stronger* than the generated ones, because a breached `Abcd123!` carries all four character classes while `word-word-word-word` carries two and is therefore marked down to Medium. 100.0% of the compromised passwords are labelled Strong by it, against 50.9% correctly flagged weak by the guess-number estimator. That second figure is a threshold result, not a ranking result: these are the hardest cases in the corpus, deliberately chosen to be outside the estimator's dictionary, and roughly half of them sit above the 10^8 line. The AUC below is the ranking measure, and it is threshold-free.
+The composition meter scores 0.2765, which is not merely uninformative - it is below 0.5, so the meter is inverted. It ranks the compromised passwords as *stronger* than the generated ones, because a breached `Abcd123!` carries all four character classes while `word-word-word-word` carries two and is therefore marked down to Medium. 100.0% of the compromised passwords are labelled Strong by it, against 53.2% correctly flagged weak by the guess-number estimator. That second figure is a threshold result, not a ranking result: these are the hardest cases in the corpus, deliberately chosen to be outside the estimator's dictionary, and roughly half of them sit above the 10^8 line. The AUC below is the ranking measure, and it is threshold-free.
 
-The charset-entropy meter looks excellent here, at 0.9921. That number is a length artefact and should not be believed: the generated controls average 25 characters and the breached passwords 10.5, so any length-sensitive score wins by default. Removing the confound settles it - each control is regenerated by a CSPRNG at exactly the length of a real breached password, carrying all four classes, so the naive meters receive statistically identical inputs:
+The charset-entropy meter looks excellent here, at 0.9921. That number is a length artefact and should not be believed: the generated controls average 32.59 characters and the breached passwords 10.5, so any length-sensitive score wins by default. Removing the confound settles it - each control is regenerated at exactly the length of a real breached password, carrying all four classes, so the naive meters receive statistically identical inputs:
 
 | meter | ROC AUC (length- and class-matched, n=346 vs 346) |
 |---|---|
 | signup-form composition score | 0.500 |
 | charset "entropy" bits | 0.500 |
-| guess-number (this tool) | 0.886 |
+| guess-number (this tool) | 0.890 |
 
-Both naive meters land on exactly 0.500, and that is not a coincidence or a rounding: matched on length and character classes, every control produces the identical composition score and the identical bit count as the breached password it was built from, so the meters are scoring ties all the way down. Mean charset "entropy" is 69.0 bits for the breached group and 69.0 bits for the controls. The guess-number estimator still separates them, 10^7.94 against 10^16.41 guesses at the median, because it is reading structure rather than counting character classes. This is the experiment the whole project turns on: strip away length and composition, and the naive meters have nothing left.
+Both naive meters land on exactly 0.500, and that is not a coincidence or a rounding: matched on length and character classes, every control produces the identical composition score and the identical bit count as the breached password it was built from, so the meters are scoring ties all the way down. Mean charset "entropy" is 69.0 bits for the breached group and 69.0 bits for the controls. The guess-number estimator still separates them, 10^7.62 against 10^16.31 guesses at the median, because it is reading structure rather than counting character classes. This is the experiment the whole project turns on: strip away length and composition, and the naive meters have nothing left.
 
 ## Finding 4 - calibration, including where this estimator is wrong
 
-For CSPRNG-generated passwords the true guess space is arithmetic, so the estimator's error can be measured instead of asserted:
+For generated passwords the true guess space is arithmetic, so the estimator's error can be measured instead of asserted:
 
 | generator | true space | estimated (median) | error | scored 'very strong' |
 |---|---|---|---|---|
 | diceware-4 | 10^15.56 | 10^21.96 | +6.4 orders | 100.0% |
-| diceware-6 | 10^23.34 | 10^35.69 | +12.34 orders | 100.0% |
+| diceware-6 | 10^23.34 | 10^35.68 | +12.33 orders | 100.0% |
 | diceware-4-nosep | 10^15.56 | 10^15.08 | -0.49 orders | 100.0% |
-| random-20 | 10^39.46 | 10^35.64 | -3.82 orders | 100.0% |
+| random-20 | 10^39.46 | 10^35.55 | -3.91 orders | 100.0% |
 
 Separated passphrases are over-scored by 6.4 orders of magnitude, and the cause is identifiable rather than mysterious: dropping the separators moves the same generator to -0.49 orders. The excess is the estimator charging for hyphens it treats as unknown characters, plus the ordering penalty on a longer pattern list. An attacker who knows the generator emits `word-word-word-word` pays neither. The estimator does not know the scheme, and pricing that ignorance as strength is the one direction of error worth fixing in future work.
 
-Long random strings go the other way, under-scored by 3.82 orders, because the search finds incidental dictionary and keyboard fragments inside random text and takes the cheaper decomposition. Under-stating a strong password is the safe direction to be wrong in, so it is left alone.
+Long random strings go the other way, under-scored by 3.91 orders, because the search finds incidental dictionary and keyboard fragments inside random text and takes the cheaper decomposition. Under-stating a strong password is the safe direction to be wrong in, so it is left alone.
 
 ## Finding 5 - live confirmation that discloses nothing
 
@@ -101,6 +101,9 @@ Long random strings go the other way, under-scored by 3.82 orders, because the s
 | `!Q2w3e4r5t` | Strong | 65.7 | 42,799 | Moderate |
 | `Catch-22` | Strong | 52.6 | 2,892 | Weak |
 | `Hello@123` | Strong | 59.1 | 341,404 | Weak |
+| `Natlus1.` | Strong | 52.6 | 831 | Very strong |
+| `dSjr!y5jh` | Strong | 59.1 | 613 | Very strong |
+| `Aa/1314512` | Strong | 65.7 | 1,332 | Very strong |
 
 The lookup sends the first five hex characters of the SHA-1 and nothing else. The server returns every suffix under that prefix and cannot tell which was asked about. A strength checker that posts the password, or even its full hash, to a third party has created a worse problem than the one it set out to solve.
 
@@ -121,7 +124,7 @@ Those two measured numbers differ by a factor of 100,917 on identical hardware. 
 ## What the results changed about the tool
 
 1. Breach membership is checked first and overrides every other signal. A password in a wordlist costs roughly its rank to guess, whatever its character classes.
-2. No composition rules are enforced. They are a gate with no measurement in them (Spearman 0.363 against actual guessability), and NIST SP 800-63B dropped them for pushing users toward predictable shapes.
+2. No composition rules are enforced. They are a gate with no measurement in them (Spearman 0.351 against actual guessability), and NIST SP 800-63B dropped them for pushing users toward predictable shapes.
 3. Suggestions are drawn independently from a CSPRNG, never mangled out of the user's rejected password, because those mangling rules are the first rules in every public cracking ruleset.
 4. Crack times are always quoted per attack model. A single "time to crack" number is meaningless without stating what is doing the hashing.
 5. Reported accuracy is the rank-split number, not the flattering one.

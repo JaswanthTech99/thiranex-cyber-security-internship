@@ -31,19 +31,19 @@ corpus **253,616 times**. Live, from this repo:
 $ python -m src.analyze --password "P@ssw0rd1"
 
   Verdict         : Weak  (guess-number score 1/4)
-  Estimated guesses: 10^4.9
+  Estimated guesses: 10^4.6
 
   What the naive meters say about the same string
     signup-form composition meter : Strong (5/6)   <-- calls it strong
     charset 'entropy'             : 59.1 bits, Reasonable
 
   Time to guess
-    online, rate-limited endpoint (10/s, assumed)        2 hours
-    offline, unsalted SHA-1, 1 GPU (5e10/s, assumed)     instantly
-    offline, Argon2id RFC 9106 (16.0/s, measured here)   1 hour
+    online, rate-limited endpoint (10/s, assumed)                  1 hour
+    offline, unsalted SHA-1, 1 GPU (5e10/s, assumed)               instantly
+    offline, Argon2id RFC 9106 (t=3,64MiB,p=4) (16.0/s, measured here) 45 minutes
 
   Why (cheapest decomposition an attacker would use)
-     8 char(s)  dictionary:breach      10^3.6 guesses  [rank 2136]
+     8 char(s)  dictionary:breach      10^3.3 guesses  [rank 2136]
      1 char(s)  bruteforce             10^1.0 guesses
 
   Breach check    : FOUND 253,616 times in HIBP (query hidden among 1968 hashes)
@@ -100,9 +100,10 @@ I expected composition rules to wave most of a breach corpus through. They do no
 | len ≥ 12 + all 4 classes | 133 | 0.01% |
 
 A strict four-class policy is a reasonably effective filter against a frequency-ranked
-dump. The problem is the 591 survivors, and that the meter cannot rank them: correlation
-between composition score and actual guess count is **0.363** (Spearman), and **0.287**
-for charset bits. A policy is a gate, not a measurement.
+dump. The problem is the 591 survivors, and that the meter cannot rank what it admits:
+across the 9,999 passwords of the second dump, correlation between composition score and
+actual guess count is **0.351** (Spearman), and **0.277** for charset bits. A policy is a
+gate, not a measurement.
 
 ### 2. The trap: a held-out corpus that is not held out
 
@@ -110,15 +111,15 @@ for charset bits. A policy is a gate, not a measurement.
 it (9,874 of 9,999) also appears in the training corpus. A corpus-lookup estimator scores
 those from memory, so any headline number over that file measures wordlist recall.
 
-On the 125 genuinely-absent entries the weak-flag rate falls from 100% to 55.2%. That is
+On the 125 genuinely-absent entries the weak-flag rate falls from 100% to 56.0%. That is
 the finding, but n=125 is too thin to publish, so the split was rebuilt by rank — the
 estimator gets breach ranks 1–500,000 and is tested on 6,000 sampled from the 500,000
 below the cutoff:
 
 | estimator's corpus | n | flags weak | median estimate |
 |---|---|---|---|
-| contains the test passwords | 6,000 | **99.95%** | 10^5.78 |
-| does not contain them | 6,000 | **79.83%** | 10^6.01 |
+| contains the test passwords | 6,000 | **100.0%** | 10^5.76 |
+| does not contain them | 6,000 | **80.47%** | 10^5.95 |
 
 The second row is the number this tool can actually claim. The gap is how much of a
 corpus-lookup meter's apparent skill is lookup.
@@ -133,7 +134,7 @@ dictionary, against 600 generated passwords.
 |---|---|---|
 | signup-form composition meter | **0.277** | **0.500** |
 | charset "entropy" bits | 0.992 | **0.500** |
-| guess-number (this tool) | 0.991 | **0.886** |
+| guess-number (this tool) | 0.992 | **0.890** |
 
 The composition meter scores **0.277** — below 0.5, so it is not uninformative, it is
 inverted. It rates the compromised passwords as *stronger*, because a breached `Abcd123!`
@@ -141,12 +142,12 @@ carries four character classes while `plywood-cactus-ferry-oxidant` carries two 
 marked down to *Medium*. It labels **100%** of the compromised set *Strong*.
 
 Charset entropy looks excellent in the left column, at 0.992. That number is a length
-artefact: the controls average 25 characters against 10.5 for the breached group, so any
+artefact: the controls average 32.6 characters against 10.5 for the breached group, so any
 length-sensitive score wins by default. The right column removes the confound — each
 control is regenerated at exactly the length of a real breached password, with all four
 classes, so mean charset entropy is **69.0 bits in both groups**. Both naive meters land
 on exactly **0.500**, scoring ties all the way down. The structural estimator still
-separates them, 10^7.94 against 10^16.41 guesses at the median.
+separates them, 10^7.62 against 10^16.31 guesses at the median.
 
 That is the experiment the project turns on: strip away length and composition, and the
 naive meters have nothing left.
@@ -160,9 +161,9 @@ For generated passwords the true guess space is arithmetic, so the error is meas
 | generator | true space | estimated (median) | error |
 |---|---|---|---|
 | diceware-4 | 10^15.56 | 10^21.96 | **+6.40 orders** |
-| diceware-6 | 10^23.34 | 10^35.69 | +12.34 orders |
+| diceware-6 | 10^23.34 | 10^35.68 | +12.33 orders |
 | diceware-4, no separators | 10^15.56 | 10^15.08 | **−0.49 orders** |
-| random-20 | 10^39.46 | 10^35.64 | −3.82 orders |
+| random-20 | 10^39.46 | 10^35.55 | −3.91 orders |
 
 Separated passphrases are over-scored by six orders of magnitude, and the cause is
 identifiable rather than mysterious: dropping the separators moves the same generator to
@@ -171,15 +172,16 @@ plus the ordering penalty on a longer pattern list. An attacker who knows the ge
 emits `word-word-word-word` pays neither. Pricing the estimator's own ignorance as
 strength is the one direction of error worth fixing.
 
-Long random strings go the other way, under-scored by 3.82 orders, because the search
-finds incidental dictionary fragments inside random text and takes the cheaper
-decomposition. Understating a strong password is the safe direction, so it stands.
+Long random strings go the other way, under-scored by 3.91 orders, because the search
+finds incidental dictionary and keyboard fragments inside random text and takes the
+cheaper decomposition. Understating a strong password is the safe direction, so it stands.
 
 ### 5. Where this tool itself fails
 
 Fifteen policy-compliant breached passwords, checked against the live HIBP API. All
 fifteen are confirmed compromised — and the guess-number estimator rates **nine of them
-Strong or Very strong**:
+Strong or Very strong**. Five of the fifteen below; all fifteen are in
+[findings.md](outputs/reports/findings.md), Finding 5:
 
 | password | composition meter | charset bits | HIBP sightings | this tool |
 |---|---|---|---|---|
@@ -210,7 +212,7 @@ under that prefix (~1,968 for `P@ssw0rd1`) and cannot tell which was asked about
 carry `Add-Padding: true` so response size leaks nothing either. A strength checker that
 posts the password to a third party has created a worse problem than the one it solved.
 
-**No composition rules are enforced.** They correlate 0.363 with actual guessability, and
+**No composition rules are enforced.** They correlate 0.351 with actual guessability, and
 NIST SP 800-63B dropped them for pushing users toward predictable shapes. The checklist
 this tool prints follows 800-63B: length, printability, a 64-character minimum ceiling,
 breach absence. No mandatory classes, no forced rotation.
@@ -233,16 +235,17 @@ digits and punctuation trimmed), with the key in a separate file. It buckets pas
 sharing a root, which does leak something, and is accepted because blocking
 suffix-increment re-use is worth more in practice. `track_skeletons=False` turns it off.
 
-**Crack times are always per attack model.** Two of the three rates are measured on this
+**Crack times are always per attack model.** Two of the four rates are measured on this
 machine (`python -m src.benchmark`): SHA-1 at 1,612,141 h/s single-threaded, Argon2id at
 16.0 h/s. That factor of **100,917 on identical hardware** is the whole argument for a
-memory-hard KDF. The GPU figure is labelled an assumption everywhere it appears, because a
-GPU cluster cannot be benchmarked from a laptop.
+memory-hard KDF. The other two — one consumer GPU against unsalted SHA-1, and a throttled
+login endpoint — are labelled assumptions everywhere they appear, because a GPU cannot be
+benchmarked from a laptop and a lockout policy is not a hardware fact.
 
 ## The re-use check, running
 
-From [outputs/reports/demo_session.txt](outputs/reports/demo_session.txt) via
-`python -m src.demo`:
+Condensed from [outputs/reports/demo_session.txt](outputs/reports/demo_session.txt),
+produced by `python -m src.demo`:
 
 ```
 Retiring the passwords she has already used:

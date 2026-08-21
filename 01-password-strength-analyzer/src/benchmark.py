@@ -1,10 +1,11 @@
 """Measures real hash throughput on this machine.
 
 Crack-time figures are only as honest as the guess rate behind them, and most
-password meters quote a rate from nowhere. Two of the three rates used by this
-project are measured here, on this CPU, and written to
-outputs/reports/hash_rates.json. The third is an explicitly-labelled external
-assumption, because a GPU cluster cannot be benchmarked from a laptop.
+password meters quote a rate from nowhere. Two of the four rates used by this
+project - CPU SHA-1 and Argon2id - are measured here, on this CPU, and written to
+outputs/reports/hash_rates.json. The other two, the single-GPU SHA-1 rate and the
+throttled online rate, are explicitly-labelled assumptions, because a GPU cannot
+be benchmarked from a laptop and a lockout policy is not a hardware fact.
 
 Run: python -m src.benchmark
 """

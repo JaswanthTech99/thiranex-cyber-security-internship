@@ -1,9 +1,9 @@
 """Breach lookup against Have I Been Pwned, without disclosing the password.
 
 The k-anonymity range API takes the first five hex characters of the SHA-1 of the
-candidate and returns every suffix sharing that prefix - on the order of 800
-hashes. The full hash never leaves this process, and the server cannot tell which
-of the ~800 candidates was being asked about.
+candidate and returns every suffix sharing that prefix - on the order of 2,000
+hashes at the corpus size measured here. The full hash never leaves this process,
+and the server cannot tell which of those candidates was being asked about.
 
 That design choice is the whole reason this check is safe to ship. Posting the
 password, or even its complete hash, to a third party in order to grade it would

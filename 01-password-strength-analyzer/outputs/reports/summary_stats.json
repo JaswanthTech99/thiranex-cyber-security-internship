@@ -112,11 +112,11 @@
     "n": 9999,
     "composition_meter_says_strong_pct": 0.16,
     "charset_entropy_says_strong_pct": 0.8,
-    "guess_number_says_strong_pct": 0.56,
-    "guess_number_flags_weak_pct": 99.44,
-    "median_log10_guesses": 3.62,
-    "spearman_comp_score_vs_log10_guesses": 0.363,
-    "spearman_entropy_bits_vs_log10_guesses": 0.287
+    "guess_number_says_strong_pct": 0.55,
+    "guess_number_flags_weak_pct": 99.45,
+    "median_log10_guesses": 3.61,
+    "spearman_comp_score_vs_log10_guesses": 0.351,
+    "spearman_entropy_bits_vs_log10_guesses": 0.277
   },
   "experiment_c_overlap_trap": {
     "overlap_with_training_corpus": 9874,
@@ -134,9 +134,9 @@
       "n": 125,
       "composition_meter_says_strong_pct": 2.4,
       "charset_entropy_says_strong_pct": 12.0,
-      "guess_number_says_strong_pct": 44.8,
-      "guess_number_flags_weak_pct": 55.2,
-      "median_log10_guesses": 7.15
+      "guess_number_says_strong_pct": 44.0,
+      "guess_number_flags_weak_pct": 56.0,
+      "median_log10_guesses": 7.1
     }
   },
   "experiment_c2_rank_split": {
@@ -147,17 +147,17 @@
       "n": 6000,
       "composition_meter_says_strong_pct": 0.45,
       "charset_entropy_says_strong_pct": 3.4,
-      "guess_number_says_strong_pct": 20.17,
-      "guess_number_flags_weak_pct": 79.83,
-      "median_log10_guesses": 6.01
+      "guess_number_says_strong_pct": 19.53,
+      "guess_number_flags_weak_pct": 80.47,
+      "median_log10_guesses": 5.95
     },
     "estimator_with_these_passwords": {
       "n": 6000,
       "composition_meter_says_strong_pct": 0.45,
       "charset_entropy_says_strong_pct": 3.4,
-      "guess_number_says_strong_pct": 0.05,
-      "guess_number_flags_weak_pct": 99.95,
-      "median_log10_guesses": 5.78
+      "guess_number_says_strong_pct": 0.0,
+      "guess_number_flags_weak_pct": 100.0,
+      "median_log10_guesses": 5.76
     }
   },
   "experiment_e_calibration": {
@@ -171,10 +171,10 @@
     },
     "diceware-6": {
       "true_log10_guess_space": 23.34,
-      "estimated_log10_median": 35.69,
+      "estimated_log10_median": 35.68,
       "estimated_log10_p05": 33.27,
       "estimated_log10_p95": 37.2,
-      "median_error_orders": 12.34,
+      "median_error_orders": 12.33,
       "pct_scored_very_strong": 100.0
     },
     "diceware-4-nosep": {
@@ -187,10 +187,10 @@
     },
     "random-20": {
       "true_log10_guess_space": 39.46,
-      "estimated_log10_median": 35.64,
-      "estimated_log10_p05": 33.24,
-      "estimated_log10_p95": 37.31,
-      "median_error_orders": -3.82,
+      "estimated_log10_median": 35.55,
+      "estimated_log10_p05": 33.03,
+      "estimated_log10_p95": 37.27,
+      "median_error_orders": -3.91,
       "pct_scored_very_strong": 100.0
     }
   },
@@ -199,7 +199,7 @@
     "n_good_generated": 600,
     "composition_meter_score_auc": 0.2765,
     "charset_entropy_bits_auc": 0.9921,
-    "guess_number_log10_auc": 0.9913,
+    "guess_number_log10_auc": 0.9919,
     "bad_examples_by_frequency": [
       "Fuck0ff!",
       "Qazigund@1",
@@ -216,7 +216,9 @@
     ],
     "pct_bad_called_strong_by_composition": 100.0,
     "pct_bad_called_strong_by_entropy": 55.2,
-    "pct_bad_flagged_weak_by_guess_number": 50.9
+    "pct_bad_flagged_weak_by_guess_number": 53.2,
+    "mean_len_bad": 10.5,
+    "mean_len_good": 32.59
   },
   "experiment_f2_length_matched": {
     "n_bad": 346,
@@ -225,11 +227,11 @@
     "mean_len_controls": 10.5,
     "mean_entropy_bits_bad": 69.0,
     "mean_entropy_bits_controls": 69.0,
-    "median_log10_guesses_bad": 7.94,
-    "median_log10_guesses_controls": 16.41,
+    "median_log10_guesses_bad": 7.62,
+    "median_log10_guesses_controls": 16.31,
     "composition_meter_score_auc": 0.5,
     "charset_entropy_bits_auc": 0.5,
-    "guess_number_log10_auc": 0.8861
+    "guess_number_log10_auc": 0.8902
   },
   "hibp_spot_check": [
     {
@@ -248,7 +250,7 @@
       "composition_label": "Strong",
       "entropy_bits": 65.7,
       "guess_number_verdict": "Very strong",
-      "log10_guesses": 13.78
+      "log10_guesses": 12.83
     },
     {
       "password": "Wai!in123",
@@ -293,7 +295,7 @@
       "composition_label": "Very strong",
       "entropy_bits": 85.4,
       "guess_number_verdict": "Very strong",
-      "log10_guesses": 21.01
+      "log10_guesses": 20.18
     },
     {
       "password": "bolpuR@1",
@@ -302,7 +304,7 @@
       "composition_label": "Strong",
       "entropy_bits": 52.6,
       "guess_number_verdict": "Very strong",
-      "log10_guesses": 12.39
+      "log10_guesses": 12.38
     },
     {
       "password": "wArdog-1kill",

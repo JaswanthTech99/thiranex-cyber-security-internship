@@ -40,53 +40,67 @@ for _letter, _subs in LEET.items():
     for _s in _subs:
         LEET_REVERSE[_s] = LEET_REVERSE.get(_s, "") + _letter
 
-# Physical QWERTY layout. Leading spaces encode the real horizontal stagger, so
-# diagonal adjacency (e.g. 'q'/'a', 'z'/'x') comes out right.
+# Physical QWERTY layout, unshifted and shifted characters of the same key in the
+# same column. The single leading space on the lower three rows puts `q`, `a` and
+# `z` in one column, which is where they sit on a real board: measured in key
+# widths from the left edge, `q` is at 1.5, `a` at 1.75 and `z` at 2.25, so all
+# three fall against `1` rather than marching one full key right per row.
 QWERTY_ROWS = [
     "`1234567890-=",
     " qwertyuiop[]\\",
-    "  asdfghjkl;'",
-    "   zxcvbnm,./",
+    " asdfghjkl;'",
+    " zxcvbnm,./",
 ]
 SHIFTED_ROWS = [
     "~!@#$%^&*()_+",
     " QWERTYUIOP{}|",
-    '  ASDFGHJKL:"',
-    "   ZXCVBNM<>?",
+    ' ASDFGHJKL:"',
+    " ZXCVBNM<>?",
 ]
 
+# Because each row is offset a fraction of a key to the right of the one above,
+# a key touches two keys on the row above and two on the row below, not three:
+# six neighbours, not eight. This is the slanted-grid model zxcvbn uses, and it
+# is why the offsets are asymmetric. A plain eight-neighbour square grid invents
+# edges that no physical keyboard has - it made `a` adjacent to `e`, which are a
+# key and a half apart - and inflates the average degree by about a third.
+NEIGHBOUR_OFFSETS = ((-1, 0), (1, 0), (0, -1), (1, -1), (0, 1), (-1, 1))
 
-def _build_adjacency() -> tuple[dict[str, set[str]], set[str]]:
-    grid: dict[tuple[int, int], list[str]] = {}
+
+def _build_adjacency() -> tuple[dict[str, set[str]], set[str], int, float]:
+    """Adjacency over characters, but starts and degree over physical keys.
+
+    The matcher needs characters: `1qaz` is a walk whatever the shift state of
+    each key. The guess count needs keys, because `spatial_matches` charges the
+    shift choice separately - counting both shift states in the degree as well
+    would pay for the same decision twice.
+    """
+    keys: dict[tuple[int, int], list[str]] = {}
     shifted: set[str] = set()
     for r, (row, srow) in enumerate(zip(QWERTY_ROWS, SHIFTED_ROWS)):
         for c, ch in enumerate(row):
             if ch == " ":
                 continue
-            keys = [ch]
+            chars = [ch]
             if c < len(srow) and srow[c] != " ":
-                keys.append(srow[c])
+                chars.append(srow[c])
                 shifted.add(srow[c])
-            grid[(r, c)] = keys
+            keys[(c, r)] = chars
     adj: dict[str, set[str]] = {}
-    for (r, c), keys in grid.items():
-        neigh: set[str] = set()
-        for dr in (-1, 0, 1):
-            for dc in (-1, 0, 1):
-                if dr == 0 and dc == 0:
-                    continue
-                for k in grid.get((r + dr, c + dc), []):
-                    neigh.add(k)
-        for k in keys:
-            adj.setdefault(k, set()).update(neigh)
-    return adj, shifted
+    degrees: list[int] = []
+    for (c, r), chars in keys.items():
+        neighbours = [keys[(c + dc, r + dr)] for dc, dr in NEIGHBOUR_OFFSETS
+                      if (c + dc, r + dr) in keys]
+        degrees.append(len(neighbours))
+        reachable = {ch for key in neighbours for ch in key}
+        for ch in chars:
+            adj.setdefault(ch, set()).update(reachable)
+    return adj, shifted, len(keys), sum(degrees) / max(len(keys), 1)
 
 
-ADJACENCY, SHIFTED_KEYS = _build_adjacency()
-# Used in the spatial guess count: how many keys an attacker could start a walk
-# on, and the mean number of onward keys at each step.
-KEYBOARD_STARTS = len(ADJACENCY)
-KEYBOARD_AVG_DEGREE = sum(len(v) for v in ADJACENCY.values()) / max(len(ADJACENCY), 1)
+# How many keys an attacker could start a walk on, and the mean number of onward
+# keys at each step. Both are per key; `spatial_matches` adds the shift factor.
+ADJACENCY, SHIFTED_KEYS, KEYBOARD_STARTS, KEYBOARD_AVG_DEGREE = _build_adjacency()
 
 LOWER, UPPER, DIGITS = 26, 26, 10
 SYMBOLS = 33  # printable ASCII that is neither a letter nor a digit
@@ -129,7 +143,13 @@ def charset_size(s: str) -> int:
 
 def bruteforce_guesses(segment: str) -> float:
     """Cost of guessing this run with no structure to exploit."""
-    return min(float(charset_size(segment)) ** len(segment), MAX_GUESSES)
+    try:
+        return min(float(charset_size(segment)) ** len(segment), MAX_GUESSES)
+    except OverflowError:
+        # float ** int raises rather than returning inf, and every substring of
+        # the candidate reaches here, so a 156-character password used to take
+        # the whole estimator down. Saturate the way _fact does.
+        return MAX_GUESSES
 
 
 def case_variations(token: str) -> float:
@@ -187,14 +207,27 @@ def dictionary_matches(
             lowered = token.lower()
             normalised, subs = _leet_normalise(token)
             for dname, ranks in dictionaries.items():
-                rank = ranks.get(token) or ranks.get(lowered)
-                used_subs = 0
+                # An exact-case hit costs the rank and nothing more: an attacker
+                # walking this corpus in rank order finds the token itself at
+                # that position, with no mangling left to pay for. The folded
+                # paths below are different - there the corpus holds a plainer
+                # form and the attacker has to re-derive the capitalisation and
+                # the leet substitutions, so those are charged.
+                rank = ranks.get(token)
+                used_case, used_subs = False, 0
+                if rank is None:
+                    rank = ranks.get(lowered)
+                    used_case = rank is not None
                 if rank is None and subs:
                     rank = ranks.get(normalised)
-                    used_subs = subs
+                    if rank is not None:
+                        used_case, used_subs = True, subs
                 if rank is None:
                     continue
-                g = rank * case_variations(token) * leet_variations(used_subs)
+                g = float(rank)
+                if used_case:
+                    g *= case_variations(token)
+                g *= leet_variations(used_subs)
                 out.append(
                     Match(
                         i, j, token, f"dictionary:{dname}",
@@ -218,7 +251,10 @@ def spatial_matches(password: str, min_len: int = 3) -> list[Match]:
         if length >= min_len:
             token = password[i : j + 1]
             shifted = sum(1 for c in token if c in SHIFTED_KEYS)
-            g = KEYBOARD_STARTS * (KEYBOARD_AVG_DEGREE ** (length - 1))
+            try:
+                g = KEYBOARD_STARTS * (KEYBOARD_AVG_DEGREE ** (length - 1))
+            except OverflowError:  # a walk of ~290 keys or more
+                g = MAX_GUESSES
             if shifted:
                 g *= min(2**shifted, 10**4)
             out.append(Match(i, j, token, "spatial", min(g, MAX_GUESSES), "keyboard walk"))
@@ -281,7 +317,10 @@ def date_matches(password: str) -> list[Match]:
             Match(m.start(), m.end() - 1, m.group(0), "date",
                   float(1950 + 100 - 1900), "4-digit year")
         )
-    for m in re.finditer(r"\d{6}|\d{8}", password):
+    # Longer alternative first: regex alternation is ordered, so `\d{6}|\d{8}`
+    # matched the first six digits of `01011990` and the 8-digit branch could
+    # never fire at all.
+    for m in re.finditer(r"\d{8}|\d{6}", password):
         out.append(
             Match(m.start(), m.end() - 1, m.group(0), "date",
                   float(31 * 12 * 130), "compact date")
