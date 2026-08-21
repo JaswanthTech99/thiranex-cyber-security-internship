@@ -1,0 +1,434 @@
+﻿
+=== RFC 4226 / RFC 6238 test vectors ===
+
+-- RFC 4226 Appendix D, Table 1: intermediate HMAC-SHA-1
+  [PASS] HMAC-SHA-1 count=0
+  [PASS] HMAC-SHA-1 count=1
+  [PASS] HMAC-SHA-1 count=2
+  [PASS] HMAC-SHA-1 count=3
+  [PASS] HMAC-SHA-1 count=4
+  [PASS] HMAC-SHA-1 count=5
+  [PASS] HMAC-SHA-1 count=6
+  [PASS] HMAC-SHA-1 count=7
+  [PASS] HMAC-SHA-1 count=8
+  [PASS] HMAC-SHA-1 count=9
+
+-- RFC 4226 Appendix D, Table 2: dynamic truncation and HOTP
+  [PASS] Sbits count=0
+  [PASS] Snum count=0
+  [PASS] HOTP count=0
+  [PASS] Sbits count=1
+  [PASS] Snum count=1
+  [PASS] HOTP count=1
+  [PASS] Sbits count=2
+  [PASS] Snum count=2
+  [PASS] HOTP count=2
+  [PASS] Sbits count=3
+  [PASS] Snum count=3
+  [PASS] HOTP count=3
+  [PASS] Sbits count=4
+  [PASS] Snum count=4
+  [PASS] HOTP count=4
+  [PASS] Sbits count=5
+  [PASS] Snum count=5
+  [PASS] HOTP count=5
+  [PASS] Sbits count=6
+  [PASS] Snum count=6
+  [PASS] HOTP count=6
+  [PASS] Sbits count=7
+  [PASS] Snum count=7
+  [PASS] HOTP count=7
+  [PASS] Sbits count=8
+  [PASS] Snum count=8
+  [PASS] HOTP count=8
+  [PASS] Sbits count=9
+  [PASS] Snum count=9
+  [PASS] HOTP count=9
+
+-- RFC 6238 Appendix B: TOTP, 8 digits, X=30, T0=0
+  [PASS] T at t=59
+  [PASS] TOTP t=59 sha1
+  [PASS] T at t=59
+  [PASS] TOTP t=59 sha256
+  [PASS] T at t=59
+  [PASS] TOTP t=59 sha512
+  [PASS] T at t=1111111109
+  [PASS] TOTP t=1111111109 sha1
+  [PASS] T at t=1111111109
+  [PASS] TOTP t=1111111109 sha256
+  [PASS] T at t=1111111109
+  [PASS] TOTP t=1111111109 sha512
+  [PASS] T at t=1111111111
+  [PASS] TOTP t=1111111111 sha1
+  [PASS] T at t=1111111111
+  [PASS] TOTP t=1111111111 sha256
+  [PASS] T at t=1111111111
+  [PASS] TOTP t=1111111111 sha512
+  [PASS] T at t=1234567890
+  [PASS] TOTP t=1234567890 sha1
+  [PASS] T at t=1234567890
+  [PASS] TOTP t=1234567890 sha256
+  [PASS] T at t=1234567890
+  [PASS] TOTP t=1234567890 sha512
+  [PASS] T at t=2000000000
+  [PASS] TOTP t=2000000000 sha1
+  [PASS] T at t=2000000000
+  [PASS] TOTP t=2000000000 sha256
+  [PASS] T at t=2000000000
+  [PASS] TOTP t=2000000000 sha512
+  [PASS] T at t=20000000000
+  [PASS] TOTP t=20000000000 sha1
+  [PASS] T at t=20000000000
+  [PASS] TOTP t=20000000000 sha256
+  [PASS] T at t=20000000000
+  [PASS] TOTP t=20000000000 sha512
+
+-- RFC 6238 Errata 2866: the prose seed does NOT reproduce the SHA256/SHA512 rows
+  [PASS] 20-byte prose seed mismatches the SHA256 row at t=59 (expected mismatch)
+  [PASS] 20-byte prose seed mismatches the SHA512 row at t=59 (expected mismatch)
+
+-- Local behaviour required by RFC 4226 section 7.2 and RFC 6238 section 5.2
+  [PASS] current code accepted
+  [PASS] accepted counter is T
+  [PASS] T-1 accepted
+  [PASS] T+1 accepted
+  [PASS] T+2 rejected
+  [PASS] first use of a code accepted
+  [PASS] replay of the same code rejected
+  [PASS] older in-window code rejected once a newer one is spent
+
+-- Input handling
+  [PASS] wrong length rejected
+  [PASS] non-numeric rejected
+  [PASS] spaces tolerated
+  [PASS] base32 round-trip
+  [PASS] short secret refused
+  [PASS] str key refused
+
+RFC 4226 / RFC 6238 test vectors: 92/92 passed, 0 failed, 0.001s
+
+=== Validation, Argon2 parameters, HIBP breach check ===
+
+-- Username rules
+  [PASS] username 'jaswanth' (plain lowercase)
+  [PASS] username 'j.kumar_01' (separators in the middle)
+  [PASS] username 'ab' (too short)
+  [PASS] username 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' (too long)
+  [PASS] username 'Jaswanth' (uppercase is normalised to lowercase, not rejected)
+  [PASS] username 'has space' (space would allow lookalike padding)
+  [PASS] username 'semi;colon' (outside the charset)
+  [PASS] username "quote'name" (outside the charset)
+  [PASS] username '-leading' (leading separator)
+  [PASS] username 'trailing.' (trailing separator)
+  [PASS] username 'double..dot' (repeated separator hides near-duplicates)
+  [PASS] username 'admin' (reserved)
+  [PASS] username 'root' (reserved)
+  [PASS] username '' (empty)
+  [PASS] uppercase folds to lowercase
+  [PASS] fullwidth characters normalise under NFKC
+  [PASS] and the normalised form hits the reserved list
+
+-- Password rules
+  [PASS] password (long passphrase, no symbols)
+  [PASS] password (12 chars; weak but not our call to refuse on composition, the breach check handles it)
+  [PASS] password (under 12 characters)
+  [PASS] password (over 128 characters)
+  [PASS] password (null byte)
+  [PASS] password (control character)
+  [PASS] password (empty)
+  [PASS] password (non-ASCII is fine)
+  [PASS] a 64-character passphrase is accepted, as SP 800-63B requires
+  [PASS] leading/trailing spaces are preserved, not silently stripped
+  [PASS] NFKC is applied to passwords too
+
+-- Argon2id parameters and hashing behaviour
+  [PASS] type
+  [PASS] t (RFC 9106 second recommended)
+  [PASS] m in KiB (2^16 = 64 MiB)
+  [PASS] p (lanes)
+  [PASS] salt length in bytes (128-bit)
+  [PASS] tag length in bytes (256-bit)
+  [PASS] the encoded hash declares argon2id
+  [PASS] the encoded hash carries the parameters
+  [PASS] two hashes of the same password differ (random salt)
+  [PASS] verify accepts the right password
+  [PASS] verify rejects a wrong password
+  [PASS] verify rejects a malformed stored hash
+  [PASS] a hash at the current parameters does not need a rehash
+  [PASS] a hash made with weaker parameters is flagged for rehash
+  [PASS] but it still verifies, so nobody is locked out by an upgrade
+
+-- Have I Been Pwned: k-anonymity properties
+  [PASS] SHA-1 of the sample password matches the documented value
+  [PASS] the prefix we would send is 5 hex characters
+  [PASS] which leaves 35 characters we never send
+  [PASS] the prefix is 20 bits of the hash
+  [PASS] a known-breached password is reported as breached
+  [PASS] and with a large count (52,372,427)
+  ...  the bucket for prefix 5BAA6 returned 1978 real candidate suffixes, so our query is one of 1978 indistinguishable possibilities
+  [PASS] the bucket is large enough to hide the query (k >= 100)
+  [PASS] a random unique password is not reported as breached
+  [PASS] and its bucket is also large, so a miss and a hit look the same from outside
+  [PASS] the request URL is the range endpoint plus the 5-char prefix only
+  [PASS] the full hash never appears in the URL
+  [PASS] the suffix never appears in the URL
+  ...  the padded response contained 35 zero-count padding entries, which the parser drops
+  [PASS] Add-Padding produced padding entries
+
+-- Registration enforces the rules over HTTP
+  [PASS] a breached password is refused
+  [PASS] a short password is refused
+  [PASS] a reserved username is refused
+  [PASS] a password containing the username is refused
+  [PASS] mismatched confirmation is refused
+  [PASS] a compliant registration succeeds
+  [PASS] a duplicate username is refused with 409
+
+Validation, Argon2 parameters, HIBP breach check: 63/63 passed, 0 failed, 3.686s
+
+=== Session lifecycle: cookies, timeouts, CSRF ===
+
+-- Cookie flags at the production default
+  ...  Set-Cookie: sls_sid=F39hMGKB7_UAOmVwBuDDy9qDQrXHV9P41JLEzOaYjnE; Secure; HttpOnly; Path=/; SameSite=Lax
+  [PASS] HttpOnly is set (no JS access to the session id)
+  [PASS] Secure is set by default (cookie never sent over HTTP)
+  [PASS] SameSite is Lax
+  [PASS] Path is /
+  [PASS] no Expires/Max-Age, so it dies with the browser
+  ...  the client stores the Secure cookie but withholds it on the next plain-HTTP request, so the server issues a new one
+  [PASS] a Secure cookie is not returned over HTTP, so the server issues a fresh session on the second request
+
+-- Security response headers
+  [PASS] X-Content-Type-Options
+  [PASS] X-Frame-Options
+  [PASS] Referrer-Policy
+  [PASS] CSP default-src 'none'
+  [PASS] CSP frame-ancestors 'none'
+  [PASS] CSP form-action 'self'
+  [PASS] Cache-Control no-store
+
+-- Idle timeout
+  [PASS] configured idle timeout
+  [PASS] authenticated immediately after login
+  [PASS] a request inside the idle window is served
+  [PASS] and that request reset the idle clock
+  [PASS] session is dead after sitting idle past the timeout
+
+-- Absolute timeout
+  [PASS] configured absolute timeout
+  [PASS] idle timeout is much longer, so only the absolute one can fire
+  ...  polled the protected page 9 times, staying active throughout
+  [PASS] a continuously active session still expires at the absolute limit
+
+-- CSRF
+  [PASS] a CSRF token is bound to the anonymous session
+  [PASS] login without a CSRF token is refused
+  [PASS] login with a wrong CSRF token is refused
+  [PASS] login with the right CSRF token succeeds
+  [PASS] the pre-login CSRF token does not work after rotation
+  [PASS] logout with the current token works
+  [PASS] GET /logout is not routed (a GET logout would be CSRF-able)
+
+Session lifecycle: cookies, timeouts, CSRF: 28/28 passed, 0 failed, 16.944s
+
+=== Rate limiting and lockout ===
+  ...  configured: 5 failures per 900s locks for 900s; per-IP cap 30 per 300s
+  [PASS] real account created
+
+-- The lockout fires at the configured threshold
+  ...  statuses: [401, 401, 401, 401, 401, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429]
+  [PASS] the first 429 arrives after exactly `threshold` failures
+  [PASS] it stays locked on subsequent attempts
+  ...  latency of the 5 attempts that ran Argon2id: mean 73.4 ms
+  ...  latency of the 20 rejected-by-limiter attempts: mean 16.4 ms
+  ...  baseline GET /healthz (no session, no write): mean 26.4 ms
+  ...  baseline GET /login (session load + last_seen commit): mean 24.1 ms
+  ...  ratio hashed/rejected = 4.49x; the rejected path is not near-zero because it still pays the per-request SQLite commits, which is the app's latency floor
+  [PASS] a rejected attempt is cheaper than a hashed one
+  [PASS] the rejected path skips the Argon2id work entirely (it costs no more than the session baseline plus measurement noise)
+
+-- The lockout is not a user-enumeration oracle
+  ...  statuses for a username that does not exist: [401, 401, 401, 401, 401, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429]
+  [PASS] a non-existent username locks out after the same count
+  [PASS] and the status sequence is identical
+
+-- A successful login clears the failure count
+  [PASS] login still works one attempt short of the threshold
+  ...  statuses after the successful login: [401, 401, 401, 401, 401, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429, 429]
+  [PASS] the counter was reset, so a full threshold is available again
+
+-- What the limiter buys against the Argon2 DoS problem
+  ...  limiter OFF: 20/20 attempts each cost a full Argon2id verify, 75.0 ms each, 1280 MiB of transient allocation in total
+  ...  limiter ON:  only 5 of those attempts would have been hashed before the username was locked, so 320 MiB instead of 1280 MiB
+  [PASS] the limiter caps hashed attempts well below the unlimited case
+
+Rate limiting and lockout: 10/10 passed, 0 failed, 7.426s
+
+=== Session fixation and rotation ===
+
+-- Password-only login rotates the session id
+  [PASS] account created
+  [PASS] a pre-login session exists to fixate on
+  [PASS] pre-login session is anonymous
+  [PASS] pre-login session has no user attached
+  [PASS] login succeeded
+  [PASS] the session id changed on login
+  [PASS] the pre-login row was DELETED, not upgraded
+  [PASS] the new row is authenticated
+  [PASS] the fixated pre-login id is not honoured after login
+  [PASS] the victim's own session works
+
+-- Every privilege change rotates: anonymous -> pending_2fa -> authenticated
+  [PASS] stage 1 is anonymous
+  [PASS] id rotated after the password step
+  [PASS] stage 2 is pending_2fa
+  [PASS] the anonymous row is gone
+  [PASS] a pending_2fa session cannot read the protected page
+  [PASS] second factor accepted
+  [PASS] id rotated again after the second factor
+  [PASS] stage 3 is authenticated
+  [PASS] the pending_2fa row is gone
+  [PASS] the pending_2fa id is not honoured once it has been rotated
+  [PASS] all three stage ids are distinct
+
+-- Logout deletes the row server-side
+  [PASS] session row exists before logout
+  [PASS] logout returns 200
+  [PASS] session row is gone after logout
+  [PASS] re-presenting the logged-out cookie is refused
+
+-- Enabling 2FA evicts every other session for that user
+  [PASS] the second session is live before enrolment
+  [PASS] the second session is dead after 2FA is enabled
+  [PASS] its row was deleted
+  [PASS] the enrolling user is still logged in
+
+Session fixation and rotation: 29/29 passed, 0 failed, 18.885s
+
+=== End-to-end: register, login, 2FA, protected page, logout ===
+  [PASS] registration returns 201
+  [PASS] registration reports created
+  [PASS] chosen password is not in the breach corpus
+  ...  HIBP: prefix 52D5E, 1908 candidate suffixes returned, available=True
+  [PASS] a known-breached password is refused at registration
+  [PASS] login succeeds
+  [PASS] session id changed on login
+  [PASS] dashboard reachable when authenticated
+  [PASS] dashboard reports the right user
+  [PASS] enrolment returns a 160-bit secret
+  [PASS] provisioning URI is an otpauth:// TOTP URI
+  [PASS] 2FA enabled after a valid code
+  [PASS] 2FA enabled flag
+  [PASS] session id rotated when 2FA was enabled
+  [PASS] dashboard shows 2FA on
+  [PASS] logout returns 200
+  [PASS] password step does not authenticate on its own
+  [PASS] password step demands the second factor
+  [PASS] pending-2FA session cannot read the protected page
+  [PASS] valid TOTP code completes authentication
+  [PASS] replaying an already-used code is refused
+  [PASS] protected page reachable after 2FA
+  [PASS] logout returns 200
+  [PASS] the pre-logout session id is no longer honoured
+  [PASS] maintenance endpoint responds
+  ...  transcript written to C:\Users\JaswanthKumarMediset\Downloads\thiranex-cyber\projects\04-secure-login-system\outputs\reports\session_transcript.md
+
+End-to-end: register, login, 2FA, protected page, logout: 24/24 passed, 0 failed, 29.242s
+
+=== SQL injection: SecLists corpus ===
+
+-- Payload corpus
+  ...  Generic-SQLi.txt: fetched from SecLists (5375 bytes)
+  ...  sqli.auth.bypass.txt: fetched from SecLists (1774 bytes)
+  ...  quick-SQLi.txt: fetched from SecLists (1180 bytes)
+  ...  Generic-SQLi.txt: 267 payloads
+  ...  sqli.auth.bypass.txt: 96 payloads
+  ...  quick-SQLi.txt: 77 payloads
+  ...  total after dedup: 390
+  [PASS] corpus is non-trivial (>= 100 payloads)
+  ...  corpus written to C:\Users\JaswanthKumarMediset\Downloads\thiranex-cyber\projects\04-secure-login-system\outputs\reports\sqli_payloads_fired.txt (percent-encoded, one per line)
+
+-- Target A: POST /login (parameterised queries)
+  [PASS] victim account created for the password-field pass
+  ...  username field: 390 payloads, status counts {401: 390}
+  [PASS] no payload authenticated via the username field
+  [PASS] no payload caused a 5xx via the username field
+  [PASS] no transport errors via the username field
+  ...  password field: 390 payloads, status counts {401: 390}
+  [PASS] no payload authenticated via the password field
+  [PASS] no payload caused a 5xx via the password field
+  [PASS] no transport errors via the password field
+  [PASS] database still intact: a fresh account can log in after the whole corpus
+
+-- Target B: POST /demo/vulnerable/login (string-concatenated SQL)
+  ...  username field: 390 payloads, 21 authenticated, 104 raised a driver error
+  [PASS] the same corpus DOES bypass the vulnerable username field
+  ...  working bypass via username: "a' or 1=1--"
+  ...  working bypass via username: "a' or 3=3--"
+  ...  working bypass via username: "hi' or 1=1 --"
+  ...  working bypass via username: "x' or 1=1 or 'x'='y"
+  ...  working bypass via username: "' or 0=0 --"
+  ...  password field: 390 payloads, 31 authenticated, 102 raised a driver error
+  [PASS] the same corpus DOES bypass the vulnerable password field
+  ...  working bypass via password: "hi' or 'a'='a"
+  ...  working bypass via password: "a' or 1=1--"
+  ...  working bypass via password: "a' or 'a' = 'a"
+  ...  working bypass via password: "a' or 3=3--"
+  ...  working bypass via password: "hi' or 1=1 --"
+
+-- Contrast
+  ...  parameterised endpoint: 0 bypasses out of 780 requests
+  ...  concatenated endpoint:  52 bypasses out of 780 requests
+  [PASS] parameterised endpoint bypass count
+  [PASS] concatenated endpoint bypass count is non-zero
+
+SQL injection: SecLists corpus: 13/13 passed, 0 failed, 91.864s
+
+=== User enumeration timing ===
+
+-- Arm: mitigation_off
+  [PASS] mitigation_off: server reports the expected mitigation state
+  [PASS] mitigation_off: known user created
+  ...  mitigation_off: existing username   mean 176.3 ms, median 165.7, p95 258.3, p99 351.3
+  ...  mitigation_off: absent username     mean 28.1 ms, median 26.5, p95 45.1, p99 51.0
+  ...  mitigation_off: median difference +139.2 ms, Cohen's d 4.557, single-request classifier accuracy 100.0%
+  [PASS] mitigation_off: identical status code for both classes
+  [PASS] mitigation_off: identical error message for both classes
+  [PASS] mitigation_off: the error message is the single generic one
+
+-- Arm: mitigation_on
+  [PASS] mitigation_on: server reports the expected mitigation state
+  [PASS] mitigation_on: known user created
+  ...  mitigation_on: existing username   mean 145.7 ms, median 135.1, p95 210.2, p99 319.4
+  ...  mitigation_on: absent username     mean 143.5 ms, median 135.7, p95 199.9, p99 359.2
+  ...  mitigation_on: median difference -0.6 ms, Cohen's d 0.044, single-request classifier accuracy 54.7%
+  [PASS] mitigation_on: identical status code for both classes
+  [PASS] mitigation_on: identical error message for both classes
+  [PASS] mitigation_on: the error message is the single generic one
+
+-- Did the mitigation work?
+  ...  median gap: +139.2 ms without the fix, -0.6 ms with it
+  ...  single-request classifier: 100.0% without the fix, 54.7% with it (50% is chance)
+  ...  Cohen's d: 4.557 without the fix, 0.044 with it
+  [PASS] without the fix, one request identifies an account almost perfectly (accuracy >= 95%)
+  [PASS] with the fix, the median gap shrinks by at least 20x
+  [PASS] with the fix, single-request accuracy drops below 70%
+  ...  figure written to C:\Users\JaswanthKumarMediset\Downloads\thiranex-cyber\projects\04-secure-login-system\outputs\figures\enumeration_timing.png
+
+User enumeration timing: 13/13 passed, 0 failed, 80.333s
+
+========================================================================
+SUMMARY
+========================================================================
+  [OK  ] RFC 4226 / RFC 6238 test vectors: 92/92 (0.001s)
+  [OK  ] Validation, Argon2 parameters, HIBP breach check: 63/63 (3.687s)
+  [OK  ] Session lifecycle: cookies, timeouts, CSRF: 28/28 (16.945s)
+  [OK  ] Rate limiting and lockout: 10/10 (7.426s)
+  [OK  ] Session fixation and rotation: 29/29 (18.885s)
+  [OK  ] End-to-end: register, login, 2FA, protected page, logout: 24/24 (29.242s)
+  [OK  ] SQL injection: SecLists corpus: 13/13 (91.864s)
+  [OK  ] User enumeration timing: 13/13 (80.333s)
+
+  272/272 checks passed, 0 failed, 248.7s total
+
+  summary written to C:\Users\JaswanthKumarMediset\Downloads\thiranex-cyber\projects\04-secure-login-system\outputs\reports\summary_stats.json

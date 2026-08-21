@@ -1,0 +1,406 @@
+{
+  "chosen": {
+    "latency": {
+      "max_ms": 92.99,
+      "mean_ms": 76.78,
+      "median_ms": 74.24,
+      "min_ms": 66.4,
+      "n": 20,
+      "p95_ms": 91.87
+    },
+    "parameters": {
+      "m_kib": 65536,
+      "m_mib": 64.0,
+      "p": 4,
+      "t": 3
+    }
+  },
+  "chosen_after_load": {
+    "latency": {
+      "max_ms": 199.91,
+      "mean_ms": 108.88,
+      "median_ms": 106.53,
+      "min_ms": 85.61,
+      "n": 20,
+      "p95_ms": 121.33
+    },
+    "parameters": {
+      "m_kib": 65536,
+      "m_mib": 64.0,
+      "p": 4,
+      "t": 3
+    }
+  },
+  "concurrency": [
+    {
+      "concurrency": 1,
+      "hashes": 8,
+      "max_ms": 118.48,
+      "mean_ms": 108.27,
+      "median_ms": 109.36,
+      "min_ms": 100.15,
+      "n": 8,
+      "p95_ms": 116.89,
+      "peak_transient_mib": 64.0,
+      "serial_reference_ms": 101.82,
+      "speedup_over_serial": 0.94,
+      "throughput_hashes_per_s": 9.22,
+      "wall_s": 0.868
+    },
+    {
+      "concurrency": 2,
+      "hashes": 16,
+      "max_ms": 168.0,
+      "mean_ms": 135.59,
+      "median_ms": 133.09,
+      "min_ms": 121.72,
+      "n": 16,
+      "p95_ms": 167.45,
+      "peak_transient_mib": 128.0,
+      "serial_reference_ms": 104.7,
+      "speedup_over_serial": 1.54,
+      "throughput_hashes_per_s": 14.72,
+      "wall_s": 1.087
+    },
+    {
+      "concurrency": 4,
+      "hashes": 32,
+      "max_ms": 616.16,
+      "mean_ms": 365.77,
+      "median_ms": 329.51,
+      "min_ms": 267.66,
+      "n": 32,
+      "p95_ms": 597.81,
+      "peak_transient_mib": 256.0,
+      "serial_reference_ms": 106.46,
+      "speedup_over_serial": 1.14,
+      "throughput_hashes_per_s": 10.73,
+      "wall_s": 2.984
+    },
+    {
+      "concurrency": 8,
+      "hashes": 64,
+      "max_ms": 746.97,
+      "mean_ms": 540.76,
+      "median_ms": 530.62,
+      "min_ms": 261.54,
+      "n": 64,
+      "p95_ms": 727.14,
+      "peak_transient_mib": 512.0,
+      "serial_reference_ms": 111.27,
+      "speedup_over_serial": 1.62,
+      "throughput_hashes_per_s": 14.51,
+      "wall_s": 4.409
+    },
+    {
+      "concurrency": 16,
+      "hashes": 128,
+      "max_ms": 1750.01,
+      "mean_ms": 1156.1,
+      "median_ms": 1141.73,
+      "min_ms": 643.86,
+      "n": 128,
+      "p95_ms": 1506.23,
+      "peak_transient_mib": 1024.0,
+      "serial_reference_ms": 127.32,
+      "speedup_over_serial": 1.71,
+      "throughput_hashes_per_s": 13.41,
+      "wall_s": 9.544
+    }
+  ],
+  "http_under_load": {
+    "concurrency_cap": {
+      "baseline_ms": {
+        "max_ms": 107.67,
+        "mean_ms": 90.2,
+        "median_ms": 87.22,
+        "min_ms": 79.32,
+        "n": 8,
+        "p95_ms": 104.71
+      },
+      "baseline_success_rate": 1.0,
+      "under_load": [
+        {
+          "attack_requests_sent": 84,
+          "attacker_threads": 4,
+          "victim_latency": {
+            "max_ms": 405.97,
+            "mean_ms": 318.41,
+            "median_ms": 314.58,
+            "min_ms": 266.94,
+            "n": 6,
+            "p95_ms": 386.54
+          },
+          "victim_p95_slowdown_x": 3.69,
+          "victim_served": true,
+          "victim_status_codes": [
+            200
+          ],
+          "victim_success_rate": 1.0
+        },
+        {
+          "attack_requests_sent": 78,
+          "attacker_threads": 16,
+          "victim_latency": {
+            "max_ms": 1801.78,
+            "mean_ms": 1004.87,
+            "median_ms": 1154.84,
+            "min_ms": 144.98,
+            "n": 6,
+            "p95_ms": 1758.1
+          },
+          "victim_p95_slowdown_x": 16.79,
+          "victim_served": true,
+          "victim_status_codes": [
+            200
+          ],
+          "victim_success_rate": 1.0
+        }
+      ]
+    },
+    "no_protection": {
+      "baseline_ms": {
+        "max_ms": 138.13,
+        "mean_ms": 114.68,
+        "median_ms": 120.14,
+        "min_ms": 85.3,
+        "n": 8,
+        "p95_ms": 138.0
+      },
+      "baseline_success_rate": 1.0,
+      "under_load": [
+        {
+          "attack_requests_sent": 73,
+          "attacker_threads": 4,
+          "victim_latency": {
+            "max_ms": 534.35,
+            "mean_ms": 407.91,
+            "median_ms": 385.63,
+            "min_ms": 352.32,
+            "n": 6,
+            "p95_ms": 506.65
+          },
+          "victim_p95_slowdown_x": 3.67,
+          "victim_served": true,
+          "victim_status_codes": [
+            200
+          ],
+          "victim_success_rate": 1.0
+        },
+        {
+          "attack_requests_sent": 89,
+          "attacker_threads": 16,
+          "victim_latency": {
+            "max_ms": 1369.82,
+            "mean_ms": 919.55,
+            "median_ms": 1177.38,
+            "min_ms": 142.75,
+            "n": 6,
+            "p95_ms": 1354.52
+          },
+          "victim_p95_slowdown_x": 9.82,
+          "victim_served": true,
+          "victim_status_codes": [
+            200
+          ],
+          "victim_success_rate": 1.0
+        }
+      ]
+    },
+    "rate_limited": {
+      "baseline_ms": {
+        "max_ms": 117.89,
+        "mean_ms": 90.33,
+        "median_ms": 87.71,
+        "min_ms": 81.28,
+        "n": 8,
+        "p95_ms": 107.49
+      },
+      "baseline_success_rate": 1.0,
+      "under_load": [
+        {
+          "attack_requests_sent": 774,
+          "attacker_threads": 4,
+          "victim_latency": {
+            "max_ms": 283.68,
+            "mean_ms": 203.27,
+            "median_ms": 195.0,
+            "min_ms": 155.52,
+            "n": 6,
+            "p95_ms": 266.17
+          },
+          "victim_p95_slowdown_x": 2.48,
+          "victim_served": true,
+          "victim_status_codes": [
+            200
+          ],
+          "victim_success_rate": 1.0
+        },
+        {
+          "attack_requests_sent": 1097,
+          "attacker_threads": 16,
+          "victim_latency": {
+            "max_ms": 107.58,
+            "mean_ms": 40.77,
+            "median_ms": 15.9,
+            "min_ms": 12.87,
+            "n": 6,
+            "p95_ms": 100.35
+          },
+          "victim_p95_slowdown_x": 0.93,
+          "victim_served": false,
+          "victim_status_codes": [
+            429
+          ],
+          "victim_success_rate": 0.0
+        }
+      ]
+    }
+  },
+  "machine": {
+    "available_ram_mib": 4705,
+    "logical_cpus": 8,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "python": "3.14.4",
+    "total_ram_mib": 32448
+  },
+  "machine_note": "shared Windows laptop with unrelated processes running; absolute latencies are this-machine-under-load figures, the curve shapes and ratios are the portable findings",
+  "memory_sweep": [
+    {
+      "m_kib": 8192,
+      "m_mib": 8.0,
+      "max_ms": 28.82,
+      "mean_ms": 21.69,
+      "median_ms": 20.31,
+      "min_ms": 16.05,
+      "n": 8,
+      "p95_ms": 28.19,
+      "t": 3
+    },
+    {
+      "m_kib": 16384,
+      "m_mib": 16.0,
+      "max_ms": 42.36,
+      "mean_ms": 35.54,
+      "median_ms": 35.37,
+      "min_ms": 31.63,
+      "n": 8,
+      "p95_ms": 40.83,
+      "t": 3
+    },
+    {
+      "m_kib": 32768,
+      "m_mib": 32.0,
+      "max_ms": 80.79,
+      "mean_ms": 59.37,
+      "median_ms": 56.44,
+      "min_ms": 52.6,
+      "n": 8,
+      "p95_ms": 73.82,
+      "t": 3
+    },
+    {
+      "m_kib": 65536,
+      "m_mib": 64.0,
+      "max_ms": 161.06,
+      "mean_ms": 117.17,
+      "median_ms": 111.22,
+      "min_ms": 96.1,
+      "n": 8,
+      "p95_ms": 151.44,
+      "t": 3
+    },
+    {
+      "m_kib": 131072,
+      "m_mib": 128.0,
+      "max_ms": 224.03,
+      "mean_ms": 194.74,
+      "median_ms": 194.42,
+      "min_ms": 172.46,
+      "n": 8,
+      "p95_ms": 218.08,
+      "t": 3
+    },
+    {
+      "m_kib": 262144,
+      "m_mib": 256.0,
+      "max_ms": 637.74,
+      "mean_ms": 416.96,
+      "median_ms": 390.66,
+      "min_ms": 350.52,
+      "n": 8,
+      "p95_ms": 564.49,
+      "t": 3
+    }
+  ],
+  "seed": 20260821,
+  "sweep_drift": {
+    "drift_ratio": 1.055,
+    "first_half_mean_ms": 108.48,
+    "probe_per_round_ms": [
+      111.84,
+      105.18,
+      105.84,
+      111.05,
+      119.76,
+      111.48,
+      122.97,
+      103.43
+    ],
+    "second_half_mean_ms": 114.41
+  },
+  "sweep_rounds": 8,
+  "time_sweep": [
+    {
+      "m_mib": 64.0,
+      "max_ms": 57.29,
+      "mean_ms": 49.98,
+      "median_ms": 49.83,
+      "min_ms": 41.79,
+      "n": 8,
+      "p95_ms": 55.51,
+      "t": 1
+    },
+    {
+      "m_mib": 64.0,
+      "max_ms": 182.69,
+      "mean_ms": 97.14,
+      "median_ms": 85.76,
+      "min_ms": 74.56,
+      "n": 8,
+      "p95_ms": 153.4,
+      "t": 2
+    },
+    {
+      "m_mib": 64.0,
+      "max_ms": 138.77,
+      "mean_ms": 113.12,
+      "median_ms": 108.17,
+      "min_ms": 99.25,
+      "n": 8,
+      "p95_ms": 135.14,
+      "t": 3
+    },
+    {
+      "m_mib": 64.0,
+      "max_ms": 184.36,
+      "mean_ms": 145.45,
+      "median_ms": 139.49,
+      "min_ms": 131.28,
+      "n": 8,
+      "p95_ms": 173.54,
+      "t": 4
+    },
+    {
+      "m_mib": 64.0,
+      "max_ms": 255.28,
+      "mean_ms": 210.33,
+      "median_ms": 204.62,
+      "min_ms": 181.73,
+      "n": 8,
+      "p95_ms": 247.58,
+      "t": 6
+    }
+  ]
+}

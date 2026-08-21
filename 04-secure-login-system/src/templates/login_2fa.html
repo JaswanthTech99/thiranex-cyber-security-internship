@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Two-factor authentication{% endblock %}
+{% block content %}
+<h1>Enter your authentication code</h1>
+<p>Your password checked out. This session cannot reach anything until the
+{{ config.totp_digits }}-digit code from your authenticator is verified.</p>
+<form method="post" action="{{ url_for('login_2fa') }}">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+  <label>Code
+    <input name="code" inputmode="numeric" autocomplete="one-time-code"
+           pattern="[0-9]{{ '{' }}{{ config.totp_digits }}{{ '}' }}"
+           maxlength="{{ config.totp_digits }}" required autofocus>
+  </label>
+  <button type="submit">Verify</button>
+</form>
+<p class="hint">Codes change every {{ config.totp_step_s }} seconds. One step
+either side is accepted, so the acceptance window is
+{{ (2 * config.totp_skew_steps + 1) * config.totp_step_s }} seconds. Each code
+works once.</p>
+{% endblock %}

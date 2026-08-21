@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>Signed in as {{ user['username'] }}</h1>
+<p>This page requires an <code>authenticated</code> session. A session that
+stopped at the password step cannot see it.</p>
+
+<table class="kv">
+  <tr><th>Two-factor authentication</th>
+      <td>{{ 'enabled' if user['totp_enabled'] else 'not enabled' }}</td></tr>
+  {% if info.session_age_s is defined %}
+  <tr><th>Session age</th><td>{{ info.session_age_s }} s</td></tr>
+  <tr><th>Idle timeout</th><td>{{ info.idle_timeout_s }} s</td></tr>
+  <tr><th>Absolute timeout</th><td>{{ info.absolute_timeout_s }} s</td></tr>
+  {% endif %}
+</table>
+
+<p class="actions">
+{% if user['totp_enabled'] %}
+  <form method="post" action="{{ url_for('disable_2fa') }}" class="inline">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label>Confirm password to turn 2FA off
+      <input name="password" type="password" required
+             autocomplete="current-password">
+    </label>
+    <button type="submit" class="secondary">Disable 2FA</button>
+  </form>
+{% else %}
+  <a class="button" href="{{ url_for('enrol_2fa') }}">Set up 2FA</a>
+{% endif %}
+</p>
+
+<form method="post" action="{{ url_for('logout') }}">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+  <button type="submit" class="secondary">Sign out</button>
+</form>
+{% endblock %}

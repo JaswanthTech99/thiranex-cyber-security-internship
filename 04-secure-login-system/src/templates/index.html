@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Sign in or create an account</h1>
+<p>Passwords are hashed with Argon2id using the RFC 9106 section 4 second
+recommended parameters (t=3, m=64 MiB, p=4). Sessions are server-side and can be
+revoked. An optional TOTP second factor is available once you are signed in.</p>
+<p class="actions">
+  <a class="button" href="{{ url_for('login') }}">Sign in</a>
+  <a class="button secondary" href="{{ url_for('register') }}">Create account</a>
+</p>
+{% endblock %}

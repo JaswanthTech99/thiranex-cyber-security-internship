@@ -1,0 +1,84 @@
+/* Small hand-written stylesheet. No CDN, no framework: the Content-Security-
+   Policy in app.py is default-src 'none' with style-src 'self', and pulling a
+   stylesheet from someone else's server would mean either loosening that or
+   trusting a third party with the login page. */
+
+:root {
+  --bg: #10131a;
+  --panel: #181c26;
+  --ink: #e8ecf4;
+  --muted: #98a2b8;
+  --line: #2a3140;
+  --accent: #5b9dff;
+  --bad: #ff7a70;
+  --good: #6fd08c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+header {
+  display: flex; flex-wrap: wrap; gap: .75rem; align-items: baseline;
+  padding: 1rem 1.25rem; border-bottom: 1px solid var(--line);
+}
+.brand { color: var(--ink); font-weight: 650; text-decoration: none; }
+header .sub { color: var(--muted); font-size: .82rem; }
+
+main { max-width: 44rem; margin: 0 auto; padding: 1.75rem 1.25rem 3rem; }
+
+h1 { font-size: 1.4rem; margin: 0 0 .9rem; }
+h2 { font-size: 1rem; margin: 1.4rem 0 .5rem; }
+p { margin: 0 0 .85rem; }
+
+form { background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+       padding: 1.1rem; margin: 0 0 1.1rem; }
+form.inline { margin-bottom: .75rem; }
+label { display: block; margin-bottom: .8rem; color: var(--muted);
+        font-size: .84rem; }
+input {
+  display: block; width: 100%; margin-top: .3rem; padding: .55rem .65rem;
+  background: #0d1017; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 7px; font-size: 1rem;
+}
+input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+button, .button {
+  display: inline-block; padding: .55rem 1rem; border: 0; border-radius: 7px;
+  background: var(--accent); color: #08111f; font-weight: 600; font-size: .95rem;
+  cursor: pointer; text-decoration: none;
+}
+button.secondary, .button.secondary {
+  background: transparent; color: var(--ink); border: 1px solid var(--line);
+}
+.actions { display: flex; flex-wrap: wrap; gap: .6rem; align-items: flex-end; }
+
+.flash { color: var(--good); border-left: 3px solid var(--good);
+         padding-left: .7rem; }
+.error { color: var(--bad); border-left: 3px solid var(--bad);
+         padding-left: .7rem; }
+ul.error { list-style: none; padding: .2rem 0 .2rem .7rem; margin: 0 0 .9rem; }
+.danger { color: var(--bad); font-weight: 600; }
+
+.hint, .rules { color: var(--muted); font-size: .85rem; }
+.rules ul { padding-left: 1.1rem; }
+
+code { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+       font-size: .85em; }
+.secret code { font-size: 1.05rem; letter-spacing: .06em; word-break: break-all; }
+.wrap { word-break: break-all; }
+
+table.kv { border-collapse: collapse; width: 100%; margin: 0 0 1.1rem; }
+table.kv th, table.kv td {
+  text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--line);
+  font-weight: 400;
+}
+table.kv th { color: var(--muted); width: 45%; }
+
+footer { border-top: 1px solid var(--line); padding: 1rem 1.25rem;
+         color: var(--muted); font-size: .8rem; }

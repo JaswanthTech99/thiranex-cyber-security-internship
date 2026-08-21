@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Create account{% endblock %}
+{% block content %}
+<h1>Create account</h1>
+{% if created %}
+<p class="flash">Account <strong>{{ username }}</strong> created.
+<a href="{{ url_for('login') }}">Sign in</a>.</p>
+{% else %}
+<form method="post" action="{{ url_for('register') }}" autocomplete="on">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+  <label>Username
+    <input name="username" value="{{ username or '' }}" required
+           minlength="{{ config.username_min_length }}"
+           maxlength="{{ config.username_max_length }}"
+           autocomplete="username" autocapitalize="none" spellcheck="false">
+  </label>
+  <label>Password
+    <input name="password" type="password" required
+           minlength="{{ config.password_min_length }}"
+           maxlength="{{ config.password_max_length }}"
+           autocomplete="new-password">
+  </label>
+  <label>Confirm password
+    <input name="confirm" type="password" required
+           autocomplete="new-password">
+  </label>
+  <button type="submit">Create account</button>
+</form>
+<section class="rules">
+  <h2>Rules, and why</h2>
+  <ul>
+    <li>Username: {{ config.username_min_length }} to
+        {{ config.username_max_length }} characters, lowercase letters, digits,
+        dot, underscore, hyphen. Narrow on purpose so two accounts cannot look
+        identical to a human.</li>
+    <li>Password: at least {{ config.password_min_length }} characters, up to
+        {{ config.password_max_length }}. No composition rules: NIST SP 800-63B
+        section 5.1.1.2 says verifiers should not impose them.</li>
+    <li>The password is checked against the Have I Been Pwned corpus using the
+        k-anonymity range API. Only the first five characters of its SHA-1 hash
+        leave this machine.</li>
+  </ul>
+</section>
+{% endif %}
+{% endblock %}

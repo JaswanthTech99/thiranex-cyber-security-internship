@@ -1,0 +1,399 @@
+{
+  "generated_at": "2026-08-21 18:28:52",
+  "measurements": {
+    "test_e2e": {
+      "breached_password_rejected": true,
+      "db_stats_after_run": {
+        "attempts": 5,
+        "sessions": 2,
+        "users": 1
+      },
+      "hibp": {
+        "available": true,
+        "breached": false,
+        "candidates_returned": 1908,
+        "count": 0,
+        "error": null,
+        "prefix": "52D5E"
+      },
+      "logout_invalidates_server_side": true,
+      "totp_replay_refused": true,
+      "waited_for_step_boundary_s": 27.08
+    },
+    "test_enumeration": {
+      "arms": {
+        "mitigation_off": {
+          "classifier": {
+            "best_single_request_accuracy": 1.0,
+            "best_threshold_ms": 55.075,
+            "cohens_d": 4.557
+          },
+          "client_visible_messages": {
+            "enum.absent": [
+              "Invalid username or password."
+            ],
+            "enum.known": [
+              "Invalid username or password."
+            ]
+          },
+          "known": {
+            "max_ms": 416.952,
+            "mean_ms": 176.339,
+            "median_ms": 165.673,
+            "min_ms": 118.697,
+            "n": 150,
+            "p05_ms": 135.663,
+            "p95_ms": 258.314,
+            "p99_ms": 351.346,
+            "stdev_ms": 45.385
+          },
+          "status_codes": {
+            "enum.absent": [
+              401
+            ],
+            "enum.known": [
+              401
+            ]
+          },
+          "unknown": {
+            "max_ms": 55.075,
+            "mean_ms": 28.143,
+            "median_ms": 26.461,
+            "min_ms": 17.493,
+            "n": 150,
+            "p05_ms": 20.27,
+            "p95_ms": 45.1,
+            "p99_ms": 51.016,
+            "stdev_ms": 7.435
+          }
+        },
+        "mitigation_on": {
+          "classifier": {
+            "best_single_request_accuracy": 0.5467,
+            "best_threshold_ms": 151.403,
+            "cohens_d": 0.044
+          },
+          "client_visible_messages": {
+            "enum.absent": [
+              "Invalid username or password."
+            ],
+            "enum.known": [
+              "Invalid username or password."
+            ]
+          },
+          "known": {
+            "max_ms": 582.976,
+            "mean_ms": 145.683,
+            "median_ms": 135.133,
+            "min_ms": 98.446,
+            "n": 150,
+            "p05_ms": 109.729,
+            "p95_ms": 210.178,
+            "p99_ms": 319.434,
+            "stdev_ms": 48.954
+          },
+          "status_codes": {
+            "enum.absent": [
+              401
+            ],
+            "enum.known": [
+              401
+            ]
+          },
+          "unknown": {
+            "max_ms": 607.989,
+            "mean_ms": 143.504,
+            "median_ms": 135.71,
+            "min_ms": 100.134,
+            "n": 150,
+            "p05_ms": 108.71,
+            "p95_ms": 199.879,
+            "p99_ms": 359.188,
+            "stdev_ms": 51.182
+          }
+        }
+      },
+      "figure": "outputs/figures/enumeration_timing.png",
+      "median_gap_ms": {
+        "mitigation_off": 139.212,
+        "mitigation_on": -0.577
+      },
+      "samples_per_class": 150,
+      "seed": 20260821
+    },
+    "test_lockout": {
+      "dos_bound": {
+        "limited_hashed_attempts_per_username_per_window": 5,
+        "limited_transient_mib": 320,
+        "unlimited_attempts_measured": 20,
+        "unlimited_mean_ms": 74.982,
+        "unlimited_transient_mib": 1280
+      },
+      "enumeration_safe": {
+        "absent_user_first_429_after": 5,
+        "identical": true,
+        "real_user_first_429_after": 5
+      },
+      "lockout": {
+        "baseline_healthz_ms": 26.418,
+        "baseline_session_request_ms": 24.143,
+        "first_429_after": 5,
+        "hashed_over_rejected_ratio": 4.489,
+        "mean_hashed_attempt_ms": 73.399,
+        "mean_rejected_attempt_ms": 16.352,
+        "statuses": [
+          401,
+          401,
+          401,
+          401,
+          401,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429,
+          429
+        ],
+        "threshold": 5
+      },
+      "success_clears_counter": true
+    },
+    "test_session_fixation": {
+      "enabling_2fa_evicts_other_sessions": true,
+      "logout_deletes_row": true,
+      "password_only": {
+        "fixated_id_status": 401,
+        "pre_login_row_deleted": true,
+        "pre_login_sid_changed": true
+      },
+      "three_stage_rotation": {
+        "distinct_ids": 3,
+        "levels": [
+          "anonymous",
+          "pending_2fa",
+          "authenticated"
+        ]
+      }
+    },
+    "test_session_lifecycle": {
+      "absolute_timeout": {
+        "configured_s": 6,
+        "expired_while_active": true,
+        "polls_before_expiry": 9
+      },
+      "cookie_flags": {
+        "httponly": "",
+        "path": "/",
+        "samesite": "Lax",
+        "secure": ""
+      },
+      "csrf": {
+        "get_logout_not_allowed": 405,
+        "missing_token": 403,
+        "stale_token_after_rotation": 403,
+        "wrong_token": 403
+      },
+      "headers": {
+        "cache_control": "no-store, no-cache, must-revalidate",
+        "csp": "default-src 'none'; style-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+        "x_frame_options": "DENY"
+      },
+      "idle_timeout": {
+        "configured_s": 3,
+        "expired": true,
+        "refreshed_by_activity": true
+      }
+    },
+    "test_sqli": {
+      "corpus": {
+        "deduped_total": 390,
+        "notes": [
+          "Generic-SQLi.txt: fetched from SecLists (5375 bytes)",
+          "sqli.auth.bypass.txt: fetched from SecLists (1774 bytes)",
+          "quick-SQLi.txt: fetched from SecLists (1180 bytes)"
+        ],
+        "per_source": {
+          "Generic-SQLi.txt": 267,
+          "quick-SQLi.txt": 77,
+          "sqli.auth.bypass.txt": 96
+        },
+        "sources": [
+          "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/Databases/SQLi/Generic-SQLi.txt",
+          "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/Databases/SQLi/sqli.auth.bypass.txt",
+          "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/Databases/SQLi/quick-SQLi.txt"
+        ]
+      },
+      "real_endpoint": {
+        "password": {
+          "authenticated": 0,
+          "field": "password",
+          "fired": 390,
+          "server_errors": 0,
+          "status_counts": {
+            "401": 390
+          },
+          "transport_errors": 0
+        },
+        "username": {
+          "authenticated": 0,
+          "field": "username",
+          "fired": 390,
+          "server_errors": 0,
+          "status_counts": {
+            "401": 390
+          },
+          "transport_errors": 0
+        }
+      },
+      "summary": {
+        "concatenated_bypasses": 52,
+        "parameterised_bypasses": 0,
+        "requests_per_target": 780
+      },
+      "vulnerable_endpoint": {
+        "password": {
+          "bypass_examples": [
+            "hi' or 'a'='a",
+            "a' or 1=1--",
+            "a' or 'a' = 'a",
+            "a' or 3=3--",
+            "hi' or 1=1 --",
+            "anything' OR 'x'='x",
+            "x' or 1=1 or 'x'='y",
+            "' or 0=0 --",
+            "' or 1=1--",
+            "' or '1'='1'--"
+          ],
+          "bypassed": 31,
+          "db_errors": 102,
+          "fired": 390,
+          "status_counts": {
+            "200": 31,
+            "401": 257,
+            "500": 102
+          }
+        },
+        "username": {
+          "bypass_examples": [
+            "a' or 1=1--",
+            "a' or 3=3--",
+            "hi' or 1=1 --",
+            "x' or 1=1 or 'x'='y",
+            "' or 0=0 --",
+            "' or 1=1--",
+            "' or '1'='1'--",
+            "' or 1 --'",
+            "' or 1=1 or ''='",
+            "' or 1=1/*"
+          ],
+          "bypassed": 21,
+          "db_errors": 104,
+          "fired": 390,
+          "status_counts": {
+            "200": 21,
+            "401": 265,
+            "500": 104
+          }
+        }
+      }
+    },
+    "test_validation": {
+      "argon2_parameters": {
+        "hash_len": 32,
+        "memory_cost_kib": 65536,
+        "memory_cost_mib": 64.0,
+        "parallelism": 4,
+        "salt_len": 16,
+        "time_cost": 3,
+        "type": "Argon2id"
+      },
+      "hibp": {
+        "candidates_in_bucket": 1978,
+        "padding_entries": 35,
+        "prefix_bits": 20,
+        "prefix_sent": "5BAA6",
+        "sample_password_breach_count": 52372427
+      }
+    }
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.4",
+  "suites": [
+    {
+      "checks": 92,
+      "duration_s": 0.001,
+      "failed": 0,
+      "passed": 92,
+      "suite": "RFC 4226 / RFC 6238 test vectors"
+    },
+    {
+      "checks": 63,
+      "duration_s": 3.687,
+      "failed": 0,
+      "passed": 63,
+      "suite": "Validation, Argon2 parameters, HIBP breach check"
+    },
+    {
+      "checks": 28,
+      "duration_s": 16.945,
+      "failed": 0,
+      "passed": 28,
+      "suite": "Session lifecycle: cookies, timeouts, CSRF"
+    },
+    {
+      "checks": 10,
+      "duration_s": 7.426,
+      "failed": 0,
+      "passed": 10,
+      "suite": "Rate limiting and lockout"
+    },
+    {
+      "checks": 29,
+      "duration_s": 18.885,
+      "failed": 0,
+      "passed": 29,
+      "suite": "Session fixation and rotation"
+    },
+    {
+      "checks": 24,
+      "duration_s": 29.242,
+      "failed": 0,
+      "passed": 24,
+      "suite": "End-to-end: register, login, 2FA, protected page, logout"
+    },
+    {
+      "checks": 13,
+      "duration_s": 91.864,
+      "failed": 0,
+      "passed": 13,
+      "suite": "SQL injection: SecLists corpus"
+    },
+    {
+      "checks": 13,
+      "duration_s": 80.333,
+      "failed": 0,
+      "passed": 13,
+      "suite": "User enumeration timing"
+    }
+  ],
+  "totals": {
+    "checks": 272,
+    "duration_s": 248.8,
+    "failed": 0,
+    "passed": 272
+  }
+}

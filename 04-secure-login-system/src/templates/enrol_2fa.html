@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Set up 2FA{% endblock %}
+{% block content %}
+<h1>Set up two-factor authentication</h1>
+{% if already %}
+<p>Two-factor authentication is already enabled for this account.</p>
+<p class="actions"><a class="button" href="{{ url_for('dashboard') }}">Back</a></p>
+{% else %}
+<p>Add this secret to your authenticator app, then prove it works by entering a
+code. The secret is stored now but the factor is not switched on until a code
+verifies, so a mistyped secret cannot lock you out of your own account.</p>
+
+<p class="secret"><code>{{ secret_b32 }}</code></p>
+<p class="hint">Provisioning URI (paste into your app, or render as a QR code):<br>
+<code class="wrap">{{ otpauth_uri }}</code></p>
+
+<form method="post" action="{{ url_for('enrol_2fa') }}">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+  <label>Code from your app
+    <input name="code" inputmode="numeric" autocomplete="one-time-code"
+           maxlength="{{ config.totp_digits }}" required autofocus>
+  </label>
+  <button type="submit">Turn on 2FA</button>
+</form>
+<p class="hint">Turning 2FA on signs out every other session for this account.
+If someone else was logged in as you, enabling a second factor should evict
+them.</p>
+{% endif %}
+{% endblock %}

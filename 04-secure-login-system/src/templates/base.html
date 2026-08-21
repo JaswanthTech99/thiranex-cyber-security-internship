@@ -1,0 +1,33 @@
+{# Autoescaping is on by default in Jinja2 for .html templates, which is what
+   stops reflected values (usernames, error text) becoming XSS. Nothing in this
+   project uses |safe on user data. #}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Secure Login System{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body>
+<header>
+  <a class="brand" href="{{ url_for('index') }}">Secure Login System</a>
+  <span class="sub">Argon2id &middot; TOTP &middot; server-side sessions</span>
+</header>
+<main>
+{% if flash %}<p class="flash">{{ flash }}</p>{% endif %}
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+{% if errors %}
+<ul class="error">{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul>
+{% endif %}
+{% block content %}{% endblock %}
+</main>
+<footer>
+  <p>M Jaswanth Kumar &middot; Cyber Security internship project 04</p>
+  {% if config.demo_vulnerable %}
+  <p class="danger">WARNING: --demo-vulnerable is enabled. An intentionally
+  injectable endpoint is mounted at /demo/vulnerable/login.</p>
+  {% endif %}
+</footer>
+</body>
+</html>

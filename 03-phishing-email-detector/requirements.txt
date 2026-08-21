@@ -1,0 +1,8 @@
+# Pinned to the versions this project was actually run against.
+# Python 3.14.4 on Windows 11.
+numpy==2.5.2
+pandas==3.0.5
+scikit-learn==1.9.0
+scipy==1.18.0
+matplotlib==3.11.1
+requests==2.34.2

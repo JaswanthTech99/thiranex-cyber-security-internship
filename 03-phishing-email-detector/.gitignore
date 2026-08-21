@@ -1,0 +1,26 @@
+# Downloaded corpora and everything unpacked from them. ~50 MB, re-fetchable
+# with `python -m src.download`; the URLs and SHA-256 sums are recorded in
+# data/raw/MANIFEST.csv, which is itself not committed since it is generated.
+data/raw/
+
+# Parsed message bodies and headers. These are real emails from 2002-2006: live
+# addresses, real names and full Received: chains. The corpora are already public
+# at Apache and monkey.org, but committing a parsed copy here would create a new,
+# search-indexable republication of other people's correspondence under my name,
+# which is a different act from citing the archive. Excluded deliberately.
+#
+# Reproducibility is unaffected: `python -m src.download` then the parse step
+# rebuilds both files from the original sources. The derived artifacts that the
+# evaluation actually consumes - features.csv.gz (numeric features only) and
+# groups.csv (ids and cluster labels) - are committed, and neither contains a
+# message body or an email address.
+data/processed/emails.jsonl.gz
+data/processed/spam_probe.jsonl.gz
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/

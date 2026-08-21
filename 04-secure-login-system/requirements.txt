@@ -1,0 +1,33 @@
+# Pinned to the versions this project was actually built and measured against
+# (Python 3.14.4, Windows 11). Verified with `python -m pip list --format=freeze`.
+
+# --- runtime: the app itself -------------------------------------------------
+Flask==3.1.3
+argon2-cffi==25.1.0
+requests==2.34.2                # only for the Have I Been Pwned range API call
+
+# --- runtime: pulled in by the above, pinned so a rebuild is reproducible ----
+argon2-cffi-bindings==26.1.0
+blinker==1.9.0
+certifi==2026.7.22
+cffi==2.1.1
+charset-normalizer==3.5.1
+click==8.4.2
+idna==3.19
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+pycparser==3.0
+urllib3==2.7.0
+Werkzeug==3.1.8
+
+# --- tests and measurement ---------------------------------------------------
+# numpy for the percentile and effect-size maths, matplotlib for the figures.
+# No test framework: tests/harness.py is 90 lines and does what is needed, so
+# there is no pytest dependency to install or pin.
+numpy==2.5.2
+matplotlib==3.11.1
+
+# TOTP is implemented from hmac/hashlib/struct in src/totp.py and validated
+# against the RFC 4226 and RFC 6238 test vectors. pyotp is deliberately NOT a
+# dependency -- the point was to build it and prove it against the standard.

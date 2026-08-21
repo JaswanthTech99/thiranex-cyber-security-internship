@@ -1,0 +1,45 @@
+# --- databases ---------------------------------------------------------------
+# The SQLite file holds password hashes, TOTP secrets and live session rows.
+# Even from a throwaway dev run, none of that belongs in version control.
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# --- secrets and keys --------------------------------------------------------
+# The Flask secret key is generated at runtime or read from SLS_SECRET_KEY, so
+# there should never be a key file here. These patterns exist so that if anyone
+# ever adds one, git does not pick it up.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.json
+.secrets/
+
+# --- python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- local caches ------------------------------------------------------------
+# The downloaded SecLists payload corpus. Fetched fresh by tests/test_sqli.py;
+# the exact corpus that was fired is recorded in
+# outputs/reports/sqli_payloads_fired.txt, which IS committed as evidence.
+.cache/
+
+# --- editor / OS -------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

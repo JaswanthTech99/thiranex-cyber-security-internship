@@ -1,0 +1,63 @@
+﻿=== Argon2id cost measurement ===
+
+Machine:
+  platform: Windows-11-10.0.26200-SP0
+  processor: Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+  python: 3.14.4
+  logical_cpus: 8
+  total_ram_mib: 32448
+  available_ram_mib: 4705
+
+Chosen parameters (RFC 9106 section 4, second recommended): t=3, m=64 MiB, p=4
+  single-hash latency: mean 76.78 ms, median 74.24 ms, p95 91.87 ms, min 66.4 ms (n=20)
+  The minimum is the least-interference estimate of the true cost: this is a shared laptop with other processes running, and every source of interference makes a sample slower, never faster.
+
+Parameter sweeps, 8 interleaved rounds in a random order per round (seed 20260821).
+
+Memory sweep (t=3, p=4):
+    m (MiB)   mean ms   p95 ms  hashes/s (serial)
+          8     21.69    28.19               46.1
+         16     35.54    40.83               28.1
+         32     59.37    73.82               16.8
+         64    117.17   151.44                8.5
+        128    194.74   218.08                5.1
+        256    416.96   564.49                2.4
+
+Time-cost sweep (m=64 MiB, p=4):
+    t   mean ms   p95 ms
+    1     49.98    55.51
+    2     97.14   153.40
+    3    113.12   135.14
+    4    145.45   173.54
+    6    210.33   247.58
+
+Drift probe (chosen parameters, once per round): first half mean 108.48 ms, second half mean 114.41 ms, ratio 1.055x
+
+Concurrency (chosen parameters, levels in random order):
+  threads   hashes/s  speedup   mean ms   p95 ms  transient MiB
+        1       9.22     0.94    108.27   116.89             64
+        2      14.72     1.54    135.59   167.45            128
+        4      10.73     1.14    365.77   597.81            256
+        8      14.51     1.62    540.76   727.14            512
+       16      13.41     1.71   1156.10  1506.23           1024
+
+HTTP availability under attacker load:
+  no_protection:
+    victim login, no load: mean 114.68 ms, p95 138.0 ms, success rate 100%
+     4 attacker threads (73 requests in 6 s): victim mean 407.91 ms, p95 506.65 ms (3.67x baseline p95), statuses [200], logged in 100% of the time
+    16 attacker threads (89 requests in 6 s): victim mean 919.55 ms, p95 1354.52 ms (9.82x baseline p95), statuses [200], logged in 100% of the time
+  concurrency_cap:
+    victim login, no load: mean 90.2 ms, p95 104.71 ms, success rate 100%
+     4 attacker threads (84 requests in 6 s): victim mean 318.41 ms, p95 386.54 ms (3.69x baseline p95), statuses [200], logged in 100% of the time
+    16 attacker threads (78 requests in 6 s): victim mean 1004.87 ms, p95 1758.1 ms (16.79x baseline p95), statuses [200], logged in 100% of the time
+  rate_limited:
+    victim login, no load: mean 90.33 ms, p95 107.49 ms, success rate 100%
+     4 attacker threads (774 requests in 6 s): victim mean 203.27 ms, p95 266.17 ms (2.48x baseline p95), statuses [200], logged in 100% of the time
+    16 attacker threads (1097 requests in 6 s): victim mean 40.77 ms, p95 100.35 ms (0.93x baseline p95), statuses [429], logged in 0% of the time
+        ^ the victim was REFUSED, not served. The low latency here is the sound of the door being shut in their face, not of the limiter protecting them.
+
+Chosen parameters re-measured after the full benchmark load: mean 108.88 ms, median 106.53 ms, min 85.61 ms
+  vs at the start: mean 76.78 ms, median 74.24 ms, min 66.4 ms
+
+Figure written to C:\Users\JaswanthKumarMediset\Downloads\thiranex-cyber\projects\04-secure-login-system\outputs\figures\argon2_cost.png
+Raw data written to C:\Users\JaswanthKumarMediset\Downloads\thiranex-cyber\projects\04-secure-login-system\outputs\reports\argon2_bench.json
