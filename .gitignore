@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# Never commit secrets, keys or local credential stores.
+.secrets/
+*.hmac_key
+*.pem
+*.key

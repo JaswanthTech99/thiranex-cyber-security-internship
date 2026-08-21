@@ -1,0 +1,17 @@
+{
+  "machine": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "python": "3.14.4"
+  },
+  "measured": {
+    "sha1_cpu_single_thread_hps": 1612141.4,
+    "argon2id_t3_m64MiB_p4_hps": 15.975
+  },
+  "assumed": {
+    "sha1_single_gpu_hps": 50000000000.0,
+    "sha1_single_gpu_source": "published hashcat benchmark for one high-end consumer GPU, rounded to 1 significant figure - assumption, not measured here",
+    "online_throttled_hps": 10.0,
+    "online_throttled_source": "policy assumption for a rate-limited login endpoint"
+  }
+}

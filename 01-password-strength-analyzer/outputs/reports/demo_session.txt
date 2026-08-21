@@ -1,0 +1,63 @@
+Password history demo - user 'alice', mandatory quarterly rotation
+========================================================================
+
+Retiring the passwords she has already used:
+  id 1: 'Summer2024!'  ->  skeleton 'summer'
+  id 2: 'Autumn2024!'  ->  skeleton 'autumn'
+  id 3: 'Winter2025!'  ->  skeleton 'winter'
+
+Only Argon2id hashes and keyed skeleton HMACs are stored. Row 1 as held:
+  argon2_hash   $argon2id$v=19$m=65536,t=3,p=4$iW6BjXhUw8O+12Vy4qJ2MA$aB1C2eK5...
+  skeleton_hmac 130d27eaf8c69fb4badc003509c93159...
+
+Now she tries to set a new one:
+
+  'Summer2024!'  (exact re-use of the oldest retired password)
+    skeleton : 'summer'
+    history  : REJECTED - exact re-use (history id 1)
+    strength : Moderate, 10^7.9 guesses
+
+  'Summer2025!'  (same word, next year - the classic rotation dodge)
+    skeleton : 'summer'
+    history  : REJECTED - shares a root with id(s) [1]
+    strength : Moderate, 10^7.9 guesses
+
+  'Summer2024!!'  (same root, one more character)
+    skeleton : 'summer'
+    history  : REJECTED - shares a root with id(s) [1]
+    strength : Strong, 10^8.2 guesses
+
+  'Summ3r2025!'  (same root, leet-mangled)
+    skeleton : 'summer'
+    history  : REJECTED - shares a root with id(s) [1]
+    strength : Strong, 10^8.2 guesses
+
+  'Spring2025!'  (a different season - the check's blind spot)
+    skeleton : 'spring'
+    history  : ACCEPTED by history check
+    strength : Moderate, 10^7.9 guesses
+
+  'plywood-cactus-ferry-oxidant'  (an unrelated generated passphrase)
+    skeleton : 'plywood-cactus-ferry-oxidant'
+    history  : ACCEPTED by history check
+    strength : Very strong, 10^21.9 guesses
+
+========================================================================
+What the two stored values each buy, and what neither buys:
+
+  The Argon2id hash catches only the first candidate. 'Summer2025!' is
+  not a re-use of anything by hash - it matches no stored row - and a
+  history table holding hashes alone would have accepted it. That is the
+  first mutation any cracking rule applies to a known old password, so
+  missing it defeats the point of keeping history at all. The skeleton
+  HMAC catches it, along with the extra-punctuation and leet variants,
+  because all four reduce to the root 'summer'.
+
+  'Spring2025!' is the honest limitation. Root matching compares roots,
+  and 'spring' is not 'summer', so it is accepted here even though a
+  human would call it obvious rotation. Catching it would mean storing
+  something that survives changing the word itself - a similarity
+  sketch over the plaintext - and that leaks materially more about the
+  old passwords than a root HMAC does. The line is drawn deliberately:
+  block the mutation the rulesets automate, and do not pretend to solve
+  semantic similarity from data the server should not be keeping.

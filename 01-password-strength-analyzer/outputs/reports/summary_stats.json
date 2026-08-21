@@ -1,0 +1,371 @@
+{
+  "seed": 20260821,
+  "corpora": {
+    "training_breach_corpus": 1000000,
+    "heldout_dump": 9999,
+    "train_half_rank_cutoff": 500000,
+    "dictionaries": {
+      "breach": 1000000,
+      "english": 10000,
+      "eff": 7776
+    }
+  },
+  "hash_rates": {
+    "machine": {
+      "platform": "Windows-11-10.0.26200-SP0",
+      "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+      "python": "3.14.4"
+    },
+    "measured": {
+      "sha1_cpu_single_thread_hps": 1612141.4,
+      "argon2id_t3_m64MiB_p4_hps": 15.975
+    },
+    "assumed": {
+      "sha1_single_gpu_hps": 50000000000.0,
+      "sha1_single_gpu_source": "published hashcat benchmark for one high-end consumer GPU, rounded to 1 significant figure - assumption, not measured here",
+      "online_throttled_hps": 10.0,
+      "online_throttled_source": "policy assumption for a rate-limited login endpoint"
+    }
+  },
+  "weak_threshold_guesses": 100000000.0,
+  "experiment_a_composition_policy": {
+    "len>=8": {
+      "passing": 577789,
+      "total": 1000000,
+      "pct": 57.779
+    },
+    "len>=8 + 3 of 4 classes": {
+      "passing": 42540,
+      "total": 1000000,
+      "pct": 4.254
+    },
+    "len>=8 + all 4 classes": {
+      "passing": 591,
+      "total": 1000000,
+      "pct": 0.059
+    },
+    "len>=12 + all 4 classes": {
+      "passing": 133,
+      "total": 1000000,
+      "pct": 0.013
+    }
+  },
+  "experiment_a_examples": {
+    "len>=8": [
+      "123456789",
+      "password",
+      "12345678",
+      "1234567890",
+      "1q2w3e4r5t",
+      "q1w2e3r4t5y6",
+      "iloveyou",
+      "1q2w3e4r",
+      "qwertyuiop",
+      "yuantuo2012",
+      "qwerty123",
+      "1qaz2wsx3edc"
+    ],
+    "len>=8 + 3 of 4 classes": [
+      "N0=Acc3ss",
+      "D1lakiss",
+      "Password1",
+      "Indya123",
+      "Groupd2013",
+      "R9lw4j8khX",
+      "Abcd1234",
+      "6V21wbgad",
+      "Passw0rd",
+      "Blink123",
+      "pk3x7w9W",
+      "nyq28Giz1Z"
+    ],
+    "len>=8 + all 4 classes": [
+      "N0=Acc3ss",
+      "ka_dJKHJsy6",
+      "P@ssw0rd",
+      "Abc123456!",
+      "!Turbine1",
+      "fxzZ75$yer",
+      "S9QxA9Yn9Cc=",
+      "1qaz!QAZ",
+      "Temp2014!",
+      "Comply1!",
+      "Doomsayer.2.7mords.V",
+      "!QAZ2wsx"
+    ],
+    "len>=12 + all 4 classes": [
+      "S9QxA9Yn9Cc=",
+      "Doomsayer.2.7mords.V",
+      "Doomsayer.2.7mords.VV",
+      "Hengsha_2_23",
+      "Al#kS3!kSj0xX",
+      "Paperindex1*",
+      "$HEX[636f6e7472617365c3b161]",
+      "g00dPa$$w0rD",
+      "cGFzc3dvcmQ=",
+      "Doomsayer.2.7mords",
+      "L@F0vrNwa0MyU",
+      "Farazahmed1`"
+    ]
+  },
+  "experiment_b_heldout_dump": {
+    "n": 9999,
+    "composition_meter_says_strong_pct": 0.16,
+    "charset_entropy_says_strong_pct": 0.8,
+    "guess_number_says_strong_pct": 0.56,
+    "guess_number_flags_weak_pct": 99.44,
+    "median_log10_guesses": 3.62,
+    "spearman_comp_score_vs_log10_guesses": 0.363,
+    "spearman_entropy_bits_vs_log10_guesses": 0.287
+  },
+  "experiment_c_overlap_trap": {
+    "overlap_with_training_corpus": 9874,
+    "overlap_pct": 98.75,
+    "disjoint": 125,
+    "on_overlap": {
+      "n": 9874,
+      "composition_meter_says_strong_pct": 0.13,
+      "charset_entropy_says_strong_pct": 0.66,
+      "guess_number_says_strong_pct": 0.0,
+      "guess_number_flags_weak_pct": 100.0,
+      "median_log10_guesses": 3.61
+    },
+    "on_disjoint": {
+      "n": 125,
+      "composition_meter_says_strong_pct": 2.4,
+      "charset_entropy_says_strong_pct": 12.0,
+      "guess_number_says_strong_pct": 44.8,
+      "guess_number_flags_weak_pct": 55.2,
+      "median_log10_guesses": 7.15
+    }
+  },
+  "experiment_c2_rank_split": {
+    "train_rank_cutoff": 500000,
+    "eval_pool_size": 500000,
+    "sample_size": 6000,
+    "estimator_without_these_passwords": {
+      "n": 6000,
+      "composition_meter_says_strong_pct": 0.45,
+      "charset_entropy_says_strong_pct": 3.4,
+      "guess_number_says_strong_pct": 20.17,
+      "guess_number_flags_weak_pct": 79.83,
+      "median_log10_guesses": 6.01
+    },
+    "estimator_with_these_passwords": {
+      "n": 6000,
+      "composition_meter_says_strong_pct": 0.45,
+      "charset_entropy_says_strong_pct": 3.4,
+      "guess_number_says_strong_pct": 0.05,
+      "guess_number_flags_weak_pct": 99.95,
+      "median_log10_guesses": 5.78
+    }
+  },
+  "experiment_e_calibration": {
+    "diceware-4": {
+      "true_log10_guess_space": 15.56,
+      "estimated_log10_median": 21.96,
+      "estimated_log10_p05": 20.14,
+      "estimated_log10_p95": 23.13,
+      "median_error_orders": 6.4,
+      "pct_scored_very_strong": 100.0
+    },
+    "diceware-6": {
+      "true_log10_guess_space": 23.34,
+      "estimated_log10_median": 35.69,
+      "estimated_log10_p05": 33.27,
+      "estimated_log10_p95": 37.2,
+      "median_error_orders": 12.34,
+      "pct_scored_very_strong": 100.0
+    },
+    "diceware-4-nosep": {
+      "true_log10_guess_space": 15.56,
+      "estimated_log10_median": 15.08,
+      "estimated_log10_p05": 13.27,
+      "estimated_log10_p95": 16.23,
+      "median_error_orders": -0.49,
+      "pct_scored_very_strong": 100.0
+    },
+    "random-20": {
+      "true_log10_guess_space": 39.46,
+      "estimated_log10_median": 35.64,
+      "estimated_log10_p05": 33.24,
+      "estimated_log10_p95": 37.31,
+      "median_error_orders": -3.82,
+      "pct_scored_very_strong": 100.0
+    }
+  },
+  "experiment_f_discrimination": {
+    "n_bad_policy_compliant_unseen": 346,
+    "n_good_generated": 600,
+    "composition_meter_score_auc": 0.2765,
+    "charset_entropy_bits_auc": 0.9921,
+    "guess_number_log10_auc": 0.9913,
+    "bad_examples_by_frequency": [
+      "Fuck0ff!",
+      "Qazigund@1",
+      "Wai!in123",
+      "Xicorola.1",
+      "Apple@123",
+      "Sp!tfire123",
+      "ak.6sKdaNwe46",
+      "bolpuR@1",
+      "wArdog-1kill",
+      "!Q2w3e4r5t",
+      "Catch-22",
+      "Hello@123"
+    ],
+    "pct_bad_called_strong_by_composition": 100.0,
+    "pct_bad_called_strong_by_entropy": 55.2,
+    "pct_bad_flagged_weak_by_guess_number": 50.9
+  },
+  "experiment_f2_length_matched": {
+    "n_bad": 346,
+    "n_matched_controls": 346,
+    "mean_len_bad": 10.5,
+    "mean_len_controls": 10.5,
+    "mean_entropy_bits_bad": 69.0,
+    "mean_entropy_bits_controls": 69.0,
+    "median_log10_guesses_bad": 7.94,
+    "median_log10_guesses_controls": 16.41,
+    "composition_meter_score_auc": 0.5,
+    "charset_entropy_bits_auc": 0.5,
+    "guess_number_log10_auc": 0.8861
+  },
+  "hibp_spot_check": [
+    {
+      "password": "Fuck0ff!",
+      "breach_rank": 500106,
+      "hibp_count": 32866,
+      "composition_label": "Strong",
+      "entropy_bits": 52.6,
+      "guess_number_verdict": "Weak",
+      "log10_guesses": 5.91
+    },
+    {
+      "password": "Qazigund@1",
+      "breach_rank": 500310,
+      "hibp_count": 846,
+      "composition_label": "Strong",
+      "entropy_bits": 65.7,
+      "guess_number_verdict": "Very strong",
+      "log10_guesses": 13.78
+    },
+    {
+      "password": "Wai!in123",
+      "breach_rank": 500417,
+      "hibp_count": 439,
+      "composition_label": "Strong",
+      "entropy_bits": 59.1,
+      "guess_number_verdict": "Very strong",
+      "log10_guesses": 10.89
+    },
+    {
+      "password": "Xicorola.1",
+      "breach_rank": 500426,
+      "hibp_count": 854,
+      "composition_label": "Strong",
+      "entropy_bits": 65.7,
+      "guess_number_verdict": "Strong",
+      "log10_guesses": 9.29
+    },
+    {
+      "password": "Apple@123",
+      "breach_rank": 505948,
+      "hibp_count": 254316,
+      "composition_label": "Strong",
+      "entropy_bits": 59.1,
+      "guess_number_verdict": "Weak",
+      "log10_guesses": 5.92
+    },
+    {
+      "password": "Sp!tfire123",
+      "breach_rank": 506293,
+      "hibp_count": 1153,
+      "composition_label": "Strong",
+      "entropy_bits": 72.3,
+      "guess_number_verdict": "Weak",
+      "log10_guesses": 5.18
+    },
+    {
+      "password": "ak.6sKdaNwe46",
+      "breach_rank": 506444,
+      "hibp_count": 1139,
+      "composition_label": "Very strong",
+      "entropy_bits": 85.4,
+      "guess_number_verdict": "Very strong",
+      "log10_guesses": 21.01
+    },
+    {
+      "password": "bolpuR@1",
+      "breach_rank": 506873,
+      "hibp_count": 261,
+      "composition_label": "Strong",
+      "entropy_bits": 52.6,
+      "guess_number_verdict": "Very strong",
+      "log10_guesses": 12.39
+    },
+    {
+      "password": "wArdog-1kill",
+      "breach_rank": 510551,
+      "hibp_count": 872,
+      "composition_label": "Very strong",
+      "entropy_bits": 78.8,
+      "guess_number_verdict": "Very strong",
+      "log10_guesses": 12.88
+    },
+    {
+      "password": "!Q2w3e4r5t",
+      "breach_rank": 510755,
+      "hibp_count": 42799,
+      "composition_label": "Strong",
+      "entropy_bits": 65.7,
+      "guess_number_verdict": "Moderate",
+      "log10_guesses": 6.84
+    },
+    {
+      "password": "Catch-22",
+      "breach_rank": 512013,
+      "hibp_count": 2892,
+      "composition_label": "Strong",
+      "entropy_bits": 52.6,
+      "guess_number_verdict": "Weak",
+      "log10_guesses": 5.49
+    },
+    {
+      "password": "Hello@123",
+      "breach_rank": 512102,
+      "hibp_count": 341404,
+      "composition_label": "Strong",
+      "entropy_bits": 59.1,
+      "guess_number_verdict": "Weak",
+      "log10_guesses": 5.72
+    },
+    {
+      "password": "Natlus1.",
+      "breach_rank": 518434,
+      "hibp_count": 831,
+      "composition_label": "Strong",
+      "entropy_bits": 52.6,
+      "guess_number_verdict": "Very strong",
+      "log10_guesses": 12.34
+    },
+    {
+      "password": "dSjr!y5jh",
+      "breach_rank": 519603,
+      "hibp_count": 613,
+      "composition_label": "Strong",
+      "entropy_bits": 59.1,
+      "guess_number_verdict": "Very strong",
+      "log10_guesses": 15.39
+    },
+    {
+      "password": "Aa/1314512",
+      "breach_rank": 524563,
+      "hibp_count": 1332,
+      "composition_label": "Strong",
+      "entropy_bits": 65.7,
+      "guess_number_verdict": "Very strong",
+      "log10_guesses": 11.15
+    }
+  ]
+}

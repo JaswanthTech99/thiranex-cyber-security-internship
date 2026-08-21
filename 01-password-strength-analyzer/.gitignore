@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Downloaded corpora: ~9 MB of breach wordlists, reproducible with
+# `python -m src.corpus`. The processed scores in data/processed are committed.
+data/raw/
+
+# Password history databases and their HMAC keys must never be committed.
+*.db
+*.hmac_key
